@@ -1,0 +1,10 @@
+<script>
+    function varLet(){
+        if (true){
+            let a = 100; //the scopr of a is nnot restricted to if block
+            console.log('inside block', a); // 10
+        }
+        console.log('inside function', a); // scope is function
+    }
+    varLet();
+</script>

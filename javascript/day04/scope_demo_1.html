@@ -1,0 +1,30 @@
+<script>
+    var  a = 10;
+    let b = 20;
+    const c = 30;
+    console.log('Global', a,b,c);
+
+    function f1(){
+        let d = 40;
+        e = 50;
+        console.log('f1 start..');
+        console.log('a ::',a);
+        console.log('b ::',b);
+        console.log('c ::',c);
+        console.log('d ::',d);
+        console.log('c ::',c);
+        console.log('e ::',e);
+        console.log('f1 ends..');        
+    }
+    function f2(){
+        
+        console.log('f2 start..');
+        console.log('a ::',a);
+        console.log('b ::',b);
+        console.log('c ::',c);
+        console.log('e ::',e);
+        console.log('f2 ends..');
+    }
+    f1();
+    f2();
+</script>

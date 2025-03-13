@@ -1,0 +1,12 @@
+<script>
+     function varTest(){
+        if (true){
+            (function(){
+                var a = 10; //the scopr of a is nnot restricted to if block
+                console.log('inside block', a); // 10
+            }());
+        }
+        console.log('inside function', a); // scope is function
+    }
+    varTest();
+</script>
