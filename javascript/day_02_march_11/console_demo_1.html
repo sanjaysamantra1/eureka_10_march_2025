@@ -1,0 +1,20 @@
+<script>
+    console.log('Hellooooooo');
+    console.warn('Hellooooooo');
+    console.error('Hellooooooo');
+
+    console.assert(5 == 2, '5 is not equal with 2');
+    console.assert(2 == 2, '2 is  equal with 2');
+
+    let employees = [
+        { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+        { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
+        { "eId": 103, "name": "sameer", "sal": 7000, "gender": "male" },
+        { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" },
+        { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
+    ];
+    console.log(employees);
+    console.table(employees);
+    console.table(employees, ['name', 'sal']);
+
+</script>

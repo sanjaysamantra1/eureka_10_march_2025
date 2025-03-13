@@ -1,0 +1,69 @@
+HTML Emmets
+===========
+https://docs.emmet.io/cheat-sheet/
+
+
+!
+#div1 
+.div1
+ol>li*5{Country-$}
+select>option*20{city-$}
+table>tbody>tr*10>td*4{data-$}
+button.btn.btn-primary{Primary Button}
+button.btn.btn-danger{Danger Button}
+
+
+How to Use Bootstrap in an HTML File
+=====================================
+add CDN link to the <head> of HTML file
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+How to Write and Execute Javascript code
+========================================
+1. Browser (FrontEnd Development)
+   a. create a javascript file with some javascript content
+   b. include that javascript file in to HTML file
+      <script src="addition.js"></script>
+   c. Open HTML file in Browser
+
+2. NodeJS  (BackEnd Development)
+  a. create a javascript file with some javascript content
+  b. run that javascript file with the below command 
+    node <filename>.js (make sure nodejs is installed)
+Note : Every javascript code that runs on browser, might not work in nodejs
+
+
+
+Most commonly used javascript Functions
+=======================================
+console.log()           console : object , log : function
+document.write()        document : object , write:function
+window.alert()          window : object , alert : function
+
+console.log('Hello');       yes
+document.write('Hello');    yes
+window.alert('Hello');      yes
+
+log('Hello');               No
+write('Hello');             No
+alert('Hello');             yes
+
+Note : while accessing window object methods/functions , using window.function() is not mandatory
+
+
+Most Commonly Used Javascript Objects
+=====================================
+console : log(), error(), warn(), assert() , table(), trace(), time(), timeEnd(), dir()
+window : alert(), confirm(),prompt(), print(), atob() , btoa()
+document : write() 
+Math : max(), min(), sqrt()
+
+
+HomeWork/Assignment
+===================
+1. Revise Day-2 Discussion
+2. practice Emmets (https://docs.emmet.io/cheat-sheet/)
+3. write a program, using prompt() ask user to enter 2 numbers, display addition result

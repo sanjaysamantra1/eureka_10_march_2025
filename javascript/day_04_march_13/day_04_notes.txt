@@ -1,0 +1,84 @@
+    var						let						 const
+======================================================================
+1.since begining		 1.ECMASCRIPT-6(2015)		1.ECMASCRIPT-6(2015)
+2.value can be changed   2.value can be changed     2.cann't be changed
+3.initialization is		 3.initialization is		3.mandatory
+	not mandatory           not mandatory	
+4.can be redeclared		 4.cann't be redeclared		4.cann't be redeclared
+5.TDZ - No			 	 5.TDZ - Yes				5.TDZ - Yes
+6.function/global		 6.block/function/global	6.block/function/global
+
+
+How Javascript Execution works:
+================================
+Javascript code is excuted in 2 steps:
+    1. Memory Creation 
+        a. Memory gets allocated for variables(var/let/const) and functions
+        b. 'undefined' initialization is done for 'var' type variables
+    2. Code Execution
+        a. variables will be initialized with actual values
+        b. function logic gets executed
+
+Temporal Dead Zone
+==================
+-The period between entering scope and being initialized where they cannot be accessed. 
+ This period is the temporal dead zone (TDZ).
+-The state where variables are un-reachable. They are in memory, but they aren't usable.
+-The let and const variables exist in the TDZ from the start of their enclosing scope until they are initialized.
+-if a let/const variable is accessed before its initialization, it would throw a ReferenceError. Because of the TDZ.
+
+
+Hoisting
+========
+-hoisting is a mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.
+-Variables declared with var are hoisted, but their values are not initialized. They are given an initial value of undefined.
+-Variables declared with let and const are also hoisted but are not initialized. Accessing them before declaration results in a ReferenceError because they are in the "temporal dead zone."
+-Function declarations are hoisted, meaning you can call them before they appear in the code.
+
+
+Variable Scopes
+===============
+1. Global : can be accessed through out the file by multiple functions
+2. function : can be accessed only inside a function where the variables is declared
+3. Block : can be accessed only inside a block where the variables is declared
+
+
+use strict
+==========
+-provides better coding standard and stronger error checking.
+-'use strict' is only recognized at the beginning of a script or a function.
+-JavaScript modules are automatically in strict mode, with no statement needed to initiate it.(import/export)
+-The purpose of "use strict" is to execute the javascript in "strict mode".
+-when 'use strict' is not written, browser runs the JS in normal mode.
+-when 'use strict' is  written, browser runs the JS in strict mode.
+-in Normal mode few mistakes are ignored, in strict mode mistakes are not ignored
+
+1. variable declaration without var/let/const is not allowed.
+   makes it impossible to accidentally create global variables.
+2. function with duplicate arguements are not allowed.
+3. NaN/undefined/Infinity cann't be used as a variable name.
+4. Delete of an unqualified identifier in strict mode. 
+    ex:delete Object.prototype; 
+	var x = 5; delete x;
+5. Multiple assignments not allowed.
+   var a = b = c = 3;
+6. 'this' is undefined, when a function is invoked from Global Context in strict mode.
+
+
+functions
+=========
+1. Pre-Defined : already defined, we are just using them
+                log() , prompt() , alert()
+2. User Defined : we need to write and use
+
+
+1. Function Declaration / Named Function
+2. Function Expression / Anonymous Function
+3. Self Invoked / IIFE 
+4. Arrow Function (ES-6  2015)
+
+
+Function-Declaration  vs Function-Expression
+==============================================
+1. Function-Declarations are named but Function-Expressions are anonymous
+2. Function-Declarations are hoisted but Function-Expressions are not hoisted

@@ -1,0 +1,21 @@
+<script>
+    function varTest() {
+        console.log(a)
+        if (true) {
+            var a = 10; // the scope of a is not restricted to if block
+            console.log('inside block ', a); // 10
+        }
+        console.log('inside function ', a);  // scope is function
+    }
+    varTest()
+
+
+    function letTest() {
+        if (true) {
+            let a = 100; // a is block scoped
+            console.log('inside block ', a); // 100
+        }
+        console.log('inside function ', a);  // a is not visible here
+    }
+    letTest() 
+</script>
