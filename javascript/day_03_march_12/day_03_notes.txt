@@ -1,11 +1,11 @@
 Datatypes
 =========
-Primitives : number , string , boolean , undefined , null , symbol
+Primitives : number , string , boolean , undefined , null , symbol, bigint
 non-primitive : Object
 
 Primitives vs non-primitive
 ============================
-Primitives comapre by value, non-primitive compare by address
+Primitives compared by value, non-primitives are compared by address
 
 
 undefined vs null
