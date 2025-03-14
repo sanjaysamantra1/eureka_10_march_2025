@@ -1,0 +1,28 @@
+<script>
+    console.log("Hello! This is console log message");
+    console.warn("Hello! You have been warned");
+    console.error("Hello! There is an error");
+
+    console.assert(5==2, '5 not equal to 2'); // Outputs an error message
+    console.assert(2==2, '2 is equal to 2');
+
+    let employees = [
+        { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+        { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
+        { "eId": 103, "name": "sameer", "sal": 7000, "gender": "male" },
+        { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" },
+        { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
+    ];
+    console.log(employees);
+    console.table(employees);
+    console.table(employees, ['name', 'sal']);
+
+    console.info("Application started successfully.");
+
+    console.log(Math.max(10, 20, 5, 100));  //100
+    console.log(Math.min(1.1, 2, 1.11, 0, -11)); //-11
+    console.log(Math.round(4.6)); // 5
+    console.log(Math.floor(4.9)); // 4
+    console.log(Math.ceil(4.1)); // 5   
+
+</script>

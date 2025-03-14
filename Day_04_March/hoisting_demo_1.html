@@ -1,0 +1,25 @@
+<script>
+    console.log('Before initialization, a is: ', a);
+    // console.log('Before initialization, b is: ', b);
+    // console.log('Before initialization, c is: ', c);
+
+    var a = 10;
+    let b = 20;
+    const c = 30;
+
+    console.log('a is: ', a);
+    console.log('b is: ', b);
+    console.log('c is: ', c);
+
+    //Note: variables declared using 'var' are accessible even before the initialization statement
+    //Note: variables declared using 'let/const' are not accessible even before the initialization statement
+
+    function demo() {
+        var aa = 100;
+        let bb = 200;
+        const cc = 300;
+        console.log(aa, bb, cc);
+    }
+    demo();
+
+</script>

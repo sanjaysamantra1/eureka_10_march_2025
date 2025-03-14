@@ -1,0 +1,21 @@
+<script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log('Global', a, b, c);
+
+    function f1() {
+        let d = 40;
+        e = 50; //Global scope
+        console.log('f1 start...');
+        console.log('a is:', a);
+        console.log('b is:', b);
+        console.log('c is:', c);
+    }
+    function f2() {
+        console.log('f2 start...');
+        console.log('a is:', a);
+        console.log('b is:', b);
+        console.log('c is:', c);
+    }
+</script>

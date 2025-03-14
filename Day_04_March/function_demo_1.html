@@ -1,0 +1,28 @@
+<script>
+    // 1. Function Declaration
+    function add(a,b) {
+        console.log(`Addition of ${a} and ${b} is ${a + b}`);
+    }
+    add(20, 12);
+
+    // 2. Function Expression
+    let sub = function(a, b) {
+        console.log(`Substraction of ${a} and ${b} is ${a - b}`);
+    }
+    sub(20,10);
+
+    // 3. Self invoked function
+    // IIFE - Immediately Invoked Fuction Expression
+    (function(a, b) {
+        console.log(`Multiplication of ${a} and ${b} is ${a * b}`);
+    })(10,20);
+
+    // 4. Arrow Function
+    let div = (a, b) => {
+        console.log(`Division of ${a} and ${b} is ${a / b}`);
+    }
+    div(20,10);
+    //write fuction expression. Delete function keyword and add arrow sign
+
+
+</script>
