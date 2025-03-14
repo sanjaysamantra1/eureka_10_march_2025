@@ -1,0 +1,9 @@
+<script>
+    let arr = [10, 20, 30, 40, 50];
+
+    let res1 = arr.map(function (ele) { return ele + 5 }).map(function (ele) { return ele + 2 });
+    console.log(res1);
+
+    let res2 = arr.map(ele => ele + 5).map(ele => ele + 2);
+    console.log(res2);
+</script>
