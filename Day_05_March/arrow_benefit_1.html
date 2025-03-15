@@ -1,0 +1,26 @@
+<script>
+    let obj = {
+        a: 10,
+        b: 20,
+        f1: function () { // this = obj
+            console.log('inside f1 a & b are: ', this.a, this.b); // this = obj
+
+            function f2() {
+                console.log('inside f2: ', this); // this = window
+                console.log('inside f2: ', obj.a, obj.b); // this = window
+            }
+            f2(); // when a regular a function 
+
+            let f3 = () => { // this = obj
+                console.log('inside f3: ', this); // this = obj
+
+                let f4 = () => {
+                    console.log('inside f4: ', this); // this = obj4
+                }
+                f4();
+            }
+            f3();
+        }
+    }
+    obj.f1();
+</script>

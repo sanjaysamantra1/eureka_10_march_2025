@@ -2,7 +2,7 @@ Sonarqube rules
     var						let						 const
 ======================================================================
 1.since begining		 1.ECMASCRIPT-6(2015)		1.ECMASCRIPT-6(2015)
-2.value can be changed   2.value can be changed     2.cann't be changed
+2.value can be changed   2.value can be changed     2.can't be changed
 3.initialization is		 3.initialization is		3.mandatory
 	not mandatory           not mandatory	
 4.can be redeclared		 4.cann't be redeclared		4.cann't be redeclared
@@ -40,8 +40,8 @@ Hoisting
 Variable Scopes
 ===============
 1. Global : can be accessed through out the file by multiple functions
-2. function : can be accessed only inside a function where the variables is declared
-3. Block : can be accessed only inside a block where the variables is declared
+2. function : can be accessed only inside a function where the variables are declared
+3. Block : can be accessed only inside a block where the variables are declared
 
 
 use strict
@@ -57,9 +57,9 @@ use strict
 1. variable declaration without var/let/const is not allowed.
    makes it impossible to accidentally create global variables.
 2. function with duplicate arguements are not allowed.
-3. NaN/undefined/Infinity cann't be used as a variable name.
+3. NaN/undefined/Infinity can't be used as a variable name.
 4. Delete of an unqualified identifier in strict mode. 
-    ex:delete Object.prototype; 
+    ex:delete Object.prototype;
 	var x = 5; delete x;
 5. Multiple assignments not allowed.
    var a = b = c = 3;

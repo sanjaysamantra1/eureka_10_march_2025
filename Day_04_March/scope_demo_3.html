@@ -1,12 +1,11 @@
 <script>
     for(var i = 1; i <=3; i++) {
-        console.log('inside loop: ', i);
+        console.log('inside loop: ', i); // 1, 2, 3
     }
-    console.log('outside loop: ', i);
+    console.log('outside loop: ', i); // 4
 
     for(let x = 1; x <=3; x++) {
-        console.log('inside loop: ', x);
+        console.log('inside loop: ', x); // 1, 2, 3
     }
-    console.log('outside loop: ', x);
-
+    console.log('outside loop: ', x); // Uncaught ReferenceError: x is not defined
 </script>

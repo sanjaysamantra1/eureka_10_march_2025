@@ -1,0 +1,28 @@
+<script>
+    console.log('global', this);
+    // var firstName = 'Sachin';
+    // var lastName = 'Tendulkar';
+
+    let user = {
+        firstName: 'Neel',
+        lastName: 'Kawitkar',
+        fullName1: function () {// this = user
+            console.log(this.firstName, this.lastName);
+        },
+        fullName2: () => { // this = window  never use arrow funct inside an object
+            console.log(this.firstName, this.lastName);
+        },
+        sayHello: () => {
+            console.log('Helloooo');
+        }
+    }
+    user.fullName1(); // Neel Kawitkar
+    user.fullName2(); // undefined undefined
+    user.sayHello(); // Helloooo
+
+        /*
+    Note: when a regular function is invoked with an object, inside that function 'this' value refers to the object with which the function was invoked 
+
+    when an arrow function is invoked with an object, arrow function doesn't care how the function is invoked, it uses 'this' from the lexical scope
+    */
+</script>

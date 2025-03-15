@@ -1,0 +1,34 @@
+<script>
+    class Student {
+        firstName = 'Virat';
+        lastName = 'Kohli';
+
+        fullName1() { // this = std (dynamic - std , window)
+            console.log('FullName-1', this.firstName, this.lastName);
+        }
+        fullName2 = () => { // this = std (static)
+            console.log('FullName-2', this.firstName, this.lastName);
+        }
+    }
+    let std = new Student();
+
+    // std.fullName1(); // inside fullName1() , this = std
+    // std.fullName2(); // inside fullName2() , this = std
+
+    let a = std.fullName2; // assign fullName2 function to a variable a
+    a(); // inside fullName2() , this = std
+
+    let b = a;
+    b(); // inside fullName2() , this = std
+
+    let c = b;
+    c(); // inside fullName2() , this = std
+
+    let d = c;
+    d(); // inside fullName2() , this = std
+
+
+    std.fullName1(); // inside fullName1() , this = std
+    let x = std.fullName1;
+    x(); // inside fullName1() , this = no more points to std
+</script>

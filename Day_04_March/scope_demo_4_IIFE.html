@@ -1,3 +1,12 @@
 <script>
-    
+    function varTest() {
+        if (true) {
+            (function () { //this was work around to not use variable declared with var outside the function scope. Not used anymore
+                var a = 10;
+                console.log('inside block ', a);
+            }());
+        }
+        console.log('inside function ', a);
+    }
+    varTest()
 </script>

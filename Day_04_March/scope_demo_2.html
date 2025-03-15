@@ -1,19 +1,20 @@
 <script>
     function varTest() {
+        console.log(a); //undefined
         if(true) {
             var a = 10; // the scope of a is not restricted to if block
-            console.log('inside block', a); //10
+            console.log('inside block of varTest function', a); //10
         }
-        console.log('inside function', a); // scope is function
+        console.log('inside varTest function', a); // scope is function
     }
     varTest();
 
     function letTest() {
         if(true) {
-            let a = 103; // a is block scope
-            console.log('inside block', a); //103
+            let a = 100; // a is block scope
+            console.log('inside block of letTest function', a); //100
         }
-        console.log('inside function', a); // a is not visible here
+        console.log('inside letTest function', a); // a is not visible here
     }
     letTest();
 </script>
