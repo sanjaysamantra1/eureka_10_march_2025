@@ -1,0 +1,131 @@
+<script>
+   /* 1. WAP to reverse a string
+	input:- 'sachin'
+	output:- 'nihcas' */
+
+    let str = 'sachin';
+    let res = str.split("").reverse().join("");
+    console.log(res);
+
+
+    /*2. WAP to reverse words
+	input:- 'This is javascript class'
+	output:- 'class javascript is this'
+    */
+
+   /*
+    let name = "Neel Kawitkar";
+    console.log(name);
+    console.log(name.split()); // ['Neel Kawitkar']
+    console.log(name.split(' ')) // ['Neel', 'Kawitkar']
+    console.log(name.split(' ').reverse()); // ['Kawitkar', 'Neel'] reverse() method reverses the array elements
+    console.log(name.split(' ').reverse().join(' '));  // Kawitkar Neel
+    */
+
+    function reverseWords(sentence) {
+        return sentence.split(' ').reverse().join(' ');
+    }
+    console.log(reverseWords('This is javascript class')); // 'class javascript is this'
+
+
+    /*3. WAP to print the first non-repeated character in a string
+   input:- 'entertainment'
+   output:- r
+   */
+   
+   /*
+   let name = "Neel Kawitkar";
+   console.log(name.indexOf('K')); //5
+   console.log(name.lastIndexOf()); //-1
+   console.log(name.lastIndexOf('K')); //5
+   console.log(name.lastIndexOf('N')); //0
+   console.log(name.lastIndexOf('r')) //12
+   console.log(name.lastIndexOf('z')) //-1
+   */
+
+   function firstNonRepeatedChar(str) {
+        for (let char of str) {
+            if (str.indexOf(char) === str.lastIndexOf(char)) {
+                return char;
+            }
+        }
+        return null;
+    }
+    console.log(firstNonRepeatedChar('entertainment')); // 'r'
+
+
+
+    /*4. WAP to print a string in title case
+	input:- 'this is javascript class'
+   output:- 'This Is Javascript Class'
+    */
+    // replace(pattern, replacement)
+    let input_str = "this is javascript class";
+    console.log(input_str.replace(/\b\w/g, char => char.toUpperCase()));
+
+    /*5. WAP to find longest word in a sentence
+	input:- 'this is javascript class'
+    output:- javascript
+    */
+    function findLongestWord(sentence) {
+        const words = sentence.split(" ");
+        let longestWord = "";
+
+        for (const word of words) {
+            if (word.length > longestWord.length) {
+                longestWord = word;
+            }
+        }
+        return longestWord;
+    }
+
+    const sentence = "this is javascript class";
+    const longestWord = findLongestWord(sentence);
+    console.log(longestWord); // Output: sentence
+
+    /*6. WAP to print Account number
+   input:- '12345678987'
+   output:- '12*******87'
+   */
+    
+   let account_number = '12345678987';
+   console.log(account_number.slice(0,2) + '*******' + account_number.slice(9,11));
+
+
+   /*7. WAP to print Credit-card number
+   input:- '1111222233334444'
+   output:- '1111-2222-3333-4444'
+   */
+    let credit_card_num = '1111222233334444';
+    console.log(credit_card_num.slice(0,4) + '-' + credit_card_num.slice(4,8) + '-' + credit_card_num.slice(8,12) + '-' + credit_card_num.slice(12,16));
+
+
+    /*8. WAP to check if 2 strings are anagram or not
+	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
+    */
+   //TO DO
+    
+
+    /*9. WAP to remove special character from a string
+   input:- 'hello@#hi&'
+   output:- 'hellohi'
+   */
+    
+    let remove_special_char = 'hello@#hi&';
+    console.log(remove_special_char.replace(/[^a-z]/g, '')); // ^ match anything not in this set
+
+    /*10. WAP to move all the special characters to the end of the string
+	input:- 'hello@#hi&'
+   output:- 'hellohi@#&'
+   */
+    
+   let input_string = 'hello@#hi&';
+   let res_char = input_string.replace(/[^a-z]/g, '');
+   let res_special_char = input_string.replace(/[a-z]/g, '');
+   console.log(res_char + res_special_char);
+   
+
+        
+
+
+</script>

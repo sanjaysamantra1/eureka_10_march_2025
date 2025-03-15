@@ -1,0 +1,36 @@
+<script>
+    let str = "My name is Neel";
+
+    console.log(str.toUpperCase());
+
+    console.log(str.includes("Neel")); // includes() checks the sub-string in the string
+    console.log(str.includes("Kawitkar"));
+
+    let str1 = 'Rain in spain mAinly in the plain';
+    let res1 = str1.match(/ain/gi); // regular exp. 'g' flag give all the occurrences. 'i' flag ignores the case
+    console.log(res1);
+
+    let str2 = "Neel and Amogh are 2 friends, Neel is 27 and Amogh is 28 years old";
+    let res2 = str2.match(/[0-9]{1,2}/g); // to check numeric occurences in string
+    console.log(res2);
+
+    let str3 = "this is javascript class. This is string class";
+    let res3 = str3.replace('class', 'session');
+    console.log(res3);
+
+    let res4 = str3.replaceAll('class', 'session');
+    console.log(res4);
+
+    console.log('*'.repeat(10)); // prints 10 *'s
+    console.log('Hello '.repeat(3));
+
+    let str4 = "this is javascript session";
+    console.log(str4.slice(8,12)); 
+    console.log(str4.substring(8,12)); 
+
+    console.log(str4.slice(8,-1)); // works with negative index
+    console.log(str4.substring(8,-1)); // not works with negative index
+
+    console.log(str4.substr(8,12)); // start from 8 index, print next 12 characters
+
+</script>
