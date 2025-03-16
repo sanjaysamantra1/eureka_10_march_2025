@@ -1,0 +1,21 @@
+<script>
+    class Student {
+        firstName = 'Virat';
+        lastName = 'Kohli';
+
+        fullName1() { // this = std (dynamic - std , window)
+            console.log(this.firstName, this.lastName);
+        }
+        fullName2 = () => { // this = std
+            console.log(this.firstName, this.lastName);
+        }
+    }
+    let std = new Student();
+    // std.fullName1();  // Virat Kohli
+    // std.fullName2();  // Virat Kohli
+
+    setTimeout(std.fullName1, 2000);  // undefined undefined
+    setTimeout(std.fullName2, 4000);  // Virat Kohli
+
+    // Note : regular functions shouldn't be used as callbacks
+</script>
