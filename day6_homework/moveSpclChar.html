@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoveSpclChar</title>
+</head>
+<body>
+  
+  <h1>Moving Special Character to End</h1>
+  <p>Input : 'hello@#hi&'</p>
+  <p>Output : <span id="demo"></span></p>
+  
+  <script>
+    let inp1 = 'hello@#hi&';
+    inp1 = inp1.substring(0,inp1.length-5)+""+inp1.substring(7,inp1.length-1)+""+inp1.substring(5,inp1.length-3)+""+inp1.substring(inp1.length-1)
+    document.getElementById('demo').innerHTML = inp1
+  </script>
+</body>
+</html>

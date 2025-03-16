@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LongestWord</title>
+</head>
+<body>
+
+  <h1>find longest word in a sentence</h1>
+  <p>Input : this is javascript class</p>
+  <p>Output : <span id="demo"></span></p>
+
+  <script>
+
+    function myfunction(){
+    let str = 'this is javascript class';
+    let words = str.split(' ') ;
+    let longestword = "";
+    for (let i = 0; i < words.length; i++) {
+  
+      if (words[i].length > longestword.length) { //0>0
+        longestword = words[i];
+      }
+    }
+    document.getElementById('demo').innerHTML=longestword
+    }
+    myfunction()
+     
+  
+    </script>
+  
+
+</body>
+</html>

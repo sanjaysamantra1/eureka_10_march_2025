@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <h1>Print Credit-Card Number</h1>
+  <p>Input : '1111222233334444'</p>
+  <p>Output : <span id="demo"></span></p>
+
+<body>
+  <script>
+    let inp = '1111222233334444';
+   // output:- '1111-2222-3333-4444'
+    let len = inp.length; //16
+    let inp1 = inp.substring(0,inp.length-12) + '-'+inp.substring(4,inp.length-8)+'-'+inp.substring(8,inp.length-4)+'-'+inp.substring(12,inp.length)
+    document.getElementById('demo').innerHTML=inp1
+  </script>
+  
+</body>
+</html>

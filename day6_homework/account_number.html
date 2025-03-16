@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Input:   12345678987</p>
+  <p>Output : <span id="demo"></span></p>
+  <script>
+
+    let inp = '12345678987';
+
+    let d1 = inp.slice(0,2)+"*".repeat(inp.length-4)+inp.slice(-2)
+    
+    document.getElementById('demo').innerHTML = d1
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnagramCheck</title>
+</head>
+<body>
+  <h1>AnagramCheck for two strings</h1>
+  <p>Input : 'listen' - 'silent'  </p>
+  <p>Output : <span id="demo"></span></p>
+
+  <script>
+    let inp1 = 'listen';
+    let inp2 = 'sientl';
+    let data;
+    
+    
+    function anagramCheck()
+    {
+      if (inp1.length==inp2.length) 
+        {
+
+          let inp3 = inp1.toLowerCase().replace(/\s/g,'').split('').sort().join();
+          let inp4 = inp2.toLowerCase().replace(/\s/g,'').split('').sort().join();
+          
+          if (inp3==inp4) {
+             data = "Both Strings are anagrams";
+          }else{
+            data = "Both Strings are not anagrams";
+          } 
+        }
+        else{
+          document.write("Length is not equal,So they cannot be Anagrams")
+        }  
+        document.getElementById('demo').innerHTML = data;
+    }
+    
+
+    
+    anagramCheck();
+
+
+
+
+  </script>
+</body>
+</html>

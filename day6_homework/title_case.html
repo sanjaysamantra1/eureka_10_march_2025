@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TitleCase</title>
+</head>
+
+<body>
+  <h1>TitleClass</h1>
+  <p>Input : this is javascript class</p>
+  <p>Output : <span id="demo"></span></p>
+
+  <script>
+
+    function titleCase(s) {
+      return s.toLowerCase()
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+}
+
+    const data = "this is javascript class";
+    let t1 = titleCase(data);
+    document.getElementById('demo').innerHTML=t1
+
+  </script>
+  
+</body>
+</html>
