@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let str = "sachin";
+// console.log(str.split("").reverse().join(""));
+
+
+function answer1(){
+let str = "sachin"
+str1 = str.split("")
+str2 = str1.reverse()
+rs = str2.join("")
+document.write(`reverse of sachin is ${rs}<br/>`);
+}
+answer1();
+
+
+function answer2(){
+let st = "This is javascript class"
+st = st.split(" ")
+st = st.reverse()
+rs = st.join(" ")
+document.write(`reverse of 'This is javascript class' is ${rs}<br/>`);
+}
+answer2();
+
+
+function answer3(){
+    let a = 'entertainment'
+    let a1 = a.split("")
+    for (let i = 0; i < a1.length; i++) {
+        if(a.indexOf(a1[i]) == a.lastIndexOf(a1[i])){
+            document.write(`first non-repeated character is ${a1[i]}<br/>`);
+            break;
+        }
+          }
+}
+answer3();
+
+function answer4(){
+   let a = "this is javascript class"
+   let a1 = a.split(" ")
+   let a2='';
+   for (let index = 0; index < a1.length; index++) {
+    a2=a1[index].charAt(0).toUpperCase()+a1[index].substring(1);
+    document.write(` ${a2}`);
+   }
+ }
+ 
+   answer4();
+
+function answer5(){
+let a = "this is javascript class"
+let a1 = a.split(" ")
+let a2 = ""
+for (let index = 0; index < a1.length; index++) {
+    if(a1[index].length>a2.length){
+        a2 = a1[index] }
+}
+document.write(` <br/>${a2}`)
+// a1.sort((a,b)=>b.length-a.length)
+// document.write(` <br/>${a1[0]}`)
+
+}
+answer5();
+
+function answer6(){
+   let a1 = '12345678987'
+    let a2 = a1.slice(0,2)+ '*'.repeat(a1.length-4)+a1.slice(-2)
+    document.write(` <br/>${a2} `)
+
+}
+answer6();
+
+function answer7(){
+  let a1= '1111222233334444'
+let a2 = a1.slice(0,4)+ '-'+a1.slice(4,8)+ '-'+a1.slice(8,12)+'-'+a1.slice(12,16);
+document.write(` <br/>${a2} `)
+}
+answer7();
+
+function answer8(){
+   let a1 ='listen'
+   let a = a1.split("")
+   let a2 ='silent' 
+   let b = a2.split("")
+  if (a.sort == b.sort)
+   document.write(` <br/>${a1} , ${a2} are anagram`)
+  else
+  document.write(` <br/>${a1} , ${a2} are not anagram`)
+}
+answer8();
+
+function answer9(){
+    let a = 'hello@#hi&'
+   let b=a.replace(/[^a-zA-Z0-9]/g,'');
+   document.write(` <br/>${b}`)
+}
+answer9();
+function answer10(){
+    let a = 'hello@#hi&'
+   let b=a.replace(/[^a-zA-Z0-9]/g,'')+a.replace(/[a-zA-Z0-9]/g,'');
+   document.write(` <br/>${b}`)
+}
+answer10();
+
+    </script>
+    
+</body>
+</html>
