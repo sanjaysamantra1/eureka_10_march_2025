@@ -1,0 +1,22 @@
+<script>
+    employees = [
+        { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+        { "eId": 104, "name": "deepak", "sal": 8000, "gender": "female" },
+        { "eId": 103, "name": "Deepak", "sal": 7000, "gender": "male" },
+        { "eId": 102, "name": "Sanjay", "sal": 9000, "gender": "female" },
+        { "eId": 105, "name": "sanjay", "sal": 8000, "gender": "male" }
+    ];
+    let res1 = employees.sort((emp1, emp2) => emp1.name.localeCompare(emp2.name));
+    console.table(res1);
+
+    let res2 = employees.sort((emp1, emp2) => {
+        if (emp1.name < emp2.name) {
+            return -1;
+        } else if (emp1.name > emp2.name) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    console.table(res2);
+</script>

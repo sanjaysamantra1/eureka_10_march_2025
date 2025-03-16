@@ -1,0 +1,65 @@
+localeCompare() : 0 , 1 , -1
+
+
+Array
+=====
+let students = ['ajay','manoj','rahul'];
+console.log(students[0]); 
+console.log(students[2]); 
+
+Iterate Array Elements
+======================
+1. for loop
+2. for-in (ES-6)
+3. for-of (ES-6)
+4. forEach()
+
+
+properties: length , delete
+
+instance functions: at(),concat(),entries(),every(),fill(),filter(),find(),findLast(),findIndex(),flat(),
+flatMap(),forEach(),includes(),indexOf(),join(),keys(),lastIndexOf(),map(),pop(),push()
+reduce(), reverse(), shift(),slice(),sort(),some(), splice(),unshift(),values()
+
+static functions : from(),isArray(),of()
+
+
+To add/remove elements:
+	push(...items) – adds items to the end,
+	pop() – extracts an item from the end,
+	shift() – extracts an item from the beginning,
+	unshift(...items) – adds items to the beginning.
+	splice(pos, deleteCount, ...items) – at index pos delete deleteCount elements and insert items.
+	toSpliced()   - doesn't change the original array
+	slice(start, end) – creates a new array, copies elements from position start till end (not inclusive) into it.
+	concat(...items) – returns a new array: copies all members of the current one and adds items to it. If any of items is an array, then its elements are taken.
+	with(ind,newValue) - Create a new array with a single element changed
+	
+To search among elements:
+	at(index) - takes an integer and returns the item at that index.allows negative index aswell.
+	indexOf/lastIndexOf(item, pos) – look for item starting from position pos, return the index or -1 if not found.
+	includes(value) – returns true if the array has value, otherwise false.
+	find(func) – filter element through the function, return first value that make it return true.
+	findLast(func) – filter element through the function, return last value that make it return true.
+	filter(func) – filter elements through the function, return all values that make it return true.
+	findIndex(func)  - it is like find(), but returns the index instead of a value.
+	
+To transform the array:
+	map(func) – creates a new array from original array by calling func for every element.
+	sort(func) – sorts the array in-place, then returns it.
+	toSorted() - creates a new array and sorts
+	reverse	() – reverses the array in-place, then returns it.
+	toReversed() - creates a new array and reverses
+	split/join – convert a string to array and back.
+	reduce(func, initial) – calculate a single value over the array by calling func for 	each element and passing an intermediate result between the calls.
+	flat()   - creates a new array with the elements of the subarrays concatenated into it.flat(Infinity) , flat() also removes holes in array
+	flatMap() - maps each element in an array using a mapping function and then flattens the results into a new array
+	
+To iterate over elements:
+	forEach()	– calls func for every element, does not return anything.
+	
+	
+Additionally:
+	Array.isArray(arr) checks arr for being an array.
+	Array.from()  change array-like or iterable into true array
+	Array.of()  create array from every arguments passed into it.
