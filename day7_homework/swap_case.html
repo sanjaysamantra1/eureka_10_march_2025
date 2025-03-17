@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    
+    function swapCase(data) {
+     let result = '';
+
+     for (let char of data) {
+      if (char === char.toUpperCase()) 
+      {
+        result += char.toLowerCase(); // Convert to lowercase if it's uppercase
+      } 
+      else 
+      {
+      result += char.toUpperCase(); // Convert to uppercase if it's lowercase
+      }
+  }
+
+  return result;
+}
+
+
+let data = 'Hello World';
+console.log(data); 
+console.log(swapCase(data)); 
+
+
+  </script>
+</body>
+</html>

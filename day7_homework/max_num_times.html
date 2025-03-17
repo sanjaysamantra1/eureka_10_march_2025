@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+
+function maxChar(inputStr) {
+  
+  let count = {};
+  let maxChar = '';
+  let maxCount = 0;
+
+
+  for (let char of inputStr) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+
+  for (let char in count) {
+    if (count[char] > maxCount) {
+      maxCount = count[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
+}
+
+
+let inputStr = 'hello world';
+console.log(maxChar(inputStr)); 
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+function abbrevation(data) {
+ 
+ 
+  let words = data.split(' ');  // Splitting the string into words
+
+  let Output = []; //Array
+
+  // Iterate O/p arr except the last one
+  for (let i = 0; i < words.length - 1; i++) {
+    // Add the first letter of each word with dot 
+    Output.push(words[i][0].toUpperCase() + '.');
+  }
+
+  Output.push(words[words.length - 1].toLowerCase()); // Add the last word in lowercase
+
+  return Output.join(' '); // Join the abbreviation array into a single string and return it
+}
+
+let data = 'Rabindra Nath Tagore';
+console.log(data); 
+console.log(abbrevation(data)); 
+
+  </script>
+  
+</body>
+</html>

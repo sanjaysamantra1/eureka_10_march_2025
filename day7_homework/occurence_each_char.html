@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    let inpstr = "entertainment";
+    let charcnt = {}
+
+    function occurenceEachChar(str){
+
+      for (let char of str) {
+        if (charcnt[char]) 
+        {
+          charcnt[char] = charcnt[char] + 1;
+        }
+        else{
+          charcnt[char] =1;
+        }
+      }
+      return charcnt
+    }
+
+    let result =  occurenceEachChar(inpstr)
+    console.log(result);  
+
+  </script>
+  
+</body>
+</html>
