@@ -15,6 +15,7 @@ function maxChar(inputStr) {
   let maxChar = '';
   let maxCount = 0;
 
+  inputStr = inputStr.toUpperCase();
 
   for (let char of inputStr) {
     count[char] = (count[char] || 0) + 1;
