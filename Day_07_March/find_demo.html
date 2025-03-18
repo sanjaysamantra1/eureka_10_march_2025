@@ -1,0 +1,39 @@
+<script>
+    let arr = [10, 20, 30, 40, 50];
+    console.log(arr.indexOf(40)); // at what index 40 value is present?
+
+    let cars = ['tata', 'honda', 'maruti'];
+    console.log(cars.indexOf('honda')); // at what index 'honda' value is present?
+
+    let employees = [ // array of employee objects
+        { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+        { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
+        { "eId": 103, "name": "sameer", "sal": 7000, "gender": "male" },
+        { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" },
+        { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
+    ];
+    // Q. at what index first female employee is present?
+    // here indexOf() can't be used, use findIndex() instead
+    // indexOf() is only used with primitive data types.
+    let first_female_emp_ind = employees.findIndex((emp) => emp.gender == 'female');
+    console.log(first_female_emp_ind);
+
+    // print the first female employee data
+    let first_female_emp = employees.find((emp) => emp.gender == 'female');
+    console.log(first_female_emp);
+
+    // Q. at what index the last female employee is present?
+    let last_female_emp_ind = employees.findLastIndex((emp) => emp.gender == 'female');
+    console.log(last_female_emp_ind);
+
+    // print the last female employee data
+    let last_female_emp = employees.findLast((emp) => emp.gender == 'female');
+    console.log(last_female_emp);
+
+    // Print all the female employee
+    let all_female_emp = employees.filter((emp) => emp.gender == 'female' );
+    console.log(all_female_emp);
+
+    // difference between find and filter is that find filter will give all the records satisfying the given condition 
+    // but find will fetch only the first record which matches the criteria you passed in the find()
+</script>

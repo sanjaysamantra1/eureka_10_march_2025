@@ -1,0 +1,16 @@
+<script>
+    //splice(position/index, deleteCount, ...items to insert)
+    // 1. only delete 2. only insert 3. both delete and insert
+
+    let arr = [10,20,30,40,50];
+    arr.splice(1,2); // only delete
+    console.log('after first splice: ', arr); // [10,40,50]
+
+    arr.splice(1,0,20,30); // only insert
+    console.log('after second splice', arr) // [10,20,30,40,50]
+
+    arr.splice(1,2,25,35, 16, 1997); // both delete and insert
+    console.log('after third splice', arr) // [10, 25, 35, 16, 1997, 40, 50]
+
+    
+</script>

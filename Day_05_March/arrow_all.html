@@ -1,0 +1,62 @@
+<script>
+    let obj = {
+        a: 10,
+        b: 20,
+        f1: function () { // this = obj
+            console.log('inside f1 a & b are: ', this.a, this.b); // this = obj
+
+            // Regular function inside regular function
+            function f2() {
+                console.log('inside f2: ', this); // this = window (or undefined in strict mode)
+                
+                function f2_nested() {
+                    console.log('inside f2_nested: ', this); // this = window
+                }
+                f2_nested();
+
+                let f2_arrow_nested = () => {
+                    console.log('inside f2_arrow_nested: ', this); // this = window (inherits from f2)
+                }
+                f2_arrow_nested();
+            }
+            f2();
+
+            // Arrow function inside regular function
+            let f3 = () => { // this = obj
+                console.log('inside f3: ', this); // this = obj
+                
+                function f4() {
+                    console.log('inside f4: ', this); // this = window
+
+                    function f4_nested() {
+                        console.log('inside f4_nested: ', this); // this = window
+                    }
+                    f4_nested();
+
+                    let f4_arrow_nested = () => {
+                        console.log('inside f4_arrow_nested: ', this); // this = window (inherits from f4)
+                    }
+                    f4_arrow_nested();
+                }
+                f4();
+
+                let f5 = () => {
+                    console.log('inside f5: ', this); // this = obj
+
+                    function f5_nested() {
+                        console.log('inside f5_nested: ', this); // this = window
+                    }
+                    f5_nested();
+
+                    let f5_arrow_nested = () => {
+                        console.log('inside f5_arrow_nested: ', this); // this = obj (inherits from f5)
+                    }
+                    f5_arrow_nested();
+                }
+                f5();
+            }
+            f3();
+        }
+    }
+    obj.f1();
+</script>

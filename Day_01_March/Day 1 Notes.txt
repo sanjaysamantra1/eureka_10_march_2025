@@ -4,8 +4,6 @@ Day 1: 3/10/2025
 open in browser => extension (Alt + b or Alt + Shift b)
 
 
-
-
 1. NodeJS
    https://nodejs.org/en/download
 

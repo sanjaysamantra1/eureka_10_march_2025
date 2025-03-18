@@ -1,0 +1,25 @@
+<script>
+    let cars = ['Honda', 'Suzuki', 'Tata'];
+
+    for(let i=0; i<cars.length; i++) {
+        console.log(cars[i]);
+    }
+    console.log("-------------");
+
+    // 2. for-in (iterates from start to end in forward direction. There's no custom index.)  no custom index , no backward
+    for(ind in cars) { // index in array
+        console.log(cars[ind]);
+    }
+    console.log("-------------");
+
+    // 3. for-of (Similar to for-in along no index itself) no custom index , no backward, no index itself
+    for(car of cars){ // value of array
+        console.log(car);
+    }
+    console.log("-------------");
+
+    // 4. takes max 3 parameter and min 1 (value, index, array). Order is predefined
+    cars.forEach((val, ind, arr) => {
+        console.log(val, ind, arr);
+    })
+</script>

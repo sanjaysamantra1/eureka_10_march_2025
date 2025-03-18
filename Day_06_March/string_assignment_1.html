@@ -103,7 +103,23 @@
     /*8. WAP to check if 2 strings are anagram or not
 	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
     */
-   //TO DO
+    function areAnagrams(str1, str2) {
+        // Remove spaces and convert to lowercase
+        str1 = str1.replace(/\s/g, '').toLowerCase();
+        str2 = str2.replace(/\s/g, '').toLowerCase();
+        
+        // Check if lengths are different
+        if (str1.length !== str2.length) {
+            return false;
+        }
+        
+        // Sort characters and compare
+        const sortedStr1 = str1.split('').sort().join('');
+        const sortedStr2 = str2.split('').sort().join('');
+        
+        return sortedStr1 === sortedStr2;
+    }
+    console.log(areAnagrams("listen", "silent"));
     
 
     /*9. WAP to remove special character from a string
