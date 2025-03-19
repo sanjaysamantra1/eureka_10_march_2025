@@ -12,7 +12,7 @@
   <p>Output : <span id="demo"></span></p>
   <script>
     let inp1 = 'hello@#hi&';
-    inp1 = inp1.replace(/[!@#$%^&*(),.?":{}|<>]/g,'');
+    inp1 = inp1.replace(/[@#&*(),.?":{}|<>]/g,'');
     document.getElementById('demo').innerHTML = inp1
   </script>
 </body>

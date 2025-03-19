@@ -7,5 +7,8 @@ let employees = [
 { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
 ];
 
-let Incsal = employees.filter((a) => a.sal = a.sal+500)
+let Incsal = employees.map((a) => {
+  a.sal = a.sal+500;
+  return a;
+})
 console.log(Incsal)
