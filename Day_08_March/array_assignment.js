@@ -8,7 +8,7 @@ let employees = [
 console.log(employees);
 
 //Sort by empId (ascending):
-employees.sort((a, b) => a.eId - b.eId);
+employees.sort((a, b) => a.eId - b.eId); // since it's numeric sort write the logic
 console.log("1. Sorted by eId:", employees);
 
 // Sort by name (ascending):
@@ -20,7 +20,7 @@ const highPaid = employees.filter(emp => emp.sal > 6000);
 console.log("3. Salary > 6000:", highPaid);
 
 // Increase salary by 500 for each employee:
-employees = employees.map(emp => ({...emp, sal: emp.sal + 500}));
+employees = employees.map(emp => ({...emp, sal: emp.sal + 500})); // ...emp is a spread operator
 console.log("4. Salary increased by 500:", employees);
 
 
