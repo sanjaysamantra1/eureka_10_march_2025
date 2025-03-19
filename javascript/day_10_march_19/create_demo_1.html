@@ -1,0 +1,12 @@
+<script>
+    let obj1 = { a: 10, b: 20 };
+    let obj2 = Object.create(obj1);
+
+    console.log('obj1:', obj1);
+    console.log('obj2:', obj2);
+
+    obj1.a = 15;
+    obj2.b = 25;  // obj2 gets a direct property 'b' with value 25, along with the proptotype 'b'
+    console.log('obj1:', obj1.a, obj1.b); // 15   20
+    console.log('obj2:', obj2.a, obj2.b); // 15   25
+</script>

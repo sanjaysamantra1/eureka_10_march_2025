@@ -1,0 +1,16 @@
+<script>
+    let user = { firstName: 'sachin', lastName: 'tendulkar', age: 35, add: 'mumbai' };
+
+    let allkeys = Object.keys(user);
+    console.log(allkeys);
+
+    let allvalues = Object.values(user);
+    console.log(allvalues);
+
+    let allentries = Object.entries(user);
+    console.log(allentries);
+
+    // to convert from entries to object , use fromEntries()
+    let userObj = Object.fromEntries(allentries);
+    console.log(userObj)
+</script>
