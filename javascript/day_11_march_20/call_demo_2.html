@@ -1,0 +1,14 @@
+<script>
+    let obj1 = {
+        a: 10,
+        b: 20,
+        add: function () {
+            console.log(`Addition: ${this.a + this.b}`)
+        }
+    }
+    obj1.add(); // inside add() , this = obj1
+
+    let obj2 = { a: 100, b: 200 };
+    // obj2.add();
+    obj1.add.call(obj2);  // call add() from obj1 , by setting this=obj2
+</script>

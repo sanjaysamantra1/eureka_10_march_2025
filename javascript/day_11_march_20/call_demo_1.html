@@ -1,0 +1,12 @@
+<script>
+    function add(a, b) { // inside add() , this = window
+        console.log(this.num + a + b); // this = window 
+    }
+    add(2, 3);  // NaN
+
+    let obj1 = { num: 4 }; // 9
+    add.call(obj1, 2, 3); // call add(), inside add() , this = obj1
+
+    let obj2 = { num: 5 }; // 10
+    add.call(obj2, 2, 3); // call add(), inside add() , this = obj2
+</script>
