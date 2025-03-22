@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { ElectronicsComponent } from '../electronics/electronics.component';
 
 @Component({
   selector: 'app-body',
-  imports: [],
+  imports: [
+    ElectronicsComponent
+  ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
