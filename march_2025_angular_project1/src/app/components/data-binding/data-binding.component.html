@@ -1,7 +1,7 @@
 <div class="border p-2 m-2">
     <h4>My Name is: {{myName}}</h4>
     <h4>My Name is: <span [innerHTML]="myName"></span></h4>
-    <h4>My Name is: <span bind-innerHTML="myName"></span></h4>
+<h4>My Name is: <span bind-innerHTML="myName"></span></h4>
 
     <img src="https://seeklogo.com/images/A/angular-icon-logo-9946B9795D-seeklogo.com.png" alt="">
     <img src="{{img_url}}" alt="">
@@ -49,5 +49,77 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="mt-2 p-2 border">
+        <h4>Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the
+            paragraph</h4>
+        <p [hidden]="flag">Hellooooooooooooooooooooooooooooooo Hiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+        <button class="btn btn-primary" (click)="flag=!flag">{{flag?'SHOW':'HIDE'}}</button>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</h4>
+        <textarea cols="30" rows="3" [(ngModel)]="msg" maxlength="100"></textarea>
+        <div>Remaining Characters:{{100 - msg.length}}</div>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a
+            paragraph</h4>
+        <select [(ngModel)]="selectedState">
+            <option selected>State-1</option>
+            <option>State-2</option>
+            <option>State-3</option>
+            <option>State-4</option>
+            <option>State-5</option>
+            <option>State-6</option>
+            <option>State-7</option>
+            <option>State-8</option>
+            <option>State-9</option>
+            <option>State-10</option>
+        </select>
+        <div [hidden]="!selectedState">Selected State : {{selectedState}}</div>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</h4>
+        <input type="number" [(ngModel)]="num1">
+        <input type="number" [(ngModel)]="num2">
+        <select [(ngModel)]="op">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <button class="btn btn-primary mx-2" (click)="calculate()">Calculate</button>
+        <div>Result is: {{result}}</div>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>create a input box, toggle the type of that input box to (text/password)</h4>
+        <input [type]="flag?'text':'password'" />
+        <button class="btn btn-success mx-1" (click)="flag=!flag">{{flag?'HIDE':'SHOW'}}</button>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>create a counter example with 3 controls(increment,decrement,reset)</h4>
+        <h3>Count is: {{count}}</h3>
+        <button class="btn btn-warning mx-1" (click)="count=count-1">Decrement</button>
+        <button class="btn btn-danger mx-1" (click)="count=0">Reset</button>
+        <button class="btn btn-primary mx-1" (click)="count=count+1">Increment</button>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>Have a toggle button and control Dark/Light theme of a page</h4>
+        <button class="btn btn-success mx-1" (click)="toggleTheme()">{{flag?'LIGHT':'DARK'}}</button>
+    </div>
+    <div class="mt-2 p-2 border">
+        <h4>2 way Binding:</h4>
+        <input type="number" [(ngModel)]="num1" class="mx-1">
+        <input type="number" [(ngModel)]="num2">
+        <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+        <div>Subtraction of {{num1}} and {{num2}} is {{num1-num2}}</div>
+        <div>Multiplication of {{num1}} and {{num2}} is {{num1*num2}}</div>
+        <hr/>
+        <h4>Template Reference Variable:</h4>
+        <input type="number" #num3 class="mx-1" id="num3" />
+        <input type="number" ref-num4 class="mx-1" />
+        <button (click)="calculateOnDemand(num3,num4)">Calculate On Demand</button>
+        <div>Addition of {{num3.value}} & {{num4.value}} is: {{additionResult}}</div>
     </div>
 </div>

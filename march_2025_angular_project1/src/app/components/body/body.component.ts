@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ElectronicsComponent } from '../electronics/electronics.component';
 import { DataBindingComponent } from '../data-binding/data-binding.component';
 
@@ -9,7 +9,8 @@ import { DataBindingComponent } from '../data-binding/data-binding.component';
     DataBindingComponent
   ],
   templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  styleUrl: './body.component.css',
+  // encapsulation: ViewEncapsulation.None
 })
 export class BodyComponent {
 
