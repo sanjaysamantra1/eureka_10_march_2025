@@ -1,0 +1,103 @@
+<script>
+    // to reverse a string
+    let str = 'sachin';
+    let reverseString = str.split('').reverse().join('');
+    console.log(reverseString);
+
+    // reverse the order of words
+    let words_string = 'This is javascript class';
+    let word_reverseString = words_string.split(' ').reverse().join(' ');
+    console.log(word_reverseString);
+    
+    //print the first non-repeated character in a string
+    let non_repeat_char = 'entertainment';
+
+    for (char of non_repeat_char){
+        if (non_repeat_char.indexOf(char) === non_repeat_char.lastIndexOf(char)){
+            console.log(char);
+            break;
+        }
+    }
+
+    // function getNonRepeatingChar(strval){
+    //     let a = {};
+
+    //     for (let b of strval){
+    //         a[b] = (a[b]|| 0) + 1;
+    //     }
+    //     console.log(a);
+
+    //     for(let d of strval){
+    //         if(a[d] == 1){
+    //             console.log('First non repeating char', d);
+    //             return d;
+    //         }
+    //     }
+    // }
+    // getNonRepeatingChar(non_repeat_char);
+
+    //print a string in title case
+    let camelCasing = 'this is javascript class';
+    let out_camelCase = camelCasing.toLowerCase().split(' ').map(a => a.charAt(0).toUpperCase() + a.slice(1)).join(' '); 
+    console.log(out_camelCase);
+
+    // find the longest word
+
+    let inputStr = 'this is javascript class';
+    function longest_Word(strSen){
+        let a =strSen.split(' ');
+        let b = '';
+        for (let word of a){
+            if (word.length > b.length){
+                b = a;
+            }
+        }
+        return b;
+    }
+    console.log(longest_Word(inputStr));
+
+
+
+    //print Account number
+    let input_Accnumm = '12345678987'
+    function masking_Accnum(inputVal){
+        let a = inputVal.slice(0,2);
+        let e = inputVal.slice(-2);
+        let masked_val = '*'.repeat(inputVal.length - 4);
+
+        return a+masked_val+e;
+    }
+    console.log(masking_Accnum(input_Accnumm));
+
+    // print Credit-card number
+    let input_CC = '1111222233334444'
+    let formatted_CC = input_CC.replace(/(\d{4})(?=\d)/g, '$1-');
+
+    //check if 2 strings are anagram or not
+    let str1 = 'listen';
+    let str2 = 'silent';
+
+    function check_anagram(a,b){
+        if (a.length == b.length){
+
+        }
+        if (a.toLowerCase().split('').sort().join('') === b.toLowerCase().split('').sort().join('')){
+            console.log(`${a} & ${b} are anagrams`);
+        } else {
+            console.log(`${a} & ${b} are not anagrams`);
+        }
+    }
+    check_anagram(str1,str2)
+    //remove special character from a string
+    let inputSplChar = 'hello@#hi&';
+    let removeSplChars = inputSplChar.replace(/[^a-zA-Z0-9]/g,'');
+    console.log(removeSplChars);
+    //move all the special characters to the end of the stri
+    function splCharAtEnd(strwithsplchar){
+        let a = strwithsplchar.replace(/[^a-zA-Z0-9]/g,'');
+        let b = strwithsplchar.replace(/[a-zA-Z0-9]/g,'');
+        return a+b;
+    }
+
+    console.log(splCharAtEnd(inputSplChar));
+</script>
