@@ -1,0 +1,127 @@
+<div class="border p-2 mt-3 ">
+    <h4 class="text-center">Let's Learn Directives</h4>
+
+    <div class="border p-2">
+        <div>Before Angular 17</div>
+        <p *ngIf="age>=18">Hey, You are {{age}} years old,You are Eligible for voting</p>
+        <p *ngIf="age<18">Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+
+        <div>After Angular 17</div>
+        @if(age>=18){
+        <p>Hey, You are {{age}} years old,You are Eligible for voting</p>
+        }@else{
+        <p>Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+        }
+
+        <div>Hidden:</div>
+        <p [hidden]="age<18">Hey, You are {{age}} years old,You are Eligible for voting</p>
+        <p [hidden]="age>=18">Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+    </div>
+    <div class="border p-2 mt-3">
+        <div>Switch case</div>
+        <div>Day Number is: {{dayNum}}</div>
+        @switch (dayNum) {
+        @case (1) { <h1>Monday</h1> }
+        @case (2) { <h1>Tuesday</h1> }
+        @case (3) { <h1>Wednesday</h1> }
+        @case (4) { <h1>Thursday</h1> }
+        @case (5) { <h1>Friday</h1> }
+        @case (6) { <h1>Saturday</h1> }
+        @case (7) { <h1>Sunday</h1> }
+        @default { <h1>Not a Valid number</h1>> }
+        }
+    </div>
+    <div class="border p-2 mt-3">
+        <div>For Loop To display state Names</div>
+        <ol>
+            @for(state of statesArr;track $index){
+            <li [style.color]="$even?'green':'red'">{{state}}</li>
+            }
+        </ol>
+        <hr />
+        <div>States Dropdown</div>
+        <select [(ngModel)]="selectedState">
+            @for(state of statesArr;track $index){
+            <option>{{state}}</option>
+            }
+        </select>
+        <div>Selected state: {{selectedState}}</div>
+
+        <div>States datalist</div>
+        <input list="states" name="state" id="state" [(ngModel)]="selectedState2">
+        <datalist id="states">
+            @for(state of statesArr;track $index){
+            <option>{{state}}</option>
+            }
+        </datalist>
+        <div>Selected state: {{selectedState2}}</div>
+        <hr />
+
+        <div>States Table</div>
+        <table class="table table-bordered">
+            <thead>
+                <th>Sl no</th>
+                <th>state Name</th>
+                <th>isFirst?</th>
+                <th>isLast?</th>
+                <th>isEven?</th>
+                <th>isOdd?</th>
+            </thead>
+            <tbody>
+                @for(state of statesArr;track $index){
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>{{state}}</td>
+                    <td>{{$first}}</td>
+                    <td>{{$last}}</td>
+                    <td>{{$even}}</td>
+                    <td>{{$odd}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="border mt-2 p-2">
+        <div>Need of trackBy</div>
+
+        <table class="table table bordered">
+            <tbody>
+                <tr *ngFor="let emp of employees">
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="updateEmployees()">update employee</button>
+
+        <table class="table table bordered">
+            <tbody>
+                @for(emp of employees;track emp.eId){
+                    <tr>
+                        <td>{{emp.eId}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.sal}}</td>
+                        <td>{{emp.gender}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-2 p-2 border">
+        <h4>Appy styles conditionally using ngStyle</h4>
+        <input type="number" [(ngModel)]="num" />
+        <div [style.color]="num%2==0 ? 'green':'red'">Num value is {{num}}</div>
+        <p [ngStyle]="num%2==0 ?
+             {color:'green',border:'2px solid blue'} :
+            {color:'red',border:'5px dashed yellow'}">
+             Num value is {{num}} , NgStyle for multiple values </p>
+
+            <button class="btn" [ngClass]="num%2==0 ?'btn-success':'btn-danger'">button color changes dynamically</button>
+
+            <div [ngClass]="['class1', 'class2', isActive ? 'active' : 'inactive']">Array of Classes</div>
+    </div>
+</div>
