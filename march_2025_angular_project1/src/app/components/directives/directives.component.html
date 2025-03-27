@@ -8,14 +8,24 @@
 
         <div>After Angular 17</div>
         @if(age>=18){
-        <p>Hey, You are {{age}} years old,You are Eligible for voting</p>
+            <p>Hey, You are {{age}} years old,You are Eligible for voting</p>
         }@else{
-        <p>Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+            <p>Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
         }
 
         <div>Hidden:</div>
         <p [hidden]="age<18">Hey, You are {{age}} years old,You are Eligible for voting</p>
         <p [hidden]="age>=18">Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+
+        <ng-container *ngFor="let ele of statesArr">
+            <div *ngIf="age>=18;else other_content" >
+                Hey, You are {{age}} years old,You are Eligible for voting
+            </div>
+        </ng-container>
+       
+        <ng-template #other_content>
+            <p>Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+        </ng-template>
     </div>
     <div class="border p-2 mt-3">
         <div>Switch case</div>
