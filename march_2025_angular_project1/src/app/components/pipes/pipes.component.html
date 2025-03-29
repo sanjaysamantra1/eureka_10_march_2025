@@ -1,0 +1,55 @@
+<h3 class="text-center">Let's Learn Angular pipes</h3>
+
+<div class="border p-2 mt-2">
+    <div>My Name is: {{myName}}</div>
+    <div>My Name is: {{myName | uppercase }}</div>
+    <div>My Name is: {{myName | lowercase}}</div>
+    <div>My Name is: {{myName | titlecase}}</div>
+</div>
+<div class="border p-2 mt-2">
+    <div>Currency Pipe:</div>
+    <div>Salary is: {{mySal}}</div>
+    <div>Salary is: {{mySal | currency}}</div>
+    <div>Salary is: {{mySal | currency : 'INR'}}</div>
+    <!-- input | pipeName : argument1 : argument2-->
+    <div>Salary is: {{mySal | currency : '&euro;'}}</div>
+    <div>Salary is: {{mySal | currency : '&#x5143;'}}</div>
+</div>
+<div class="border p-2 mt-2">
+    <div>Date Pipe:</div>
+    <div>Date without any pipe: {{today}}</div>
+    <div>Date with date pipe: {{today | date}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'shortDate'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'mediumDate'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'longDate'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'fullDate'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'dd-MM-yyyy'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'dd-MMM-yyyy'}}</div>
+    <div>Date with date pipe and argument: {{today | date : 'dd-MMMM-yyyy'}}</div>
+</div>
+<div class="border p-2 mt-2">
+    <div>Number & percent Pipe:</div>
+    <div>{{ 12.111222333 | number: "3.2-5" }}</div>
+    <div>{{ 12.1 | number: "3.2-5" }}</div>
+    <p>{{0.5 | number:'3.2-5'}} </p>
+    <p>{{ 0.5 | percent}} </p>
+    <p>{{ 0.75 | percent}} </p>
+    <p>{{ 0.90 | percent}} </p>
+    <p>{{ 2 | percent}} </p>
+</div>
+<div class="border p-2 mt-2">
+    <div>json Pipe:</div>
+    <div>user {{user}}</div>
+    <div>user {{user|json}}</div>
+</div>
+<div class="border p-2 mt-2">
+    <div>key-value Pipe:</div>
+    @for(entry of user | keyvalue;track $index){
+    <h5>{{entry.key}}---{{entry.value}}</h5>
+    }
+</div>
+<div class="border p-2 mt-2">
+    <div>Slice Pipe:</div>
+    <div>{{arr|slice:2:4}}</div>
+    <div>{{arr|slice:2}}</div>
+</div>
