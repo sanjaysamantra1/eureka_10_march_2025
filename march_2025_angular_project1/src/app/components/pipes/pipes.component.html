@@ -14,6 +14,8 @@
     <!-- input | pipeName : argument1 : argument2-->
     <div>Salary is: {{mySal | currency : '&euro;'}}</div>
     <div>Salary is: {{mySal | currency : '&#x5143;'}}</div>
+
+    <input type="number" [(ngModel)]="mySal" />
 </div>
 <div class="border p-2 mt-2">
     <div>Date Pipe:</div>
@@ -52,4 +54,21 @@
     <div>Slice Pipe:</div>
     <div>{{arr|slice:2:4}}</div>
     <div>{{arr|slice:2}}</div>
+</div>
+<div class="border p-2 mt-2">
+    <div>Custom Pipe(Remaining):</div>
+    <textarea cols="30" rows="3" [(ngModel)]="msg"></textarea>
+    <div>Remaining Characters: {{ msg | remaining }} </div>
+
+    <textarea cols="30" rows="3" [(ngModel)]="msg2"></textarea>
+    <div>Remaining Characters: {{ msg2 | remaining : 200 }} </div>
+</div>
+<div class="border p-2 mt-2">
+    <div>Impure Pipe:</div>
+    @for(num of numArr | mySort;track num){
+        <b>{{num}} &nbsp;</b>
+    }
+    <hr/>
+    <input #newNum /> 
+    <button class="btn btn-primary mx-2" (click)="numArr.push(+newNum.value)">add</button>
 </div>
