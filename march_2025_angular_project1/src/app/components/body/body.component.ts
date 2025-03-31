@@ -8,6 +8,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { UserTableComponent } from '../user-table/user-table.component';
 import { PipesComponent } from '../pipes/pipes.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-body',
@@ -20,7 +21,8 @@ import { PipesComponent } from '../pipes/pipes.component';
     // UserTableComponent
     // ProductListComponent
     // Demo1Component
-    PipesComponent
+    // PipesComponent
+    ParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
