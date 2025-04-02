@@ -1,0 +1,143 @@
+<script>
+    //first
+    let str = 'entertainment';
+    let b = {};
+    for (a of str){
+        // if (b[a]) {
+        //     b[a] = b[a]+1;
+        // } else {
+        //     b[a] = 1;
+        // }
+
+        b[a] = (b[a] || 0) + 1;
+    }
+    console.log(b);
+
+    //Second
+    let str2 = 'Hello World';
+    let c = {};
+    let maxChar = '';
+    let maxCount = 0;
+
+    for (a of str2){
+        c[a] = (c[a] || 0) + 1;
+        if(c[a] > maxCount){
+            maxCount = c[a];
+            maxChar = a
+        }
+    }
+    console.log(maxChar.toUpperCase());
+
+
+    //Third
+    let str3 = 'Hello World';
+    let outStr = ''
+    for(a of str2){
+        // if (a === a.toUpperCase()){
+        //     outStr += a.toLowerCase();
+        // } else {
+        //     outStr += a.toUpperCase();
+        // }
+
+        outStr += a === a.toUpperCase() ? a.toLowerCase() : a.toUpperCase();
+    }
+    console.log(outStr);
+
+    //Abbreviation
+    let abb = 'Rabindra Nath Tagore'
+    let no_of_words = abb.split(' ');
+    let resultAdd = ''
+    for (let i = 0 ; i < no_of_words.length; i++){
+        if(i < no_of_words.length - 1){
+            resultAdd += no_of_words[i].slice(0,1).toUpperCase() + '. '
+        } else {
+            resultAdd += no_of_words[i].toLowerCase();
+        }
+    }
+    
+    console.log(resultAdd);
+    
+    //Shift
+    let shiftChar = 'abcxyz'
+    let resShift = '';
+    for(a of shiftChar){
+        if(a === 'z'){
+            resShift += 'a'
+        } else {
+            resShift += String.fromCharCode(a.charCodeAt(0)+1);
+        }
+        
+    }
+    console.log(resShift);
+
+    let seqPar = prompt("Enter input Paranthesis")
+    let retPat = {
+        '(' : ')',
+        '[' : ']',
+        '{' : '}'
+    }
+    let store = [];
+    let isValid = true;
+    for (a of seqPar){
+        if (a in retPat){
+            store.push(a);
+        } else if (Object.values(retPat).includes(a)){
+            let b = store.pop();
+            if (retPat[b] != a){
+                isValid = false;
+                break;
+            } 
+        }
+    }
+    console.log(isValid);
+
+    //Permutation ask user input
+    let per = prompt("Enter a string with 3 chars: ");
+    let outPer = [];
+    if(per.length === 1){
+        console.log(per);
+    } else {
+        for(let i = 0 ; i < per.length; i++){
+        let a = per[i];
+        let b = per.slice(0,i) + per.slice(i+1);
+
+        b.split('').forEach((i,j)=> outPer.push(a + i + b.slice(0,j)+ b.slice(j+1)));
+    }
+    console.log(outPer.join(', '));
+    }
+    //Input number to Roman
+    let inNum = prompt("Enter a number: ")
+    let outNum = '';
+    let romanMap = [
+        { value: 10, symbol: 'X' },
+        { value: 9, symbol: 'IX' },
+        { value: 5, symbol: 'V' },
+        { value: 4, symbol: 'IV' },
+        { value: 1, symbol: 'I' }
+    ];
+    for (let i = 0; i < romanMap.length; i++){
+        while(inNum >= romanMap[i].value){
+            outNum += romanMap[i].symbol;
+            inNum -= romanMap[i].value;
+        }
+    }
+    console.log(outNum);
+
+    //Roman to Number
+    let inNumMap = prompt("Provide Roman input: ")
+    let numMap = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50
+    };
+    let tot = 0;
+    for (let i = 0; i < inNumMap.length; i++){
+        if (i + 1 < inNumMap.length && numMap[inNumMap[i]] < numMap[inNumMap[i + 1]]) {
+            tot = tot - numMap[inNumMap[i]];
+        } else {
+            tot = tot + numMap[inNumMap[i]];
+        }
+    }
+    console.log(tot);
+</script>
