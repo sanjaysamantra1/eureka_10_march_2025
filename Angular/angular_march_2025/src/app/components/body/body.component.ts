@@ -6,6 +6,7 @@ import { UserListComponent } from '../user-list/user-list.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { ParentComponent } from '../parent/parent.component';
+import { Demo2Component } from '../demo2/demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -15,12 +16,13 @@ import { ParentComponent } from '../parent/parent.component';
     // DirectivesComponent,
     // UserListComponent,
     // ProductListComponent,
-    // Demo1Component,
-    ParentComponent
+    Demo1Component,
+    // ParentComponent,
+    Demo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
-
+  flag: boolean = true;
 }

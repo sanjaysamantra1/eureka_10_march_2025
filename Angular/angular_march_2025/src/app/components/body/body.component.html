@@ -5,6 +5,12 @@
     <!-- <app-directives></app-directives> -->
     <!-- <app-user-list></app-user-list> -->
     <!-- <app-product-list></app-product-list> -->
-     <!-- <app-demo1></app-demo1> -->
-      <app-parent></app-parent>
+    <!-- <app-demo1></app-demo1> -->
+    <!-- <app-parent></app-parent> -->
+    @if(flag){
+        <app-demo1></app-demo1>
+    }@else{
+        <app-demo2></app-demo2>
+    }
+    <button class="btn btn-primary" (click)="flag=!flag">Toggle Flag</button>
 </div>
