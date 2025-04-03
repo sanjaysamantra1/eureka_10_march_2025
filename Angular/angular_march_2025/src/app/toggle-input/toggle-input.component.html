@@ -1,0 +1,4 @@
+<input [type]="isPassword ? 'password' : 'text'">
+<button (click)="toggleType()">
+  Toggle to {{ isPassword ? 'Text' : 'Password' }}
+</button>

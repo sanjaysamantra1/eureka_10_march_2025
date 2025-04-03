@@ -1,0 +1,43 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" class="employee-form">
+    <h3>Add New Employee</h3>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        ngModel 
+        required 
+        class="form-control"
+      >
+    </div>
+    <div class="form-group">
+      <label for="position">Position:</label>
+      <input 
+        type="text" 
+        id="position" 
+        name="position" 
+        ngModel 
+        required 
+        class="form-control"
+      >
+    </div>
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <input 
+        type="text" 
+        id="department" 
+        name="department" 
+        ngModel 
+        required 
+        class="form-control"
+      >
+    </div>
+    <button 
+      type="submit" 
+      class="submit-btn"
+      [disabled]="!employeeForm.valid"
+    >
+      Add Employee
+    </button>
+  </form>

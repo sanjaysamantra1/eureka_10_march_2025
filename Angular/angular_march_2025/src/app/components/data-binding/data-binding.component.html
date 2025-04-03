@@ -1,0 +1,53 @@
+<div class="border p-2 m-2">
+    <h4>My Name is: {{myName}}</h4>
+    <h4>My Name is: <span [innerHTML]="myName"></span></h4>
+    <h4>My Name is: <span bind-innerHTML="myName"></span></h4>
+
+    <img src="https://seeklogo.com/images/A/angular-icon-logo-9946B9795D-seeklogo.com.png" alt="">
+    <img src="{{img_url}}" alt="">
+    <img [src]="img_url" alt="">
+    <img bind-src="img_url" alt="">
+
+    <div class="mt-2">
+        <p> Plain HTML : <input value="Sachin Tendulkar" placeholder="Enter Your Name" /></p>
+        <p>Interpolation Binding: <input value="{{myName}}" /></p>
+        <p>Property Binding: <input [value]="myName" /></p>
+        <p>Property Binding: <input bind-value="myName" /></p>
+        <p>2 way Binding: <input [(ngModel)]="myName" /></p>
+        <p>2 way Binding: <input bindon-ngModel="myName" /></p>
+    </div>
+
+    <div class="mt-2">
+        <button class="btn btn-success">Click Me</button>
+        <button class="btn btn-success mx-1" disabled>Click Me</button>
+        <button class="btn btn-success mx-1" disabled="{{flag}}">Click Me</button>
+        <button class="btn btn-success mx-1" [disabled]="flag">Click Me</button>
+        <button class="btn btn-success mx-1" bind-disabled="flag">Click Me</button>
+
+        <button class="btn btn-success mx-1" (click)="addToCart()">Add To cart</button>
+        <button class="btn btn-success mx-1" on-click="addToCart()">Add To cart</button>
+    </div>
+
+    <div class="mt-2">
+        <h3>Attribute Binding:</h3>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th attr.colspan="{{colspanNumber}}" text-align="center">Name</th>
+                    <!-- <th [colSpan]="colspanNumber" text-align="center">Name</th> -->
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>57</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<button (click)="toggleVisibility()">
+    {{ isVisible ? 'Hide' : 'Show' }} Paragraph
+  </button>
+  <p *ngIf="isVisible">This paragraph can be toggled!</p>

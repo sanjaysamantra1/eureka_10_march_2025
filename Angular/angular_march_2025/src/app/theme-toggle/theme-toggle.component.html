@@ -1,0 +1,7 @@
+<button (click)="toggleTheme()">
+    Toggle {{ isDarkTheme ? 'Light' : 'Dark' }} Theme
+  </button>
+  <div [class.dark-theme]="isDarkTheme" [class.light-theme]="!isDarkTheme">
+    <h1>Theme Demo</h1>
+    <p>This is some content that changes with the theme.</p>
+  </div>

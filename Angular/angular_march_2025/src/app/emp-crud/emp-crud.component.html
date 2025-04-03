@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Employee Management</h2>
+    <app-employee-add (addEmployee)="onAddEmployee($event)"></app-employee-add>
+    <app-employee-table 
+      [employees]="employees" 
+      (deleteEmployee)="onDeleteEmployee($event)">
+    </app-employee-table>
+  </div>

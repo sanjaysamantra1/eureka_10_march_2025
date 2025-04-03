@@ -1,0 +1,75 @@
+<div class="container mt-4">
+    <h2>Employee Management</h2>
+    
+    <!-- Add Employee Form -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h4>Add New Employee</h4>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="addEmployee()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="newEmployee.name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="newEmployee.email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" [(ngModel)]="newEmployee.phone" name="phone" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" class="form-control" id="department" [(ngModel)]="newEmployee.department" name="department" required>
+              </div>
+              <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" class="form-control" id="position" [(ngModel)]="newEmployee.position" name="position" required>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Employee</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Employee Table -->
+    <div class="card">
+      <div class="card-header">
+        <h4>Employee List</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employees">
+              <td>{{employee.id}}</td>
+              <td>{{employee.name}}</td>
+              <td>{{employee.email}}</td>
+              <td>{{employee.department}}</td>
+              <td>{{employee.position}}</td>
+              <td>
+                <button class="btn btn-info btn-sm mr-2" (click)="viewEmployee(employee.id)">View</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

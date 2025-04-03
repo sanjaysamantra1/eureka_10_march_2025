@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>User Management</h1>
+    
+    <button (click)="toggleView()" class="toggle-btn" [disabled]="isLoading">
+      Switch to {{ showTableView ? 'Card' : 'Table' }} View
+    </button>
+  
+    @if (isLoading) {
+      <div class="loading">Loading users...</div>
+    } @else {
+      @if (!showTableView) {
+        <div class="card-container">
+          @for (user of users; track user.id) {
+            <div class="user-card">
+              <h3>{{ user.name }}</h3>
+              <p><strong>Email:</strong> {{ user.email }}</p>
+              <p><strong>Role:</strong> {{ user.role }}</p>
+              <p><strong>City:</strong> {{ user.city }}</p>
+              <p><strong>Company:</strong> {{ user.company }}</p>
+            </div>
+          }
+        </div>
+      } @else {
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users; track user.id) {
+              <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.city }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    }
+  </div>

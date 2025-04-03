@@ -1,0 +1,74 @@
+<h1 class="text-center">Angular Pipes Assignment</h1>
+
+<!-- 1. Ordinal Pipe -->
+<div class="section">
+  <h3>1. Ordinal Pipe</h3>
+  <div class="numbers">
+    @for (num of numbers; track num) {
+      <span>{{ num | ordinal }}</span>
+    }
+  </div>
+</div>
+
+<!-- 2. Roman Pipe -->
+<div class="section">
+  <h3>2. Roman Pipe</h3>
+  <div class="numbers">
+    @for (num of romanNumbers; track num) {
+      <span>{{ num }} → {{ num | roman }}</span>
+    }
+  </div>
+</div>
+
+<!-- 3. Age Pipe -->
+<div class="section">
+  <h3>3. Age Pipe</h3>
+  <div>
+    @for (date of birthDates; track date) {
+      <p>{{ date }} → {{ date | age }}</p>
+    }
+  </div>
+</div>
+
+<!-- 4. Salutation Pipe -->
+<div class="section">
+  <h3>4. Salutation Pipe</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track emp.id) {
+        <tr>
+          <td>{{ emp | salutation }}</td>
+          <td>{{ emp.position }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. Employee Filter Pipe -->
+<div class="section">
+  <h3>5. Employee Filter</h3>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search employees...">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees | employeeFilter: searchText; track $index) {
+        <tr>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

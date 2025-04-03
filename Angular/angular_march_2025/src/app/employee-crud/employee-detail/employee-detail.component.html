@@ -1,0 +1,19 @@
+<div class="employee-detail">
+    <h2 mat-dialog-title>Employee Details</h2>
+    <mat-dialog-content>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Name:</strong> {{employee.name}}</p>
+          <p><strong>Email:</strong> {{employee.email}}</p>
+          <p><strong>Phone:</strong> {{employee.phone}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Department:</strong> {{employee.department}}</p>
+          <p><strong>Position:</strong> {{employee.position}}</p>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+  </div>
