@@ -1,0 +1,15 @@
+<div class="container border p-2 mt-2 ">
+    <div class="row text-center">
+        <h4>This is Parent Component</h4>
+        <div>My Own variable a is {{a}}</div>
+        <div>My child's data b is {{child1Ref.b}}</div>
+        <div>My child's data userName is- {{userNameParent}}</div>
+
+        <div class="col-sm-6">
+            <app-child1 [a]="a" #child1Ref (nameEvent)="receiveDataFromChild($event)"></app-child1>
+        </div>
+        <div class="col-sm-6">
+            <app-child2 [aChild]="a" [child1Ref]="child1Ref"></app-child2>
+        </div>
+    </div>
+</div>

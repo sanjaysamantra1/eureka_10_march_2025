@@ -27,7 +27,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     RouterOutlet,
     // NavbarComponent,
-    // CategoriesComponent,
+    CategoriesComponent,
     // CarouselComponent,
     // BodyComponent,
     // FooterComponent,
@@ -41,9 +41,9 @@ import { BrowserModule } from '@angular/platform-browser';
     // ThemeToggleComponent,
     // EmployeeCRUDComponent,
     // PipesDemoComponent,
-    EmpCRUDComponent,
-    EmployeeTableComponent,
-    EmployeeAddComponent,
+    // EmpCRUDComponent,
+    // EmployeeTableComponent,
+    // EmployeeAddComponent,
     CommonModule
   ],
   templateUrl: './app.component.html',

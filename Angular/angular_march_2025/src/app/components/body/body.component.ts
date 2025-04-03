@@ -5,6 +5,7 @@ import { DirectivesComponent } from '../directives/directives.component';
 import { UserListComponent } from '../user-list/user-list.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { Demo1Component } from '../demo1/demo1.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-body',
@@ -13,8 +14,9 @@ import { Demo1Component } from '../demo1/demo1.component';
     //DataBindingComponent,
     // DirectivesComponent,
     // UserListComponent,
-    ProductListComponent,
-    // Demo1Component
+    // ProductListComponent,
+    // Demo1Component,
+    ParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
