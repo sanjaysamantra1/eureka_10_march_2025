@@ -27,9 +27,9 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     RouterOutlet,
     // NavbarComponent,
-    CategoriesComponent,
+    // CategoriesComponent,
     // CarouselComponent,
-    // BodyComponent,
+    BodyComponent,
     // FooterComponent,
     // UserViewComponent,
     // HttpClientModule
