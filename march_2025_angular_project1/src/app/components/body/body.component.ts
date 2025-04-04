@@ -11,6 +11,7 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
 import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
 import { Demo2Component } from '../demo2/demo2.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -26,8 +27,9 @@ import { Demo2Component } from '../demo2/demo2.component';
     // PipesComponent,
     // TrafficLightComponent,
     // ParentComponent
-    Demo1Component,
-    Demo2Component
+    // Demo1Component,
+    // Demo2Component
+    HttpDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
