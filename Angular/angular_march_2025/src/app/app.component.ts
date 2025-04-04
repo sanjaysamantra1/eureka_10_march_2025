@@ -21,6 +21,7 @@ import { EmployeeTableComponent } from './emp-crud/employee-table/employee-table
 import { EmployeeAddComponent } from './emp-crud/employee-add/employee-add.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { EmployeeComponent } from './employee/employee.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,7 @@ import { BrowserModule } from '@angular/platform-browser';
     // NavbarComponent,
     // CategoriesComponent,
     // CarouselComponent,
-    BodyComponent,
+    // BodyComponent,
     // FooterComponent,
     // UserViewComponent,
     // HttpClientModule
@@ -44,6 +45,7 @@ import { BrowserModule } from '@angular/platform-browser';
     // EmpCRUDComponent,
     // EmployeeTableComponent,
     // EmployeeAddComponent,
+    EmployeeComponent,
     CommonModule
   ],
   templateUrl: './app.component.html',

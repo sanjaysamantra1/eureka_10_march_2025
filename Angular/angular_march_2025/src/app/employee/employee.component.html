@@ -1,0 +1,40 @@
+<h1 class="text-center">Service Concept</h1>
+<hr>
+<div class="container mt-4">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <select class="form-select" [(ngModel)]="selectedFilter" (change)="onFilterChange()">
+          @for (option of filterOptions; track option.value) {
+            <option [value]="option.value">{{ option.label }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (employee of employees; track employee.id) {
+          <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.department }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="5" class="text-center">No employees found</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
