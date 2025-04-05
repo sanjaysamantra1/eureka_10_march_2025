@@ -12,6 +12,7 @@ import { ParentComponent } from '../parent/parent.component';
 import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
 import { Demo2Component } from '../demo2/demo2.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { UserCrudHttpComponent } from '../user-crud-http/user-crud-http.component';
 
 @Component({
   selector: 'app-body',
@@ -29,7 +30,8 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
     // ParentComponent
     // Demo1Component,
     // Demo2Component
-    HttpDemo1Component
+    // HttpDemo1Component
+    UserCrudHttpComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
