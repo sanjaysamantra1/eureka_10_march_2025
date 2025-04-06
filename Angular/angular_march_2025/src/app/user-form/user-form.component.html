@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()" class="user-form">
+    <h3>{{ selectedUser ? 'Update User' : 'Add New User' }}</h3>
+    
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input 
+        id="name" 
+        [(ngModel)]="user.name" 
+        name="name" 
+        required>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input 
+        id="email" 
+        [(ngModel)]="user.email" 
+        name="email" 
+        type="email" 
+        required>
+    </div>
+  
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input 
+        id="age" 
+        [(ngModel)]="user.age" 
+        name="age" 
+        type="number" 
+        required>
+    </div>
+  
+    <button type="submit">
+      {{ selectedUser ? 'Update' : 'Create' }}
+    </button>
+    
+    @if (selectedUser) {
+      <button type="button" (click)="resetForm()">
+        Cancel
+      </button>
+    }
+  </form>

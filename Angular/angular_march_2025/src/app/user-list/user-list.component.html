@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>User List</h2>
+    
+    @if (loading) {
+      <div class="loading">Loading...</div>
+    }
+  
+    @if (!loading) {
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users; track user.id) {
+            <tr>
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.age}}</td>
+              <td>
+                <button (click)="selectUser(user)">Edit</button>
+                <button (click)="deleteUser(user.id!)">Delete</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  
+    <app-user-form 
+      [selectedUser]="selectedUser"
+      (userUpdated)="fetchUsers()"
+      (userCreated)="fetchUsers()">
+    </app-user-form>
+  </div>

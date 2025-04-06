@@ -22,6 +22,8 @@ import { EmployeeAddComponent } from './emp-crud/employee-add/employee-add.compo
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { EmployeeComponent } from './employee/employee.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +47,9 @@ import { EmployeeComponent } from './employee/employee.component';
     // EmpCRUDComponent,
     // EmployeeTableComponent,
     // EmployeeAddComponent,
-    EmployeeComponent,
+    // EmployeeComponent,
+    UserListComponent, //User CRUD in app directory
+    // UserFormComponent,
     CommonModule
   ],
   templateUrl: './app.component.html',

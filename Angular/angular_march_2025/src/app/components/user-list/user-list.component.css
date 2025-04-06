@@ -1,0 +1,21 @@
+.container {
+    padding: 20px;
+  }
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .loading {
+    text-align: center;
+    padding: 20px;
+  }
+  button {
+    margin: 0 5px;
+    padding: 5px 10px;
+  }

@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Neel Kawitkar",
+      "email": "neel@gamil.com",
+      "age": 28
+    },
+    {
+      "id": "2",
+      "name": "Amogh",
+      "email": "amogh@gamil.com",
+      "age": 28
+    },
+    {
+      "id": "3",
+      "name": "Shone",
+      "email": "shone@gamil.com",
+      "age": 28
+    },
+    {
+      "id": "29fe",
+      "name": "Devendra",
+      "email": "dev@sfs.com",
+      "age": 30
+    }
+  ]
+}
