@@ -32,7 +32,7 @@ import { UserFormComponent } from './user-form/user-form.component';
     // NavbarComponent,
     // CategoriesComponent,
     // CarouselComponent,
-    // BodyComponent,
+    BodyComponent,
     // FooterComponent,
     // UserViewComponent,
     // HttpClientModule
@@ -48,7 +48,7 @@ import { UserFormComponent } from './user-form/user-form.component';
     // EmployeeTableComponent,
     // EmployeeAddComponent,
     // EmployeeComponent,
-    UserListComponent, //User CRUD in app directory
+    // UserListComponent, //User CRUD in app directory
     // UserFormComponent,
     CommonModule
   ],
