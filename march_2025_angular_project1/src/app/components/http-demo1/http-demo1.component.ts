@@ -43,7 +43,7 @@ export class HttpDemo1Component {
   }
   fetchUserData_angular() {
     this.isLoading = true;
-    const api_url = 'https://jsonplaceholder.typicode.com/users';
+    const api_url = 'ttps://jsonplaceholder.typicode.com/users';
 
     this.httpClient.get(api_url).subscribe(response => {
       this.isLoading = false;
