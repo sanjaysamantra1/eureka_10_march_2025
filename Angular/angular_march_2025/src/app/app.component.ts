@@ -24,6 +24,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EmployeeComponent } from './employee/employee.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { MainComponent } from './components/main/main.component';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ import { UserFormComponent } from './user-form/user-form.component';
     // NavbarComponent,
     // CategoriesComponent,
     // CarouselComponent,
-    BodyComponent,
+    // BodyComponent,
     // FooterComponent,
     // UserViewComponent,
     // HttpClientModule
@@ -50,6 +51,7 @@ import { UserFormComponent } from './user-form/user-form.component';
     // EmployeeComponent,
     // UserListComponent, //User CRUD in app directory
     // UserFormComponent,
+    MainComponent,
     CommonModule
   ],
   templateUrl: './app.component.html',

@@ -24,7 +24,7 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
     // Demo2Component,
     // HttpDemo1Component,
     // HttpDemo2Component,
-    ObservableDemo1Component
+    // ObservableDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

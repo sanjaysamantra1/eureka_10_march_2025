@@ -1,0 +1,35 @@
+.folder-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+  }
+  
+  .item {
+    margin: 5px 0;
+  }
+  
+  .item-content {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 5px;
+  }
+  
+  .folder {
+    color: #f4b400;
+  }
+  
+  .file {
+    color: #4285f4;
+  }
+  
+  .nested {
+    margin-left: 20px;
+  }
+  
+  .name {
+    user-select: none;
+  }

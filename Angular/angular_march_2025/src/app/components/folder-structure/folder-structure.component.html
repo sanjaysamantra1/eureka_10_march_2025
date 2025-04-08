@@ -1,0 +1,15 @@
+<ul class="folder-list">
+    @for (item of items(); track item.name) {
+      <li class="item">
+        <div class="item-content" (click)="toggleFolder(item)">
+          <span class="icon" [class.folder]="item.isFolder" [class.file]="!item.isFolder">
+            {{ item.isFolder ? '📁' : '📄' }}
+          </span>
+          <span class="name">{{ item.name }}</span>
+        </div>
+        @if (item.isFolder && item.items && isExpanded(item)) {
+          <app-folder-structure [items]="item.items" class="nested"></app-folder-structure>
+        }
+      </li>
+    }
+  </ul>
