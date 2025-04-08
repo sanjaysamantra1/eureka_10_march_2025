@@ -1,0 +1,5 @@
+<p>message2 works!</p>
+
+<input #newMsg />
+<button class="btn btn-primary mx-2" (click)="sendMessage(newMsg.value)">Send Message</button>
+<button class="btn btn-danger" (click)="clearMessages()">Clear Messages</button>
