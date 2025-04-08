@@ -1,0 +1,22 @@
+<div class="ms-3">
+  @if (node.isFolder) {
+    <div 
+      class="d-flex align-items-center cursor-pointer"
+      (click)="toggle()"
+    >
+      <i [class]="iconClass"></i>
+      <span class="ms-2 fw-bold">📁{{ node.name }}</span>
+    </div>
+  } @else {
+    <div class="d-flex align-items-center ms-4">
+      <i class="bi bi-file-earmark"></i>
+      <span class="ms-2">🏢{{ node.name }}</span>
+    </div>
+  }
+
+  @if (node.isFolder && isOpen) {
+    @for (child of node.items; track child.name) {
+      <app-folderitem [node]="child"></app-folderitem>
+    }
+  }
+</div>
