@@ -1,0 +1,26 @@
+<script>
+    let cars = ['Tata', 'Honda', 'Maruti', 'Hundai'];
+
+    // 1. for Loop
+    for (let i = 0; i < cars.length; i++) {
+        console.log(cars[i]);
+    }
+    console.log('******************************');
+
+    // 2. for-in      // no custom index , no backward
+    for (ind in cars) { // index in array
+        console.log(cars[ind]);
+    }
+    console.log('******************************');
+
+    // 3. for-of        // no custom index , no backward, no index itself
+    for (car of cars) {   // value of array
+        console.log(car);
+    }
+    console.log('******************************');
+
+    // 4. forEach() HigherOrder
+    cars.forEach((val, ind, arr) => {
+        console.log(val, ind, arr);
+    })
+</script>

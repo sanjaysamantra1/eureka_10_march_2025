@@ -1,0 +1,7 @@
+<div class="container">
+   <div class="row">
+        @for(categoryObj of allCategories;track $index){
+            <app-category-card [categoryObj]="categoryObj" class="col"></app-category-card>
+        }
+   </div>
+</div>

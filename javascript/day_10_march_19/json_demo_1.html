@@ -1,0 +1,20 @@
+<script>
+    let user = { firstName: 'sachin', lastName: 'tendulkar', age: 35, add: 'mumbai' };
+    // objects cann't be used directly : alert(),sessionstorage, database, network, file
+    alert(user);
+    document.writeln(user);
+    sessionStorage.setItem('userdata1', user);
+
+    // The above use cases force us to convert object to string
+    let userStr = JSON.stringify(user);
+    alert(userStr);
+    document.writeln(userStr);
+    sessionStorage.setItem('userdata2', userStr);
+
+    let userInfo = sessionStorage.getItem('userdata2');
+    // userInfo is string
+    console.log(userInfo.firstName, userInfo.add)
+    // convert string to object
+    let userObj = JSON.parse(userInfo);
+    console.log(userObj.firstName, userObj.add)
+</script>

@@ -1,0 +1,23 @@
+<script>
+    class Student {
+        constructor(roll, name, address, course) {
+            this.roll = roll;
+            this.name = name;
+            this.address = address;
+            this.course = course;
+        }
+    }
+    Student.prototype.clgName = 'Eureka';
+    let std = new Student(1, 'pavan', 'va', 'angular');
+    console.log(std);
+
+    // check if a property exists in an object or not,  1. 'in'  2. hasOwnProperty()
+    console.log('name' in std); // true
+    console.log(std.hasOwnProperty('name')); // true
+
+    console.log('clgName' in std); // true
+    console.log(std.hasOwnProperty('clgName')); // false
+
+    console.log('dob' in std); // false
+    console.log(std.hasOwnProperty('dob')); // false
+</script>

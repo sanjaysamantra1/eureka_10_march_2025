@@ -1,0 +1,22 @@
+<script>
+    let obj1 = { a: 10, b: 20 };
+    let obj2 = obj1;  // Reference Copy - Copy by address
+    obj1.a = 15;
+    obj2.b = 25;
+    console.log('obj1:', obj1); // {a: 15, b: 25}
+    console.log('obj2:', obj2); // {a: 15, b: 25}
+
+    let obj3 = { a: 10, b: 20, c: { d: 30 } };
+    let obj4 = { ...obj3 }; // shallow copy - copy by value (only top level values)
+    obj4.a = 15;
+    obj4.c.d = 35;
+    console.log('obj3:', obj3);
+    console.log('obj4:', obj4);
+
+    let obj5 = { a: 10, b: 20, c: { d: 30 } };
+    let obj6 = structuredClone(obj5) // deep copy - copy by value 
+    obj6.a = 15;
+    obj6.c.d = 35;
+    console.log('obj5:', obj5);
+    console.log('obj6:', obj6);
+</script>

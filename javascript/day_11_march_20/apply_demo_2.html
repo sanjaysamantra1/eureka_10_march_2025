@@ -1,0 +1,9 @@
+<script>
+    console.log(Math.max(20, 10, 50, 30, 40)); // 50
+
+    let arr = [20, 10, 50, 30, 40];
+    console.log(Math.max(arr));  // NaN
+
+    console.log(Math.max.apply({}, arr)); // 50
+    console.log(Math.max(...arr)); // 50
+</script>

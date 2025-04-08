@@ -1,0 +1,89 @@
+Day:1 : Introduction to Web-Development , Overview of Angular Framework
+
+Javascript
+==========
+Day-2:  Introduction to Javascript , Variables , Variable Scope, use strict
+Day-3:  functions, Arrow function
+Day-4:  String
+Day-5:  Array
+Day-6:  class, prototype, Object Class
+Day-7:  Closure , call(),bind(),apply()
+Day-8:  ES-6 and beyond
+
+
+
+Angular 
+========
+Day-9:
+-Angular Installation
+-Angular CLI
+-Component
+
+Day-10:
+-Databinding (interpolation, property, event,2-way)
+-Template Reference Variable
+
+Day-11:
+-View Encapsulation (Emulated, shadowDOM, none)
+-Inbuilt Directives (@if, @else, @for)
+
+Day-12:
+-Custom Directives
+
+Day-13:
+-Pipes (uppercase, date, number, json)
+-Custom Pipes
+
+Day-14:
+-<ng-content>/ Content projection
+-Component Communication
+
+Day-15:
+-LifeCycle Methods / Hooks
+
+Day-16:
+-Services
+-Dependency Injection
+-HttpClient / AJAX
+
+Day-18:
+-HttpClient(Continuation)
+-Interceptors
+
+Day-19:
+-Observables (RxJs-mergeMap,concatMap,SwitchMap,Forjoin)
+
+Day-20:
+-Observables (Subject, BehaviourSubject,ReplaySubject)
+
+Day-21:
+-Form (Template riven Form With Validation)
+
+Day-22:
+-Form (Model riven Form With Validation)
+
+
+Day-23:
+-Basic Routing
+
+Day-24:
+-Routing (Path Param, Query Param, Route Guards)
+-Lazy Loading
+
+Day-25:
+-Build & Deploy
+
+Day-26:
+-Angular Material
+
+Day-27:
+-Unit testing (Jasmine + Karma)
+
+Day-28:
+-NgRx (State management)
+
+Day-29:
+-Tools and standards used 
+
+Day-30:
+-Interiew Questions
