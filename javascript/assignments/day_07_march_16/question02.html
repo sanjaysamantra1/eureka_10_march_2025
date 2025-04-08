@@ -1,0 +1,23 @@
+<script>
+    // 2. Print the character which is repeated max no of times
+    // input: 'hello world'
+    // output : 'L'
+    let input = 'hello world';
+    let countObj = {};
+    for (let char of input){
+        if(char in countObj){
+            countObj[char] = countObj[char]+1
+        }else{
+            countObj[char] = 1
+        }
+    }
+    let maxCount = 0
+    let maxChar = '';
+    for (let char in countObj){
+        if(countObj[char]>maxCount){
+            maxCount = countObj[char]
+            maxChar = char
+        }
+    }
+    console.log(maxChar.toUpperCase())
+</script>

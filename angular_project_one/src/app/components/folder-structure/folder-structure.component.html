@@ -1,0 +1,28 @@
+<ul *ngIf="fileItem">
+    <ng-container *ngTemplateOutlet="renderNode; context: { $implicit: fileItem }"></ng-container>
+  </ul>
+  
+  <ng-template #renderNode let-node>
+    <li>
+      <div 
+        (click)="node.isFolder ? toggleFolder(node) : null" 
+        style="cursor: pointer; display: flex; align-items: center;">
+        <i 
+          [ngClass]="node.isFolder 
+            ? (node.isExpanded ? 'faFolder' : 'fas fa-folder') 
+            : 'fas fa-file'" 
+          style="margin-right: 8px;">
+        </i>
+  
+        {{ node.name }}
+      </div>
+  
+      <ul *ngIf="node.isFolder && node.isExpanded">
+        <ng-container *ngFor="let item of node.items">
+          <ng-container *ngTemplateOutlet="renderNode; context: { $implicit: item }"></ng-container>
+        </ng-container>
+      </ul>
+    </li>
+  </ng-template>
+
+

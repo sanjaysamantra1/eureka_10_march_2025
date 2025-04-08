@@ -1,0 +1,68 @@
+
+<button class="btn btn-outline-primary m-2" (click)="flag = !flag">{{flag?'SHOW Table':'SHOW CARD'}}</button>
+@if(flag){
+    <div class="card-container ">
+        <div class="d-flex flex-row justify-content-center row">
+            @for(obj of personList; track obj.id){
+            <div class="card col-2 m-2" >
+                <div class="card-body">
+                  <h5 class="card-title">{{obj.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{obj.id}}</h6>
+                  <p class="card-text">{{obj.username}}</p>
+                  <p class="card-text">{{obj.email}}</p>
+                  <div>
+                    <h6 class="card-subtitle mb-2 text-muted">Address</h6>
+                    <p class="card-text">{{obj.address.street}},
+                                            {{obj.address.suite}},
+                                            {{obj.address.city}},
+                                            {{obj.address.zipcode}},
+                                            lattitude:{{obj.address.geo.lat}}
+                                            longitude:{{obj.address.geo.lng}}
+                    </p>
+                  </div>
+                  
+                </div>
+            </div>  
+        }
+        </div>
+    </div>
+}@else{
+    <div>
+        <table class="table table-bordered m-2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>User Name</td>
+                    <td>Email</td>
+                    <td>address</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(obj of personList; track obj.id){
+                    <tr>
+                        <td>{{obj.id}}</td>
+                        <td>{{obj.name}}</td>
+                        <td>{{obj.username}}</td>
+                        <td>{{obj.email}}</td>
+                        <td>
+                            {{obj.address.street}},
+                            {{obj.address.suite}},
+                            {{obj.address.city}},
+                            {{obj.address.zipcode}},
+                            lattitude:{{obj.address.geo.lat}}
+                            longitude:{{obj.address.geo.lng}}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+     </div>
+}
+
+    
+
+
+     
+    
+

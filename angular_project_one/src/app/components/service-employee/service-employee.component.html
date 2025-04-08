@@ -1,0 +1,41 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>gender</th>
+            <th>Salary</th>
+            <th>Experience</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+            @for(employee of selectedEmployees; track employee.id){
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.gender}}</td> 
+                <td>{{employee.salary}}</td> 
+                <td>{{employee.experience}}</td> 
+                <td>{{employee.email}}</td> 
+                <td>{{employee.phone}}</td>
+                <td>{{employee.address}}</td>
+            </tr>
+            }   
+    </tbody>
+  </table>
+  <label ></label>
+
+<select (change)="selectedEmployee($event)">
+  <option value="all">All</option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>

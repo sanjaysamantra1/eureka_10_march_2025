@@ -1,0 +1,59 @@
+<div class="container mt-5 ">
+    <div>
+        <h1>Question 1</h1>
+        <p [hidden] = "check">This is a paragraph element to check toggle button </p>
+        <button class="btn btn-outline-primary" (click)="hiddenPara()">{{check?'SHOW' : 'HIDE'}}</button>
+    </div>
+
+    <div class="mt-3">
+        <h1>Question 2</h1>
+        <p >Remaining Characters: {{remainingChars()}}</p>
+        <textarea [(ngModel)]="inpValue" [maxLength]= "maxLength"></textarea>
+    </div>
+
+    <div class="mt-3 mb-3">
+        <h1>Question 3</h1>
+        <label >Choose a State:</label>
+        <select [(ngModel)] ="States" >
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Virginia">Virginia</option>
+            <option value="New York">New York</option>
+            <option value="Ohio">Ohio</option>
+        </select>
+        <p>Selected State: {{States}}</p>
+    </div>
+
+    <div>
+        <h1>Question 4</h1>
+        <input class="mx-2" type="number" [(ngModel)]="num1">
+        <select [(ngModel)]="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input class="mx-2" type="number" [(ngModel)]="num2">
+        <button class="btn btn-primary" (click)="performOperation()">calculate</button>
+        <p >The result of the given numbers: {{result}}</p>
+    </div>
+
+    <div>
+        <h1>Question 5</h1>
+        <input class="mx-2" [type] = "toggle? 'text' : 'password'"/>
+        <button class="btn btn-success" (click)="toggle = !toggle">toggle</button>
+    </div>
+
+    <div>
+        <h1>Question 6</h1>
+        <p >{{count}}</p>
+        <button class="btn btn-success mx-2" (click)= "count = count+1">Increment</button>
+        <button class="btn btn-primary mx-2" (click)= "count = 0">reset</button>
+        <button class="btn btn-danger mx-2" (click)= "count = count-1">decrement</button>
+    </div>
+
+    <div>
+        <button class="btn btn-outline-danger mt-3" (click)="toggleTheme()">{{changeBG? 'Light':'Dark'}}</button>
+    </div>
+    
+</div>
+

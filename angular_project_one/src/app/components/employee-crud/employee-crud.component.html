@@ -1,0 +1,79 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Hire date</th>
+            <th>Play</th>
+        </tr>
+    </thead>
+    <tbody>
+            @for(employee of employeesArr; track employee.id){
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.hireDate}}</td> 
+                <td >
+                    <fa-icon [icon]="trash" type="button" class="px-5" (click)="removeEmp(employee.id)" ></fa-icon>
+                    <fa-icon [icon]="view"  (click)="searchedEmp = employee" type="button"  data-bs-toggle="modal" data-bs-target="#viewingemployee"></fa-icon>
+                </td>
+            </tr>
+            }   
+    </tbody>
+  </table>
+
+  <div class="d-flex felx-row justify-content-center">
+    <button class="btn btn-primary mt-2"  data-bs-toggle="modal" data-bs-target="#addingemployee">Add an employee</button>
+</div>
+
+<div class="modal" tabindex="-1" id="viewingemployee">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Employee ID: {{searchedEmp?.id}}</p>
+          <p>Employee Last Name: {{searchedEmp?.lastName}}</p>
+          <p>Employee First Name: {{searchedEmp?.firstName}}</p>
+          <p>Employee Department: {{searchedEmp?.department}}</p>
+          <p>Employee Salary: {{searchedEmp?.salary}}</p>
+          <p>Employee Hire Date: {{searchedEmp?.hireDate}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal" tabindex="-1" id="addingemployee">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input />
+          <input />
+          <input />
+          <input />
+          <input />
+          <input />
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="addEmployee()">ADD</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

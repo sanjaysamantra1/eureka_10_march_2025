@@ -1,0 +1,28 @@
+<!-- // Ask user to enter a roman string and convert that to integer value
+//     input:   IX    XII
+//     output : 9     12 -->
+<script>
+function romanToInt(s) {
+    const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+    let total = 0;
+    let prev = 0;
+
+    for (let i = s.length - 1; i >= 0; i--) {
+        const current = map[s[i]];
+        if (current < prev) {
+            total -= current;
+        } else {
+            total += current;
+        }
+        prev = current;
+    }
+
+    return total;
+}
+
+let romanInput = prompt("Enter a Roman numeral (e.g., IX, XII):");
+
+const result = romanToInt(romanInput);
+console.log(`The integer value of ${romanInput} is: ${result}`);
+
+</script>

@@ -1,0 +1,15 @@
+<script>
+    // Print the occurence of each character in a string
+    // input: 'entertainment'
+    // output: { e:3 , n:2 , t: 3 ....}
+    let input= 'entertainment';
+    let count = {};
+    for (let char of input){
+        if(char in count){
+            count[char] = count[char]+1
+        }else{
+            count[char] = 1
+        }
+    }
+    console.log(count)
+</script>

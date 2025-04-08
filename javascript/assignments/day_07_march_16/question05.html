@@ -1,0 +1,18 @@
+<script>
+    // 5. Shift the characters by the next character
+    // input:  'abcxyz'
+    // output: 'bcdyza'
+    function shiftCharacters(input) {
+    return input.split('').map(char => {
+        if (char >= 'a' && char <= 'z') {
+            return char === 'z' ? 'a' : String.fromCharCode(char.charCodeAt(0) + 1);
+        } else if (char >= 'A' && char <= 'Z') {
+            return char === 'Z' ? 'A' : String.fromCharCode(char.charCodeAt(0) + 1);
+        } else {
+            return char;
+        }
+    }).join('');
+}
+console.log(shiftCharacters('abcxyz'));  
+    
+</script>

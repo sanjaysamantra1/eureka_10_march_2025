@@ -1,0 +1,19 @@
+<script>
+    // Swap The case for Each Character in a string 
+    // input: 'Hello World'
+    // output: 'hELLO wORLD'
+
+    let input1 = 'Hello World';
+    let newWord ='';
+    for (char of input1) {
+            if(char === char.toUpperCase()){
+                newWord = newWord+char.toLowerCase()
+            }else if(char === char.toLowerCase()){
+                newWord = newWord+char.toUpperCase()
+            }else{
+                newWord = newWord+char;
+            }
+            
+        }
+        console.log(newWord);
+</script>

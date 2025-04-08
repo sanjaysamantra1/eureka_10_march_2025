@@ -1,0 +1,41 @@
+<h2 class="text-center">Product List</h2>
+ <hr/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-2">
+            <input type="search" placeholder="Search Product..." #userInput class="form-control" (input)="searchItems()"  [(ngModel)]="searchQuery" >
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-2" (click)="ascending()">Sort Asc</button>
+            <button class="btn btn-secondary" (click)="descending()">Sort Desc</button>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        @for(product of products| paginate: { itemsPerPage: 4, currentPage: p}; track product.id){
+            <div class="col-sm-3">
+                <div class="card mt-2">
+                    <img src="{{product.image}}" style="height: 200px; width: 200px; margin-left: auto; margin-right: auto;" class="mt-2" alt="...">
+                    <div class="card-body">
+                        <h5>{{product.category}}</h5>
+                        <p class="card-text text-truncate">{{product.title}}</p>
+                        <p class="card-text">Id: {{product.id}}</p>
+                        <p class="card-text text-truncate">{{product.description}}</p>
+                        <p class="card-text">Price: {{product.price}}</p>
+                        <p class="card-text">
+                            Rating: {{product.rating.rate}}
+                        </p>
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4 offset-4">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

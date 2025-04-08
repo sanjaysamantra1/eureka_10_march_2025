@@ -1,0 +1,64 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>gender</th>
+            <th>Salary</th>
+            <th>Experience</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+            @for(user of allUsers; track user.id){
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.phone}}</td> 
+                <td>{{user.website}}</td> 
+                <td>{{user.company}}</td> 
+                <button class="btn-danger" (click)="onDelete(user.id)">delete</button>
+            </tr>
+            }   
+    </tbody>
+  </table>
+
+  <!-- <button class="btn-primary" (click)=" fetchingUsersData()">hit</button> -->
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <fieldset>
+    <legend>Basic Info</legend>
+    <input name="id" [(ngModel)]="user.id" placeholder="ID" type="number"><br>
+    <input name="name" [(ngModel)]="user.name" placeholder="Name" type="text"><br>
+    <input name="username" [(ngModel)]="user.username" placeholder="Username" type="text"><br>
+    <input name="email" [(ngModel)]="user.email" placeholder="Email" type="email"><br>
+    <input name="phone" [(ngModel)]="user.phone" placeholder="Phone" type="text"><br>
+    <input name="website" [(ngModel)]="user.website" placeholder="Website" type="text"><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Address</legend>
+    <input name="street" [(ngModel)]="user.address.street" placeholder="Street" type="text"><br>
+    <input name="suite" [(ngModel)]="user.address.suite" placeholder="Suite" type="text"><br>
+    <input name="city" [(ngModel)]="user.address.city" placeholder="City" type="text"><br>
+    <input name="zipcode" [(ngModel)]="user.address.zipcode" placeholder="Zipcode" type="text"><br>
+    <input name="lat" [(ngModel)]="user.address.geo.lat" placeholder="Latitude" type="text"><br>
+    <input name="lng" [(ngModel)]="user.address.geo.lng" placeholder="Longitude" type="text"><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Company</legend>
+    <input name="companyName" [(ngModel)]="user.company.name" placeholder="Company Name" type="text"><br>
+    <input name="catchPhrase" [(ngModel)]="user.company.catchPhrase" placeholder="Catch Phrase" type="text"><br>
+    <input name="bs" [(ngModel)]="user.company.bs" placeholder="BS" type="text"><br>
+  </fieldset>
+  <button type="submit">Submit</button>
+  </form>

@@ -1,0 +1,13 @@
+<script>
+    // Print the Abbreviation for a string
+    // input: 'Rabindra Nath Tagore'
+    // output: 'R. N. tagore'
+    input = 'Rabindra Nath Tagore';
+    output = '';
+    let words = input.split(' ');
+    
+    for (let i = 0; i<(words.length-1);i++){
+        output = output+words[i].slice(0,1)+'. '
+    }
+    console.log(output+words[words.length-1].toLowerCase())
+</script>
