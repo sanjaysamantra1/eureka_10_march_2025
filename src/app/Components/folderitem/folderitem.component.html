@@ -1,16 +1,16 @@
 <div class="ms-3">
   @if (node.isFolder) {
-    <div 
-      class="d-flex align-items-center cursor-pointer"
-      (click)="toggle()"
-    >
-      <i [class]="iconClass"></i>
-      <span class="ms-2 fw-bold">📁{{ node.name }}</span>
+    <div class="d-flex align-items-center cursor-pointer"
+      (click)="toggle()">
+      <span class="ms-2 fw-bold">
+        <fa-icon [icon]="faFolderOpen"></fa-icon>{{ node.name }}</span>
     </div>
-  } @else {
+  }
+   @else {
     <div class="d-flex align-items-center ms-4">
       <i class="bi bi-file-earmark"></i>
-      <span class="ms-2">🏢{{ node.name }}</span>
+      <span class="ms-2">
+        <fa-icon [icon]="faFile"></fa-icon>{{ node.name }}</span>
     </div>
   }
 
