@@ -1,0 +1,15 @@
+<h3 class="text-center">Comment List</h3>
+<button class="btn btn-secondary" (click)="fetchAllComments()">Fetch Comments</button>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        @for(comment of comments;track $index){
+            <tr>
+                <td>{{comment.id}}</td>
+                <td>{{comment.name}}</td>
+                <td>{{comment.email}}</td>
+                <td>{{comment.body}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

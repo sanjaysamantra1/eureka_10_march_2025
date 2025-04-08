@@ -13,11 +13,13 @@ export class HttpDemo1Component {
 
   constructor(private httpClient: HttpClient) {
   }
+  
   ngOnInit() {
     this.fetchUserData_javascript_then();
     this.fetchUserData_javascript_async_await();
     // this.fetchUserData_angular();
   }
+
   fetchUserData_javascript_then() {
     const api_url = 'https://jsonplaceholder.typicode.com/users';
 
@@ -35,17 +37,22 @@ export class HttpDemo1Component {
     )
 
   }
+
   async fetchUserData_javascript_async_await() {
     const api_url = 'https://jsonplaceholder.typicode.com/users';
     let response = await fetch(api_url);
     let finalResponse = await response.json();
     console.log(finalResponse)
   }
+
   fetchUserData_angular() {
     this.isLoading = true;
-    const api_url = 'https://jsonplaceholder.typicode.com/users';
+    const api_url = 'ttps://jsonplaceholder.typicode.com/users';
 
-    this.httpClient.get(api_url).subscribe(response => {
+    //get(api_url, {observe: 'response'})
+    // observe: 'response' we get extra data along with body
+
+    this.httpClient.get(api_url).subscribe(response => {   
       this.isLoading = false;
       console.log(response);
       this.users = response;
