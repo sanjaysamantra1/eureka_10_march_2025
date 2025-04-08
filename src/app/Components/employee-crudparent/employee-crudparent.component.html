@@ -1,0 +1,8 @@
+<div>
+     <div>
+      <app-employee-table [employees]="employees"  (deleteEvent)="DeleteEmployee($event)"></app-employee-table>
+    </div>
+    <div>
+    <app-employee-add (addEvent)="addEmployee($event)"></app-employee-add>
+    </div>
+</div> 

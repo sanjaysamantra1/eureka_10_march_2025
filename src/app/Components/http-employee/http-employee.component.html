@@ -1,0 +1,65 @@
+<div class="mb-2 mt-2 offset-5">
+<button class="btn btn-primary" (click)="fetchUserData_angular()">Fetch User data</button>
+</div>
+@if(isLoading){
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" class="offset-5"alt="">
+}@else{
+<div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>       
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employees;track $index){
+        <tr>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.username }}</td>
+          <td>{{ emp.email }}</td>
+          <td><button class="btn btn-danger mb-2" (click)="deleteUser(emp.id)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+            <br>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+            (click)="viewdetails(emp.name, emp.username, emp.email, emp.id)">
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+        </td>    
+        </tr>
+    }
+      </tbody>
+    </table>
+  </div>
+}
+<div class="mb-3">
+    <app-http-employee-add (addEvent)="addEmployee($event)"></app-http-employee-add> 
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="Name1" />
+        <label>Username</label>
+        <input type="text" class="form-control" [(ngModel)]="usern1" />
+        <label>Email</label>
+        <input type="text" class="form-control" [(ngModel)]="email1" />
+      </div>      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateUser()">Update</button>
+      </div>      
+    </div>
+  </div>
+</div>

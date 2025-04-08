@@ -1,0 +1,54 @@
+<button class="btn btn-primary" (click)="AddEmp()">Add</button>
+<input type="text" [(ngModel)]="Name" placeholder="Enter Employee Name">
+<input type="number" [(ngModel)]="price" placeholder="Enter Employee Name">
+<table class="table">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        
+    </tr>
+</thead>
+<tbody>
+    @for(students of product ;track students ;let i= $index){
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{students.title}}</td>
+            <td>{{students.price}}</td>
+            <td>
+            <button class="btn btn-primary"  (click) = "Edit(i+1,students.title,students.price)" >Edit</button>
+            </td>
+            <td>
+               
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Delete(students.title)">Delete</button>
+                    
+                  
+            </td>
+        </tr>
+  
+
+    }
+
+</tbody>
+</table>
+      <!-- Button trigger modal -->
+      
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Student Deletion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2>Are u sure u want to delete this student {{this.sName}}</h2>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(this.sName)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>

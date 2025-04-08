@@ -1,0 +1,31 @@
+<h3 class="text-center mb-4">Add Employee</h3>
+
+<form class="mx-auto p-4 border rounded shadow-sm" style="max-width: 400px;">
+  <div class="mb-3">
+    <label for="eId" class="form-label">ID:</label>
+    <input type="number" [(ngModel)]="newEmployee.eId" name="eId" class="form-control" required placeholder="Enter ID">
+  </div>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" [(ngModel)]="newEmployee.name" name="name" class="form-control" required placeholder="Enter Name">
+  </div>
+
+  <div class="mb-3">
+    <label for="sal" class="form-label">Salary:</label>
+    <input type="number" [(ngModel)]="newEmployee.sal" name="sal" class="form-control" required placeholder="Enter Salary">
+  </div>
+
+  <div class="mb-3">
+    <label for="gender" class="form-label">Gender:</label>
+    <select [(ngModel)]="newEmployee.gender" name="gender" class="form-select" required>
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+
+  <button type="button" (click)="addEmployee()" class="btn btn-primary w-100">
+    Add Employee
+  </button>
+</form>

@@ -1,0 +1,99 @@
+<!-- <div class="border p-2 m-2">
+    <h4>My Name is: {{myName}}</h4>
+    <h4>My Name is: <span [innerHTML]="myName"></span></h4>
+    <h4>My Name is: <span bind-innerHTML="myName"></span></h4>
+
+    <img src="https://seeklogo.com/images/A/angular-icon-logo-9946B9795D-seeklogo.com.png" alt="">
+    <img src="{{img_url}}" alt="">
+    <img [src]="img_url" alt="">
+    <img bind-src="img_url" alt="">
+
+    <div class="mt-2">
+        <p> Plain HTML : <input value="Sachin Tendulkar" placeholder="Enter Your Name" /></p>
+        <p>Interpolation Binding: <input value="{{myName}}" /></p>
+        <p>Property Binding: <input [value]="myName" /></p>
+        <p>Property Binding: <input bind-value="myName" /></p>
+        <p>2 way Binding: <input [(ngModel)]="myName" /></p>
+        <p>2 way Binding: <input bind-on-ngModel="myName" /></p>
+    </div>
+
+    <div class="mt-2">
+        <button class="btn btn-success">Click Me</button>
+        <button class="btn btn-success mx-1" disabled>Click Me</button>
+        <button class="btn btn-success mx-1" disabled="{{flag}}">Click Me</button>
+        <button class="btn btn-success mx-1" [disabled]="flag">Click Me</button>
+        <button class="btn btn-success mx-1" bind-disabled="flag">Click Me</button>
+
+        <button class="btn btn-success mx-1" (click)="addToCart()">Add To cart</button>
+        <button class="btn btn-success mx-1" on-click="addToCart()">Add To cart</button>
+    </div>
+</div> -->
+
+<!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+ -->
+
+
+<div class="border p-2 m-2">  
+    <button class="btn btn-primary" (click)="toggleVisibility()">Toggle Visibility</button>
+    <p>My Name is: {{myName}}</p> 
+</div>
+
+
+<!-- 2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters. -->
+<div class="border p-2 m-2">
+    <textarea [(ngModel)]="textValue" maxlength="100" rows="4" cols="50"></textarea>
+    <p>Remaining Characters: {{ 100 - textValue.length }}</p>
+</div>
+
+<!-- 3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+<div class="border p-2 m-2">
+    <select [(ngModel)]="state">
+        <option value="PA">PA</option>
+        <option value="VA">VA</option>
+        <option value="NY">NY</option>
+        <option value="KS">KS</option>
+    </select>
+    <p>Selected State: {{ state }}</p>
+
+</div>
+
+
+<!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+
+<div class="border p-2 m-2">
+  <input [(ngModel)]="num1" type="number" placeholder="Enter number 1">
+  <input [(ngModel)]="num2" type="number" placeholder="Enter number 2">
+  <select [(ngModel)]="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <p>Result: {{ performOperation() }}</p>
+</div>
+
+
+<!-- 
+5. create a input box, toggle the type of that input box to (text/password) -->
+<div class="border p-2 m-2">
+    <input [type]="inputType" [(ngModel)]="inputValue" placeholder="Enter text">
+    <button (click)="toggleInputType()">Toggle Type</button>
+</div>
+
+<!-- 6. create a counter example with 3 controls(increment,decrement,reset) -->
+<div class="border p-2 m-2">
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+    <p>Counter: {{ counter }}</p>
+</div>
+
+
+<!-- 7. Have a toggle button and control Dark/Light theme of a page. -->
+
+<div class="border p-2 m-2" >
+     
+    <button (click)="toggleTheme()">Toggle Theme</button>
+    <p>Current Theme: {{ theme }}</p>
+</div>
+

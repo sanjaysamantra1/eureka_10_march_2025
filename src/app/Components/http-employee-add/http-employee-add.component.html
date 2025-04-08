@@ -1,0 +1,27 @@
+
+<form class="mx-auto p-4 border rounded shadow-sm" style="max-width: 400px;">
+    <div class="mb-3">
+      <label for="id" class="form-label">ID:</label>
+      <input type="text" [(ngModel)]="newEmployee.id" name="id" class="form-control" required placeholder="Enter ID">
+    </div>
+  
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" [(ngModel)]="newEmployee.name" name="name" class="form-control" required placeholder="Enter Name">
+    </div>
+  
+    <div class="mb-3">
+      <label for="Username" class="form-label">UserName:</label>
+      <input type="text" [(ngModel)]="newEmployee.username" name="username" class="form-control" required placeholder="Enter Username">
+    </div>
+  
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" [(ngModel)]="newEmployee.email" name="email" class="form-control" required placeholder="Enter Email">
+    </div>
+  
+    <button type="button" (click)="addEmployee()" class="btn btn-primary w-100">
+      Add Employee
+    </button>
+  </form>
+  

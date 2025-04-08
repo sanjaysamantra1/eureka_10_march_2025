@@ -1,0 +1,30 @@
+<h3 class="text-align: center;">Employee List</h3>
+
+<div class="offset-5">
+  <select id="employeeFilter" [(ngModel)]="filter" (click)="getFilteredEmployees()">
+    <option value="allEmployees">All Employees</option>
+    <option value="maleEmployees">Male Employees</option>
+    <option value="femaleEmployees">Female Employees</option>
+  </select>
+</div>
+
+<table class="table table-bordered table-striped m-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(employee of employees;track $index){
+    <tr>
+      <td>{{ employee.eId }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.sal }}</td>
+      <td>{{ employee.gender }}</td>
+    </tr>
+     }
+  </tbody>
+</table>

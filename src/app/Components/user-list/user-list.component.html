@@ -1,0 +1,52 @@
+<h6>user-list works!</h6>
+
+<div >
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of users;track emp.id){
+        <tr>
+          
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.username }}</td>
+          <td>{{ emp.email }}</td>
+          <td>
+            <ul>
+              <li>{{ emp.address.street }}</li>
+              <li>{{ emp.address.suite }}</li>
+              <li>{{ emp.address.city }}</li>
+              <li>{{ emp.address.zipcode }}</li>
+              <li>
+                  ({{ emp.address.geo.lat }}, {{ emp.address.geo.lng }})
+              </li>
+            </ul>
+          </td>
+          <td>{{ emp.phone }}</td>
+          <td>
+            {{ emp.website }}
+          </td>
+          <td>
+            <Strong>{{ emp.company.name }}</Strong>
+            <ul>
+            <li>{{ emp.company.catchPhrase }}</li>
+           <li> {{emp.company.bs}} </li>
+          </ul>
+          </td>
+        
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>

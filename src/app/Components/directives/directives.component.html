@@ -1,0 +1,98 @@
+<div class="container mt-2">
+  <h1 class=" mb-4">Employee Directory</h1>
+  
+  <div class="mb-4">
+    <button (click)="toggleView()" class="btn btn-primary">
+      Toggle View
+    </button>
+  </div>
+
+  <!-- Table View -->
+  <div *ngIf="currentView == 'table'" >
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employees;track emp.id){
+        <tr>
+          
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.username }}</td>
+          <td>{{ emp.email }}</td>
+          <td>
+            <ul>
+              <li>{{ emp.address.street }}</li>
+              <li>{{ emp.address.suite }}</li>
+              <li>{{ emp.address.city }}</li>
+              <li>{{ emp.address.zipcode }}</li>
+              <li>
+                  ({{ emp.address.geo.lat }}, {{ emp.address.geo.lng }})
+              </li>
+            </ul>
+          </td>
+          <td>{{ emp.phone }}</td>
+          <td>
+            {{ emp.website }}
+          </td>
+          <td>
+            <Strong>{{ emp.company.name }}</Strong>
+            <ul>
+            <li>{{ emp.company.catchPhrase }}</li>
+           <li> {{emp.company.bs}} </li>
+          </ul>
+          </td>
+        
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Card View -->
+  <div *ngIf="currentView == 'cards'">
+    <div class="row">
+      @for(emp of employees;track emp.id){
+      <div class="col-md-4 mb-4" [ngStyle]="emp.id%2==0 ?
+      {'background-color': 'lightblue'} : {'background-color': 'orange'}">
+        
+        <div class="card">
+          <div class="card-header bg-dark text-white">
+            <h5 class="card-title mb-0">{{ emp.name }}</h5>
+            <small class="text-white-50">{{ emp.username }}</small>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Email:</strong> {{ emp.email }}<br>
+              <strong>Phone:</strong> {{ emp.phone }}<br>
+              <strong>Website:</strong> {{ emp.website }}
+            </p>
+                <h6 class="mb-0">Address</h6>
+                <p class="mb-1">{{ emp.address.street }}, {{ emp.address.suite }}</p>
+                <p class="mb-1">{{ emp.address.city }}, {{ emp.address.zipcode }}</p>
+                <h6 class="mb-0">Geo</h6>
+                  ({{ emp.address.geo.lat }}, {{ emp.address.geo.lng }})
+                <h6 class="mb-0">Company</h6>
+                <p class="mb-1"><strong>{{ emp.company.name }}</strong></p>
+                <p class="mb-1"><em>{{ emp.company.catchPhrase }}</em></p>
+                <small class="text-muted">{{ emp.company.bs }}</small>
+              
+            
+          </div>
+        </div>
+      
+      </div>
+    }
+    </div>
+  </div>
+</div>

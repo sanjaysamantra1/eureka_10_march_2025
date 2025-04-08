@@ -1,0 +1,106 @@
+
+<h2>Employee CRUD</h2>
+<div mb-2 >
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2"  >Add employee</button>
+</div>
+<div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>       
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employees;track emp.id){
+        <tr>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.username }}</td>
+          <td>{{ emp.email }}</td>
+          
+          <td>
+            
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="viewdetails(emp.name,emp.username,emp.email)"> <fa-icon [icon]="faEye"></fa-icon></button>
+          <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setEmployeeToDelete(emp.name)"><fa-icon [icon]="faDeleteLeft "></fa-icon></button>
+             -->
+             <button type="button" class="btn btn-danger" (click)="delete(emp.name)">
+              <fa-icon [icon]="faDeleteLeft"></fa-icon>
+             </button>
+          </td>
+        </tr>
+    }
+      </tbody>
+    </table>
+  </div>
+  
+<!--  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete the employee: <strong>{{ emp_delete }}</strong>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="delete()" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+  
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>{{Name1}}</h6>
+          <h2>{{usern1}}</h2>
+          <h2>{{email1}}</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Add Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+            <input type="number" [(ngModel)]="Emp_id" placeholder="Enter id">
+          </div>
+          <div class="mb-3">
+              <input type="text" [(ngModel)]="Emp_Name" placeholder="Enter name">
+            </div>
+            <div class="mb-3"><input type="text" [(ngModel)]="EmpUser_Name" placeholder="User name"></div>
+            <div class="mb-3"><input type="email" [(ngModel)]="Emp_Email" placeholder="Enter Email"></div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="AddEmp()">Add</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
