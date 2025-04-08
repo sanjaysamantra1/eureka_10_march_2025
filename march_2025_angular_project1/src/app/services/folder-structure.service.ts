@@ -9,8 +9,9 @@ export class FolderStructureService {
   constructor(private http: HttpClient){ }
 
   getFolderStructure() {
-    const headers = new HttpHeaders().set('Accept', 'application/json');
-    return this.http.get<FileStructure>(`https://raw.githubusercontent.com/sanjaysamantra1/react_folder_explorer/main/src/data/data.json`, { headers });
+    // const headers = new HttpHeaders().set('Accept', 'application/json');
+    // return this.http.get<FileStructure>(`https://raw.githubusercontent.com/sanjaysamantra1/react_folder_explorer/main/src/data/data.json`, { headers });
+    return this.http.get<FileStructure>(`https://raw.githubusercontent.com/sanjaysamantra1/react_folder_explorer/main/src/data/data.json`);
     
   }
 }
