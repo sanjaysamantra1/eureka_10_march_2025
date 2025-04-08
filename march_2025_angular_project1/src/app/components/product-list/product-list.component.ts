@@ -1,40 +1,49 @@
 import { Component } from '@angular/core';
 import productsArr from './product_data';
-import { NgxPaginationModule } from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { ZoominDirective } from '../../directives/zoomin.directive';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-product-list',
   imports: [
-    FormsModule,
-    NgxPaginationModule,
+    NgxPaginationModule,CommonModule,
     FontAwesomeModule,
-    ZoominDirective
+    FormsModule
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
   products = productsArr; // products is a state variable
-  filteredProducts = productsArr; // filteredProducts is a state variable
-  p: any;
+  p:any;
   faStar = faStar;
-  searchText: string = '';
+  searchText="";
 
-  searchProducts() {
-    this.filteredProducts = this.products.filter(product => {
-      return product.description.includes(this.searchText);
-    })
+  sortAscending()
+  {
+    //alert("HI");
+    this.products = this.products.sort((a,b)=>a.price - b.price);
+    console.log(this.products);
   }
-  sortProducts(type: string) {
-    if (type == 'asc') {
-      this.products.sort((p1, p2) => p1.price - p2.price);
-    } else {
-      this.products.sort((p1, p2) => p2.price - p1.price);
+  sortDescending()
+  {
+    this.products = this.products.sort((a,b)=>b.price - a.price);
+    console.log(this.products);
+  }
+
+  searchFilter()
+  {
+    if (this.searchText.trim() === '') {
+      this.products = productsArr; // Reset to original data
+    } else {  
+      this.products = this.products.filter(product =>
+        product.title.toLowerCase().includes(this.searchText.toLowerCase())
+      );
     }
   }
 }

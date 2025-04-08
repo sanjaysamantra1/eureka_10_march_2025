@@ -1,0 +1,29 @@
+<div style="align-items: center;">
+    <button class="btn btn-outline-success" (click)="empAdd();">Add Employee</button>
+ </div>
+
+ 
+<div [hidden]="addEmployee">
+    <app-employee-add (employeeAdded)="receiveDataToAdd($event)"></app-employee-add>
+</div>
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (emp of employees; track $index) {
+            <tr>
+                <app-employee-table [emp]="emp" (nameEvent)="receiveDataFromChild($event)"></app-employee-table>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

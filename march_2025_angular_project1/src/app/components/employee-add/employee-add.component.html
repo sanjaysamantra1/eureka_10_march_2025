@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <div class="card p-3" style="max-width: 350px; margin: auto;">
+        <h5 class="text-center">Add Employee</h5>
+
+        <div class="mb-2">
+            <input type="number" class="form-control form-control-sm" placeholder="Id" [(ngModel)]="newEmployee.id" required />
+        </div>
+
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Name" [(ngModel)]="newEmployee.name" required />
+        </div>
+
+        <div class="mb-2">
+            <select class="form-select form-select-sm" [(ngModel)]="newEmployee.gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="mb-2">
+            <input type="number" class="form-control form-control-sm" placeholder="Age" [(ngModel)]="newEmployee.age" required />
+        </div>
+
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Position" [(ngModel)]="newEmployee.position" required />
+        </div>
+
+        <button class="btn btn-sm btn-primary w-100" (click)="addingEmployee()">Add</button>
+    </div>
+</div>

@@ -1,29 +1,104 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">All In One</a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TV shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sports</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Live TV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" on-click="displayAssignmentBtns();">Assignments</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button class="navbar-toggler d-flex align-items-center" type="button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            <!-- <span class="ms-2">HIII</span> -->
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- <div class="collapse navbar-collapse" id="navbarItems">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Careers</a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+        </div> -->
+      </div>
     </div>
-</nav>
+  </nav>
+
+  <app-categories></app-categories>
+
+
+<div id="displayAssignmentByns" [hidden]="displayAssignmentByns">
+
+<button class="btn btn-primary" on-click="Assignmnet1Switch();">Assignment1</button><span>  </span>
+<button class="btn btn-success" on-click="Assignmnet2Switch();">Assignment2</button>
+<button class="btn btn-success" on-click="Assignmnet3Switch();">Assignment3</button>
+<button class="btn btn-danger" on-click="Assignmnet4Switch();">Assignment4(pipes)</button>
+<button class="btn btn-warning" on-click="Assignmnet5Switch();">Assignment5(Parent_Childs)</button>
+<button class="btn" style="background-color: brown;" on-click="Assignmnet6Switch();">Assignment6(Services)</button>
+
+<button class="btn" style="background-color: rgb(8, 241, 109);" on-click="Assignmnet7Switch();">Assignment7(Http)</button>
+
+<button class="btn" style="background-color: rgb(207, 228, 11);" on-click="Assignmnet8Switch();">Assignment8(Folder Structure)</button>
+
+</div>
+
+  <div id="carousal" [hidden]="carousal">
+    <app-carousel></app-carousel>
+  </div>
+
+  <div id="Assignment1" [hidden]="assignments1">
+    <app-assignment1></app-assignment1>
+  </div>
+  
+  <div id="Assignment1" [hidden]="assignments2">
+    <app-assignmnet2></app-assignmnet2>
+  </div>
+
+  <div id="Assignment3" [hidden]="assignment3">
+    <app-assignment3></app-assignment3>
+  </div>
+
+  <div id="Assignment4" [hidden]="assignment4">
+    <app-assignment4-pipes></app-assignment4-pipes>
+  </div>
+
+  <div id="Assignment5" [hidden]="assignment5">
+    <app-assignment5></app-assignment5>
+  </div>
+
+  
+  <div id="Assignment6" [hidden]="assignment6">
+    <app-assignment6></app-assignment6>
+  </div>
+  
+  
+
+  <div id="Assignment7" [hidden]="assignment7">
+    <app-assignment7></app-assignment7>
+  </div>
+
+  <div id="Assignment8" [hidden]="assignment8">
+    <app-assignment8></app-assignment8>
+  </div>
+
+  <app-body></app-body>
+  

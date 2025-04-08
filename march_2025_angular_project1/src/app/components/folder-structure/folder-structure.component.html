@@ -1,0 +1,32 @@
+<div class="folder-node">
+    <div (click)="toggle()" class="folder-label">
+      @if(node.isFolder)
+      {
+        <span><b>*</b></span>
+      }
+      @else
+      {
+        <span><b>!</b></span>
+      }
+      {{ node.name }}
+    </div>
+  
+    @if (isExpanded && node.items?.length) {
+        <div>
+        @for(child of node.items;track $index)
+        {
+            <!-- <p>{{child.isFolder}}</p> -->
+            <app-folder-structure  [node]="child"></app-folder-structure>
+        }
+    </div>
+    }
+   
+<!-- <button (click)="bhoom();">HI</button> -->
+<!-- @for(n of node.items;track $index)
+{
+{{n.isFolder}} 
+} -->
+
+  </div>
+
+  <!-- <button (click)="toggle()">nokkuthunna</button> -->

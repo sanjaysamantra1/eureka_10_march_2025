@@ -1,15 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { faL } from '@fortawesome/free-solid-svg-icons';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-http-demo1',
-  imports: [FormsModule],
-  templateUrl: './http-demo1.component.html',
-  styleUrl: './http-demo1.component.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class HttpDemo1Component {
+export class JsonService {
+
+
 
   hideForm = false;
   loading = false;
@@ -118,7 +115,12 @@ if(this.addingEmplys.email=='' || this.addingEmplys.firstName=='' || this.adding
     });
 
 
-    this.fetchUserData_angular();
+    this.httpClient.get(this.api_url)//return Observable
+    .subscribe((response : any)=>{
+      console.log(response);
+      this.employess = response;
+      //this.employess.push(this.addingEmplys);
+    });
 
     this.hideForm = true;
     
@@ -143,7 +145,12 @@ if(this.addingEmplys.email=='' || this.addingEmplys.firstName=='' || this.adding
       error => console.error('Delete failed:', error)
     );
 
-    this.fetchUserData_angular();
+     this.httpClient.get(this.api_url)//return Observable
+    .subscribe((response : any)=>{
+      console.log(response);
+      this.employess = response;
+      //this.employess.push(this.addingEmplys);
+    });
     this.fetchUserData_angular();
     this.loading = false;
   }
@@ -160,7 +167,12 @@ if(this.addingEmplys.email=='' || this.addingEmplys.firstName=='' || this.adding
       error => console.error('Patch failed:', error)
     );
 
-    this.fetchUserData_angular();
+    this.httpClient.get(this.api_url)//return Observable
+    .subscribe((response : any)=>{
+      console.log(response);
+      this.employess = response;
+      //this.employess.push(this.addingEmplys);
+    });
     this.fetchUserData_angular();
     this.loading = false;
     this.hideForm = true;
@@ -174,7 +186,12 @@ if(this.addingEmplys.email=='' || this.addingEmplys.firstName=='' || this.adding
       error => console.error('Update failed:', error)
     );
 
-    this.fetchUserData_angular();
+    this.httpClient.get(this.api_url)//return Observable
+    .subscribe((response : any)=>{
+      console.log(response);
+      this.employess = response;
+      //this.employess.push(this.addingEmplys);
+    });
     this.fetchUserData_angular();
     //this.loading = false;
   }

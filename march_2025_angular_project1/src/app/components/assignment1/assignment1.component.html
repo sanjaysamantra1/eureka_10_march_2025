@@ -1,0 +1,79 @@
+
+    <!-- Assignments: 
+1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
+3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph
+4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+5. create a input box, toggle the type of that input box to (text/password)
+6. create a counter example with 3 controls(increment,decrement,reset)
+7. Have a toggle button and control Dark/Light theme of a page. -->
+
+<div [style]="themeColor">
+
+    <!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph -->
+        <p [hidden]="paragraphHidden" [style]="textColor">My control is with the toggle button below</p>
+        <button style="color: blue;" class="button btn-primary btn btn-success" on-click="hidenSick();">Hide n Seek</button> 
+    
+        <!-- 2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters. -->
+        <p [style]="textColor" >Text Area(100 char max) : </p>
+        
+        <textarea type="text-area" (input)="inputLength();" maxlength="100" [(ngModel)]="lengthCheckInput"></textarea>
+        
+        <p [style]="textColor">characters left: <input [(ngModel)]="updatedlengthCheckInput"></p>
+        
+        
+        <br/>
+          
+        <!-- 5. create a input box, toggle the type of that input box to (text/password) -->
+         <input [type]="inputType" placeholder="Enter Name/Password"> <button on-click="showHide();">Show/Hide</button>
+    
+        <!-- 6. create a counter example with 3 controls(increment,decrement,reset) -->
+    <div class="div">
+        <p [style]="textColor">Counter : <span>{{counter}}</span></p>
+        <button class="btn btn-success"  on-click="incrementCount();">Increment</button> <button class="btn btn-primary" on-click="decrement();">Decrement</button> <button class="btn btn-danger" on-click="reset();">reset</button>
+    
+    </div>
+    
+    
+    <!-- 7. Have a toggle button and control Dark/Light theme of a page. -->
+    <br/>
+    <div style="display: flex; justify-content: center; align-items: center; ">
+    
+        <button on-click="themeChange();" style="align-self: center;">Toggle Theme</button> 
+    
+        <button class="navbar-toggler d-flex align-items-center"><span class="navbar-toggler-icon"></span></button>
+    </div>
+    <br/>
+    
+    <!-- 3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+    
+    <select id="state" [(ngModel)]="selectedStateValue">
+        <option>----Select State----</option>
+        <option selected>Andhra</option>
+        <option >Telengana</option>
+        <option >Tamil Nadu</option>
+        <option >Kerala</option>
+        <option >Karnataka</option>
+        <option >Assam</option>
+    
+    </select>
+    <p [style]="textColor">Selacted State is: <span>{{selectedStateValue}}</span></p>
+    
+    <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+    <p [style]="textColor">Number 1: <input type="number" [(ngModel)]="number1" placeholder="Please Enter Number"></p>
+    <p [style]="textColor">Number 2: <input type="number" [(ngModel)]="number2" placeholder="Please Enter Number"></p>
+    
+    <p [style]="textColor">Arithmetics <select id="Arithmetic" (change)="Arithmetic();" [(ngModel)] = "ArithmeticValue">
+        <option selected>---Select Operation---</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value ="*">*</option>
+        <option value="/">/</option>
+    
+    </select>
+    </p>
+    
+    <p [style]="textColor">Result: <input  [(ngModel)]="result"> </p>
+    <br/>
+    
+</div>

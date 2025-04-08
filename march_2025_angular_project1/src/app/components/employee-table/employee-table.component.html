@@ -1,0 +1,13 @@
+
+   <td>{{ emp.id }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.gender }}</td>
+    <td>{{ emp.age }}</td>
+    <td>{{ emp.position }}</td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="sendDataToParent(emp)">
+        Delete
+      </button>
+    </td>
+  
+  <!-- (click)="deleteEmployee(emp) -->

@@ -1,27 +1,91 @@
-<h3 class="text-center">User List</h3>
-<button class="btn btn-primary" (click)="fetchUserData_angular()">Fetch User data</button>
 
-@if(isLoading){
+@if(loading){
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="">
-}@else{
-    <div class="container">
-        <div class="row">
-            @for(user of users;track user.id){
-            <div class="col-sm-3">
-                <div class="card text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfF_VvADcrR8iGtgkBBunroA3XqMtjv7fe61gJZJA5suDEu2Gr4BY79rHJ30H-GaP0AA&usqp=CAU"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{user.username}}</h5>
-                        <p class="card-text">Name: {{user.name}}</p>
-                        <p class="card-text">Email: {{user.email}}</p>
-                        <p class="card-text">Phone: {{user.phone}}</p>
-                        <p class="card-text">City: {{user.address.city}}</p>
-                        <a href="#" class="btn btn-primary">Details</a>
-                    </div>
-                </div>
-            </div>
-            }
-        </div>
-    </div>
 }
+@else
+{
+<div class="table">
+<tr>
+    <td>ID</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Gender</td>
+    <td>Sal</td>
+    <td>Action</td>
+</tr>
+
+@for(emp of employess;track $index)
+{
+<tr>
+
+    <td>{{emp.id}}</td>
+    <td>{{emp.firstName}}</td>
+    <td>{{emp.lastName}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.gender}}</td>
+    <td>{{emp.sal}}</td>
+
+    <button class="btn btn-success btn-sm" (click)="updateData(emp)">
+        Edit
+      </button>
+    <button class="btn btn-danger btn-sm" (click)="deleteData(emp)">
+        Delete
+      </button>
+
+
+</tr>
+}
+</div>
+}
+
+<button (click)="addingEmployees('add');">Add Employess</button>
+
+<button (click)="addingEmployees('update');">Full Update</button>
+
+<!-- <button (click)="partial();">partial Update</button> -->
+
+<div [hidden]="hideForm">
+
+<div class="container mt-3">
+    <div class="card p-3" style="max-width: 350px; margin: auto;">
+        <h5 class="text-center">Add Employee</h5>
+
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Id" [(ngModel)]="addingEmplys.id" required />
+        </div>
+
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="First Name" [(ngModel)]="addingEmplys.firstName" required />
+        </div>
+
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Last Name" [(ngModel)]="addingEmplys.lastName" required />
+        </div>
+
+        <div class="mb-2">
+            <input type="email" class="form-control form-control-sm" placeholder="Email" [(ngModel)]="addingEmplys.email" required />
+        </div>
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Gender" [(ngModel)]="addingEmplys.gender" required />
+        </div>
+        <div class="mb-2">
+            <input type="number" class="form-control form-control-sm" placeholder="Sal" [(ngModel)]="addingEmplys.sal" required />
+        </div>
+        <!-- @if(partialFlag)
+        {
+            <button class="btn btn-sm btn-primary w-100" (click)="updateData(addingEmplys);">Partial</button>
+        }
+        @else  -->
+        @if(!updateFlag)
+        {
+            <button class="btn btn-sm btn-primary w-100" (click)="addingEmployee();">Add</button>
+        }
+        @else
+        {
+            <button class="btn btn-sm btn-primary w-100" (click)="fullUpdate(addingEmplys);">Update</button>
+        }
+       
+    </div>
+</div>
+</div>

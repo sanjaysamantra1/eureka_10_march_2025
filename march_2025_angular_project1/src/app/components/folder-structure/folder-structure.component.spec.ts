@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductListComponent } from './product-list.component';
+import { FolderStructureComponent } from './folder-structure.component';
 
-describe('ProductListComponent', () => {
-  let component: ProductListComponent;
-  let fixture: ComponentFixture<ProductListComponent>;
+describe('FolderStructureComponent', () => {
+  let component: FolderStructureComponent;
+  let fixture: ComponentFixture<FolderStructureComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductListComponent]
+      imports: [FolderStructureComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProductListComponent);
+    fixture = TestBed.createComponent(FolderStructureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -15,5 +15,3 @@ export class RemainingPipe implements PipeTransform {
 
 // pure : trandform() gets invoked only when input/argument changes
 // impure : trandform() gets invoked when any data changes in the component
-
-
