@@ -1,0 +1,31 @@
+<div class="border p-2">
+    <div>This is employee Table</div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Address/street</th>
+          <th>Apt/Suite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.address.street }}</td>
+          <td>{{ user.address.suite }}</td>
+          <td>
+            <button style="margin-right: 10px;" type="button" class="btn btn-primary" (click)="deleteEmployee(user.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,52 @@
+<p>pipe-assignment-03-31-2025 works!</p>
+<div class="border p-3">
+  <p>Custom Pipe - ordinalpipe :</p>
+  <input type="number" [(ngModel)]="num">
+  <div>{{ num | ordinal }}</div>
+</div>
+
+<div class="border p-3">
+  <p>Custom Pipe - Age:</p>
+  <div>Please selct a date to calculate your Age:</div>
+  <input type="date" [(ngModel)]="dob">
+  <div>DOB: {{ dob | date }}</div>
+  <div>Age: {{ dob | age }}</div>
+</div>
+
+<div class="border p-3">
+  <p>Custom Pipe - Roman:</p>
+  <p>Roman Numeral Conversion : </p>
+  <input type="number" [(ngModel)]="numbersToConvert">
+  <div>Given number in Roman: {{ numbersToConvert | roman }}</div>
+</div>
+
+
+<div class="border p-3">
+
+  <p>Custom Pipe - Salutation & search Employee:</p>
+  <input type="text" [(ngModel)]="searchInput" placeholder="Search employees" />
+  <table class="table table-bordered table-striped">
+      <thead>
+          <tr>
+              <th>Sl No.</th>
+              <th>Eid</th>
+              <th>Name</th>
+              <th>Salary</th>
+              <th>Gender</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for(emp of employees | filter : searchInput ;track $index){
+          <tr>
+              <td>{{$index+1}}</td>
+              <td>{{emp?.eId}}</td>
+              <td>{{emp?.name | salutation : emp?.gender}}</td> 
+              <td>{{emp?.sal}}</td>
+              <td>{{emp?.gender}}</td>
+          </tr>
+          }@empty {
+          <b>No Employee Found</b>
+          }
+      </tbody>
+  </table>
+</div>

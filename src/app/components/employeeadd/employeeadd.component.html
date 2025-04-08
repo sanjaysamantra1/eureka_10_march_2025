@@ -1,0 +1,27 @@
+<div class="border p-2">
+  <div>This is employee Add</div>
+  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add User</button>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          id : <input #idNumber /><br />
+          Name : <input #name /><br />
+          Username : <input #userName /><br />
+          email : <input #email /><br />
+          address/street : <input #address_street /><br />
+          address/suite : <input #address_suite /><br />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="save(idNumber.value, name.value, userName.value, email.value, address_street.value, address_suite.value)" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

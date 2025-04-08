@@ -1,0 +1,59 @@
+
+<div class="border p-2 m-2">
+    Assignment:1 (Toggle)
+    <h1 [hidden]="flag">This is how Hide and Show Button works</h1>
+    <button (click)="flag=!flag">
+        {{flag ? 'SHOW' : 'HIDE'}}
+    </button>
+</div>
+
+    <div class="border p-2 m-2">
+        Assignment:2 (Please review to our page in 100 letters) <br />
+        <textarea rows="4" cols="20" maxlength="100" [(ngModel)]="msg"></textarea>
+        <div>Remaining Characters: {{100 - msg.length}}</div>
+    </div>
+
+    <div class="border p-2 m-2">
+        Assignment:3 (Please select one Course in dropDown) <br />
+        <select [(ngModel)]="selectedCourse">
+            <option value="Java">JAVA OOPS concept</option>
+            <option value="HTML">Hypertext Markup Language</option>
+            <option value="TS">Type Script</option>
+            <option value="CSS">Cascading Style Sheets</option>
+            <option value="BT">BootStrap</option>
+        </select>
+        <div>You selected:: {{selectedCourse}}</div>
+    </div>
+
+    <div class="border p-2 m-2">
+        Assignment:4 (Arithmetic Operations)  <br />
+        <input class="mx-2" #value1 />
+        <input ref-value2 class="mx-2" />
+        <select [(ngModel)]="selectedOperation">
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+        </select>
+        <div>Answer :: {{operation(value1.value,value2.value, selectedOperation)}}</div>
+    </div>
+
+    <div class="border p-2 m-2">
+        Assignment:5 (Toggle Input box) <br />
+        <input class="mx-2" id="new" bind-type="text"/>
+        <button (click)="clickEvent()">
+            {{flip ? 'Password' : 'Text'}}
+        </button>
+    </div>
+
+    <div class="border p-2 m-2">
+        <h3> count is:{{count}}</h3>
+        <button class="btn btn-warning mx-1" (click)="count=count-1">Decrease</button>
+        <button class="btn btn-danger mx-1" (click)="count=count+1">increase</button>
+        <button class="btn btn-success mx-1" (click)="count=count=0">reset</button>
+    </div>
+
+    <div class="mt-2 p-2 border">
+        <h4>Have a toggle button and control Dark/Light theme of a page</h4>
+        <button class="btn btn-success mx-1" (click)="toggleTheme()">{{flag?'LIGHT':'DARK'}}</button>
+    </div>

@@ -1,0 +1,13 @@
+<div class="container border p-2 mt-2">
+    <div class="row text-center">
+      <h4>This parent Employee component</h4>
+      <div></div>
+      <div class="col-sm-8">
+        <app-employeetable [users]="users" (removeEmployee)="removeEmp($event)"></app-employeetable>
+      </div>
+      <div class="col-sm-4">
+        <app-employeeadd (addEmployee)="addEmployee($event)"></app-employeeadd>
+      </div>
+    </div>
+  </div>
+  

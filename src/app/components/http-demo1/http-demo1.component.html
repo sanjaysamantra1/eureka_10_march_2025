@@ -1,0 +1,55 @@
+<p>http-demo1 works!</p>
+<div *ngIf="isLoading">
+    <img src="https://i.pinimg.com/originals/71/3a/32/713a3272124cc57ba9e9fb7f59e9ab3b.gif" alt="Loading..." />
+  </div>
+  
+  <!-- Add Form -->
+  <form (ngSubmit)="addUser()" *ngIf="!editingUser">
+    <input class="form-group" type="text" [(ngModel)]="newUser.firstName" name="firstName" placeholder="First Name" required />
+    <input class="form-group" type="text" [(ngModel)]="newUser.lastName" name="lastName" placeholder="Last Name" required />
+    <input class="form-group" type="email" [(ngModel)]="newUser.email" name="email" placeholder="Email" required />
+    <select [(ngModel)]="newUser.gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input class="form-group" type="number" [(ngModel)]="newUser.sal" name="sal" placeholder="Salary" min="1" required />
+    <button class="btn btn-outline-success"  type="submit">Add User</button>
+  </form>
+  
+  <!-- Update  Form -->
+  <form (ngSubmit)="updateUser()" *ngIf="editingUser">
+    <input type="text" [(ngModel)]="editingUser.firstName" name="editFirstName" placeholder="First Name" required />
+    <input type="text" [(ngModel)]="editingUser.lastName" name="editLastName" placeholder="Last Name" required />
+    <input type="email" [(ngModel)]="editingUser.email" name="editEmail" placeholder="Email" required />
+    <select [(ngModel)]="editingUser.gender" name="editGender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input type="number" [(ngModel)]="editingUser.sal" name="editSal" placeholder="Salary" min="1" required />
+    <button type="submit">Update</button>
+    <button class="btn btn-secondary"  type="button" (click)="cancelEdit()">Cancel</button>
+  
+  </form>
+  
+  <!-- Table -->
+  <table class="table table-bordered" *ngIf="users.length && !isLoading">
+    <thead>
+      <tr>
+        <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Gender</th><th>Salary</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.sal }}</td>
+        <td>
+          <button Class="btn btn-warning"  (click)="editUser(user)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

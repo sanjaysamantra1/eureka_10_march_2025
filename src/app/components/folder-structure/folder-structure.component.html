@@ -1,0 +1,26 @@
+<div *ngIf="loading">Loading file structure...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<ul *ngIf="fileItem">
+  <li *ngIf="fileItem.isFolder">
+    <span (click)="toggleFolder(fileItem)">
+      <ng-container *ngIf="!fileItem.isExpanded; else expandedIcon">
+        ▶️
+      </ng-container>
+      <ng-template #expandedIcon>
+        🔽
+      </ng-template>
+    </span>
+    <strong>{{ fileItem.name }}</strong>
+    <ul *ngIf="fileItem.isExpanded && fileItem.items">
+      <li *ngFor="let item of fileItem.items">
+        <app-folder-structure [fileItem]="item"></app-folder-structure>
+      </li>
+    </ul>
+  </li>
+  <li *ngIf="!fileItem.isFolder">
+    {{ fileItem.name }}
+  </li>
+</ul>
+
+
