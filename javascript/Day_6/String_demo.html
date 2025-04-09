@@ -1,0 +1,19 @@
+<script>
+    let str1 = 'hello';
+    let str2 = 'hello';  // String Literals
+
+    let str3 = new String('hello');
+    let str4 = new String('hello'); // String Objects
+
+    console.log(typeof str1, typeof str3); // string object
+
+    console.log('str1 == str2', str1 == str2); // true
+    console.log('str2 == str3', str2 == str3); // true, object gets converted to literal
+    console.log('str3 == str4', str3 == str4); // false
+
+    let str5 = '2+3+4';
+    console.log(eval(str5));
+
+    let str6 = new String('2+3+4');//ji
+    console.log(eval(str6));
+</script>

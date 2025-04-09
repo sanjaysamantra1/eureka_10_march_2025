@@ -1,0 +1,73 @@
+<div class="container text-center">
+  <h2>Ordinal Pipe Example</h2>
+  
+  <label for="numberInput">Enter a Number:</label>
+  <input type="number" [(ngModel)]="number" id="numberInput" class="form-control" />
+
+  <p>Ordinal Format: <strong>{{ number | ordinal }}</strong></p>
+
+  <h3>Example List:</h3>
+    <li *ngFor="let num of numbers">
+      {{ num }} → <strong>{{ num | ordinal }}</strong>
+    </li>
+</div>
+<h2>Salutation Pipe</h2>
+<label for="nameInput">Enter Name:</label>
+<input type="text" id="nameInput" [(ngModel)]="name" placeholder="Enter your name" />
+
+<label for="genderSelect">Select Gender:</label>
+<select id="genderSelect" [(ngModel)]="gender">
+  <option value="">Select</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+
+<p>Salutation: {{ name | salutation:gender }}</p>
+
+  <div>
+    <h3>Employee List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name | salutation: employee.gender }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.salary | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <div>
+    <h3>Employee List</h3>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search employees..." />
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeesData | employeeFilter: searchText"> <td>{{ employee.name }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.salary | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>Roman Pipe</h2>
+  <label for="numberInput">Enter a number:</label>
+<input type="number" id="numberInput" [(ngModel)]="numberValue" min="1" />
+
+<p>Roman Numeral: {{ numberValue | roman }}</p>

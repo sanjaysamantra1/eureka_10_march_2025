@@ -1,0 +1,32 @@
+<div class="table-responsive mt-4">
+    <table class="table table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Company Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="t-body">
+            @for (employee of employees; track employee.eId) {
+            <tr>
+                <td>{{ employee.eId }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.username }}</td>
+                <td>{{ employee.company.name }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.phone }}</td>
+                <td>
+                    <button class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(employee.eId)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

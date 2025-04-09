@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>Assignment 1</h2>
+  
+    <!-- Toggle Paragraph Section -->
+    <button (click)="onButtonClick()">Toggle Paragraph</button>
+    <p *ngIf="isParagraphVisible">This is a toggleable paragraph.</p>
+  
+    <!-- Text Area with Max Length -->
+    <div>
+      <label for="textInput">Enter text (limit: {{ wordsLimit }} characters):</label>
+      <textarea id="textInput" [(ngModel)]="textInput" maxlength="100" (input)="textAreaWithLimit()"></textarea>
+      <p>Remaining Characters: {{ wordsLimit - textInput.length }}</p>
+    </div>
+  
+    <!-- Dropdown for State Selection -->
+    <div>
+      <label for="stateSelect">Select a State:</label>
+      <select id="stateSelect" (change)="onStateChange($event)">
+        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+      </select>
+      <p>Selected State: {{ selectedState }}</p>
+    </div>
+  
+    <!-- Arithmetic Operations -->
+    <div>
+      <input type="number" [(ngModel)]="num1" placeholder="Enter first number">
+      <select [(ngModel)]="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="number" [(ngModel)]="num2" placeholder="Enter second number">
+      <button (click)="performOperation()">Calculate</button>
+      <p>Result: {{ result }}</p>
+    </div>
+  
+    <!-- Toggle Input Type -->
+    <div>
+      <input [type]="inputType" [(ngModel)]="inputValue" placeholder="Enter text">
+      <button (click)="toggleInputType()">Toggle Type</button>
+    </div>
+  
+    <!-- Counter Example -->
+    <div>
+      <button (click)="increment()">Increment</button>
+      <button (click)="decrement()">Decrement</button>
+      <button (click)="reset()">Reset</button>
+      <p>Counter: {{ counter }}</p>
+    </div>
+  
+    <!-- Dark/Light Theme Toggle -->
+    <div>
+      <button (click)="toggleTheme()">Toggle Dark/Light Mode</button>
+    </div>
+  </div>
+  

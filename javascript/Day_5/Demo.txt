@@ -1,0 +1,29 @@
+Arrow Function
+==============
+-Shorter in syntax
+-Implicit Return / no return keyword
+-No Function keyword
+
+
+this keyword
+============
+Regular Functions : 'this' - How/Where the function is invoked/called
+Arrow Functions   : 
+    Arrow function doesn't have it's own 'this' 
+    uses 'this' value from the lexical/sorounding scope
+    'this' - is used from the place where the function is written
+
+
+Use cases where arrow function shouldn't be used
+================================================
+1. arrow functions shouldn't be used as object methods.
+2. arrow functions shouldn't be used if 'this' should be dynamic 
+
+
+Use cases where arrow function should be used
+==============================================
+1. arrow functions should be used if 'this' should be static
+2. arrow function should be used as callbacks
+
+MDN Link:
+https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout

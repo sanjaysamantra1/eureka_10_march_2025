@@ -1,0 +1,16 @@
+<script>
+    let user = {
+        firstName: "MSD",
+        lastName: "Singh",
+        fullName1: function (){
+            console.log(this.firstName, this.lastName);
+        },
+        fullName2: () =>{
+            //this is pointing to window function (global function, default) (if we declare global variables it will work)
+            //don't use arrow fun in an object if its using this keyword
+            console.log(this.fullName, this.lastName);
+        }
+    }
+user.fullName1();//MSD SINGH
+user.fullName2();//undefined undefined
+</script>

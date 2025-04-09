@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 250px;
+            height: 350px;
+        }
+        button{
+            padding: 10px;
+            border: 19px;
+            font-size: large;
+            font-weight: bolder;
+            color: rgb(195, 143, 48);
+        }
+        #button1{
+            background-color: rgb(28, 205, 205);
+        }
+        #button2{
+            background-color: rgb(9, 230, 230);
+        }
+    </style>
+    <script>
+        function buttonOnclick(){
+            window.alert("Directing to the payment page")
+        }
+        function addToCart(){
+            window.alert("Added to cart")
+        }
+    </script>
+</head>
+<body>
+    <button id="button1" onclick="buttonOnclick()">Buy</button>
+    <button id="button2" onclick="addToCart()">add to cart</button>
+    <img src="/Users/venkatapavankalyanpoka/JavaScript/Day_2/Luffy.jpeg" alt="Luffy">
+</body>
+</html>

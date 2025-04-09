@@ -1,0 +1,8 @@
+.body-comp{
+    background-color: aliceblue;
+    text-align: center;
+    text-justify: auto;
+    text-shadow: rgb(14, 68, 169);
+    container: fluid;
+    fill: none;
+}

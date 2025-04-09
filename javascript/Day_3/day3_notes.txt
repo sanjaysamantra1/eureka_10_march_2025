@@ -1,0 +1,20 @@
+Data Types and Variables in JS
+==========
+primitives : number, string, boolean, undefined, null, symbol
+non-primitive : object 
+
+**primitives compare by values and non-primitives compare by address
+
+
+Js vs EcmaScript
+
+Js: Programming Language follows EcmaScript standards
+
+EcmaScript: standards, followed by Javascript
+Ecma : european computer manufacturer Assn.
+
+variables can be declared by
+
+1.let
+2.var
+3.const

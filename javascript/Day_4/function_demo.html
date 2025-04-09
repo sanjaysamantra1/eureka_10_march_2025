@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+//1.first Option normal function traditional way
+console.log(a11);
+let a11 = 10;
+add(20,90);
+    function add(a,b){
+        console.log(a+b);
+    }
+//it can be used before declaration
+//2. Function Expression : value is assigned to a variable, it is hoisted
+//these has to be named
+    let sub = function(a,b){
+        console.log(a-b);
+    }
+sub(20,10);//it cant be accessed before initialization it is not hoisted.
+//these are anonymous and doesn't have names.
+//3.self - invoked , can be used when we need this function to be run only once. IIFE(Immediately invoked function expression)
+(function(a,b){
+    console.log(a-b);
+
+})(10,20);
+//4. Arrow function
+let div = (a,b)=>{
+        console.log(a-b);
+    }
+div(4,2);
+</script>
+<body>
+    
+</body>
+</html>

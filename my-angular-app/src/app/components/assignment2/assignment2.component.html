@@ -1,0 +1,41 @@
+<h2 class="text-center">Product List</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-2">
+            <input 
+                type="search" 
+                [(ngModel)]="searchQuery" 
+                (input)="searchProducts()" 
+                placeholder="Search Product..." 
+                class="form-control">
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-2" (click)="sortProducts(true)">Sort Asc</button>
+            <button class="btn btn-secondary" (click)="sortProducts(false)">Sort Desc</button>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div *ngFor="let emp of filteredUsers | paginate: { itemsPerPage: 4, currentPage: p}; trackBy: trackByEmpId" class="col-md-4 d-flex align-items-stretch">
+           
+                <div class="card bg-light border-primary shadow-lg h-100"> 
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center text-primary">{{ emp.id }}</h5>
+                        <p class="card-text text-center text-dark"><strong>Title:</strong> {{ emp.title }}</p>
+                        <img src="{{emp.image}}" alt="">
+                        <p class="card-text text-center text-success"><strong>Price:</strong> ${{ emp.price }}</p>
+                        <p class="card-text text-center text-danger"><strong>Description:</strong> {{ emp.description }}</p>
+                        <p class="card-text text-center text-danger"><strong>Category:</strong> {{ emp.category }}</p>
+                        <p class="card-text text-center text-info"><strong>Rating:</strong> {{ emp.rating.rate }}</p>
+                        <p class="card-text text-center text-info"><strong>Count:</strong> {{ emp.rating.count }}</p>
+                    </div>
+                </div>
+            </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+
+
+
+</div>

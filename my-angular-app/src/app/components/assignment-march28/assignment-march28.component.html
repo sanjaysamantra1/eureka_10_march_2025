@@ -1,0 +1,78 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Employee Management</h2>
+
+  <div class="card shadow-sm p-3 mb-4">
+      <div class="card-body">
+          <h5 class="card-title">Add New Employee</h5>
+          <div class="row g-2">
+              <div class="col-md-4">
+                  <input type="text" [(ngModel)]="newEmployee.name" class="form-control" placeholder="Name" />
+              </div>
+            
+              <div class="col-md-4">
+                  <input type="text" [(ngModel)]="newEmployee.username" class="form-control" placeholder="UserName" />
+              </div>
+              <div class="col-md-4">
+                <input type="text" [(ngModel)]="newEmployee.companyname" class="form-control" placeholder="CompanyName" />
+            </div>
+            <div class="col-md-4">
+              <input type="text" [(ngModel)]="newEmployee.phone" class="form-control" placeholder="Phone" />
+          </div>
+          <div class="col-md-4">
+            <input type="text" [(ngModel)]="newEmployee.email" class="form-control" placeholder="Email" />
+        </div>
+
+          </div>
+          <div class="text-end mt-3">
+              <button class="btn btn-success" (click)="addEmployee()">Add Employee</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="table-responsive">
+      <table class="table table-hover align-middle">
+          <thead class="table-dark">
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>CompanyName</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let employee of employees; trackBy: trackByEmployee">
+                  <td>{{ employee.eId }}</td>
+                  <td>{{ employee.name }}</td>
+                  <td>{{ employee.username }}</td>
+                  <td>{{ employee.company.name }}</td>
+                  <td>
+                      <button class="btn btn-outline-primary btn-sm me-2" (click)="viewEmployeeDetails(employee)" data-bs-toggle="modal" data-bs-target="#employeeModal">
+                          View
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(employee.eId)">
+                          Delete
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+              <h4>{{ selectedEmployee?.name }}</h4>
+              <p><strong>ID:</strong> {{ selectedEmployee?.eId }}</p>
+              <p><strong>Phone:</strong> {{ selectedEmployee?.phone }}</p>
+              <p><strong>Email:</strong> {{ selectedEmployee?.email }}</p>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container p-2 mt-4">
+    <h2>Employee Management</h2>
+    <div class="row-sm-6">
+        <app-employee-add (employeeAdded)="addEmployee($event)"></app-employee-add>
+    <div class="row-sm-6">
+        <app-employee-view-delete [employees]="employees" (employeeDeleted)="deleteEmployee($event)">
+    </app-employee-view-delete>
+</div>
+</div>
+</div>
