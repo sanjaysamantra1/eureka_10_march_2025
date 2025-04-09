@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_plus-055f80.svg"
+                alt="">
+        </div>
+        <div class="col-sm-3">
+            <input type="search" class="form-control" placeholder="Search For Products Brands and more...">
+        </div>
+        <div class="col-sm-3 offset-3">
+            <div style="font-size: 24px;">
+                <span>cart</span>
+                <fa-icon [icon]="faCartShopping"></fa-icon>
+                @if(cartItems.length){
+                    <span style="color: red;">{{cartItems.length}}</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

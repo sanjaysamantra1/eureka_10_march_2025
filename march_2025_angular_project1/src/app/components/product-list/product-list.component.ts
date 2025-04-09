@@ -5,7 +5,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
-
+import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms'; 
 
 @Component({
@@ -23,6 +23,14 @@ export class ProductListComponent {
   p:any;
   faStar = faStar;
   searchText="";
+
+
+  constructor(private cartService: CartService) {
+  }
+  addToCart(product: any) {
+    alert("Added to the cart");
+    this.cartService.addItem(product);
+  }
 
   sortAscending()
   {
