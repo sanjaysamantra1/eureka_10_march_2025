@@ -33,7 +33,7 @@ import { MainComponent } from './components/main/main.component';
     // NavbarComponent,
     // CategoriesComponent,
     // CarouselComponent,
-    // BodyComponent,
+    BodyComponent,
     // FooterComponent,
     // UserViewComponent,
     // HttpClientModule
@@ -51,7 +51,7 @@ import { MainComponent } from './components/main/main.component';
     // EmployeeComponent,
     // UserListComponent, //User CRUD in app directory
     // UserFormComponent,
-    MainComponent,
+    // MainComponent,
     CommonModule
   ],
   templateUrl: './app.component.html',

@@ -11,7 +11,7 @@ Another way is inject():
 const toastService = inject(ToastService);
 */
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
-  console.log("Error Interceptor");
+  // console.log("Error Interceptor");
   const toastService = inject(ToastService);
   
   return next(req).pipe(catchError((error) => { //If the api call succeeds dont do anything. If it FAILS ...
