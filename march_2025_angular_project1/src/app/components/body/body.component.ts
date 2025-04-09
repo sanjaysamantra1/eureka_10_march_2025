@@ -30,7 +30,7 @@ import { Message2Component } from '../message2/message2.component';
     // MyModalComponent
     // UserListComponent
     // UserTableComponent
-    // ProductListComponent
+    ProductListComponent
     // Demo1Component
     // PipesComponent,
     // TrafficLightComponent,
@@ -44,8 +44,8 @@ import { Message2Component } from '../message2/message2.component';
     // ObservableDemo2Component
     // ObservableDemo3Component
     // SubjectDemo1Component
-    Message1Component,
-    Message2Component
+    // Message1Component,
+    // Message2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

@@ -4,10 +4,12 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   imports: [
+    HeaderComponent,
     NavbarComponent,
     CategoriesComponent,
     // CarouselComponent,

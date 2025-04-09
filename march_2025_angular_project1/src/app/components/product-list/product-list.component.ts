@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ZoominDirective } from '../../directives/zoomin.directive';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -36,5 +37,11 @@ export class ProductListComponent {
     } else {
       this.products.sort((p1, p2) => p2.price - p1.price);
     }
+  }
+
+  constructor(private cartService: CartService) {
+  }
+  addToCart(product: any) {
+    this.cartService.addItem(product);
   }
 }
