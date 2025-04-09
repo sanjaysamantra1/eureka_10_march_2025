@@ -1,0 +1,25 @@
+<h5>Employee Table</h5>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(emp of employees; track emp.id) {
+      <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="onDelete(emp.id)">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

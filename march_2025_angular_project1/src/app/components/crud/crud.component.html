@@ -1,0 +1,51 @@
+<h2 class="text-center">User CRUD App</h2>
+<hr>
+
+@if(isLoading){
+  <div class="text-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="Loading..." width="100px">
+  </div>
+} @else {
+
+
+<div class="border p-3 m-3">
+  <h4>{{ editingUserId ? 'Update User' : 'Add New User' }}</h4>
+  <form (ngSubmit)="addUser()">
+    <input [(ngModel)]="newUser.id" name="id" type="text" class="form-control my-2" placeholder="Enter id" required>
+    <input [(ngModel)]="newUser.firstName" name="dirstName" type="text" class="form-control my-2" placeholder="Enter firstName" required>
+    <input [(ngModel)]="newUser.lastName" name="lastName" type="text" class="form-control my-2" placeholder="Enter lastName" required>
+    <input [(ngModel)]="newUser.email" name="email" type="email" class="form-control my-2" placeholder="Enter Email" required>
+    <input [(ngModel)]="newUser.gender" name="gender" type="text" class="form-control my-2" placeholder="Enter gender" required>
+    <input [(ngModel)]="newUser.sal" name="sal" type="text" class="form-control my-2" placeholder="Enter sal" required>
+    <button type="submit" class="btn btn-primary">{{ editingUserId ? 'Update' : 'Add' }}</button>
+  </form>
+</div>
+
+
+<div class="container mt-3">
+  <table class="table table-bordered text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>id</th><th>firstName</th><th>lastName</th><th>email</th><th>gender</th><th>sal</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(user of users; track user.id){
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.sal}}</td>
+          <td>
+            <button class="btn btn-warning btn-sm mx-1" (click)="editUser(user)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+}

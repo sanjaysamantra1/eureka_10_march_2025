@@ -1,0 +1,17 @@
+<div class="ms-3">
+  @if (node.isFolder) {
+    <strong>{{ node.name }}</strong>
+  } @else {
+    <span>{{ node.name }}</span>
+  }
+
+  @if (node.items?.length) {
+    <ul>
+      @for (item of node.items; track item.name) {
+        <li>
+          <app-folder [node]="item"></app-folder>
+        </li>
+      }
+    </ul>
+  }
+</div>

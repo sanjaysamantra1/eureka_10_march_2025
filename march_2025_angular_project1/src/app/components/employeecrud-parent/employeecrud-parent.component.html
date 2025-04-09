@@ -1,0 +1,8 @@
+
+<div class="border p-2 mt-2">
+    <h4 class="text-center">Employee CRUD</h4>
+  
+  <app-employee-add (add)="addEmployee($event)"></app-employee-add>
+  
+    <app-employee-table [employees]="employees" (delete)="deleteEmployee($event)"></app-employee-table>
+  </div>

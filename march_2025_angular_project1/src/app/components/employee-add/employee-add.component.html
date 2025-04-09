@@ -1,0 +1,18 @@
+<div class="border p-2 mt-2">
+    <h5>Add New Employee</h5>
+    <form (ngSubmit)="onSubmit()" #empForm="ngForm">
+      <div class="form-group mb-2">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="emp.name" name="name" required />
+      </div>
+      <div class="form-group mb-2">
+        <label>Email</label>
+        <input type="email" class="form-control" [(ngModel)]="emp.email" name="email" required />
+      </div>
+      <div class="form-group mb-2">
+        <label>Salary</label>
+        <input type="number" class="form-control" [(ngModel)]="emp.sal" name="sal" required />
+      </div>
+      <button class="btn btn-success mt-2" type="submit">Add Employee</button>
+    </form>
+  </div>

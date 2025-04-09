@@ -1,0 +1,35 @@
+<div class="container border p-3 mt-2">
+    <h4 class="text-center">Employee List</h4>
+
+   <div class = "row mb-3">
+    <div class = "col-md-4 offset-md-4">
+          <select class = "form-select" [(ngModel)] = "selectedType" (change)="filterEmployees()">
+            <option value="all">All Employees</option>
+            <option value = "male">Male Employess</option>
+            <option value = "female">Female Employee</option>
+          </select>
+    </div>
+   </div>
+
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        @for (emp of employees; track emp.id) {
+          <tr>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.role }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  
