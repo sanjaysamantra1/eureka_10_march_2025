@@ -3,3 +3,4 @@
 .node_modules
 .dist
 .gitignore
+my-angular-app/node_modules
