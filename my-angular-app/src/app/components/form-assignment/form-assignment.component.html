@@ -1,0 +1,114 @@
+<h3 class="text-center">Let's Learn Template Driven Form</h3>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-3 border p-4">
+
+      <form #myForm="ngForm" (ngSubmit)="submitMyForm(myForm)">
+
+        <p>
+          First Name:
+          <input name="firstName" #fname="ngModel" ngModel required minlength="5" />
+          <span class="text-danger" *ngIf="fname.touched && fname.hasError('required')">First Name is Required</span>
+          <span class="text-danger" *ngIf="fname.touched && fname.hasError('minlength')">Min 5 characters required</span>
+        </p>
+
+        <p>
+          Last Name:
+          <input name="lastName" #lname="ngModel" ngModel required minlength="3" />
+          <span class="text-danger" *ngIf="lname.touched && lname.hasError('required')">Last Name is Required</span>
+          <span class="text-danger" *ngIf="lname.touched && lname.hasError('minlength')">Min 3 characters required</span>
+        </p>
+
+        <p>
+          Email:
+          <input name="email" #email="ngModel" ngModel required email />
+          <span class="text-danger" *ngIf="email.touched && email.hasError('required')">Email is Required</span>
+          <span class="text-danger" *ngIf="email.touched && email.hasError('email')">Invalid Email Format</span>
+        </p>
+
+        <p>
+          Phone:
+          <input name="phone" #phone="ngModel" ngModel required pattern="^[0-9]{10}$" />
+          <span class="text-danger" *ngIf="phone.touched && phone.hasError('required')">Phone is Required</span>
+          <span class="text-danger" *ngIf="phone.touched && phone.hasError('pattern')">Enter 10 digit Phone Number</span>
+        </p>
+
+        <p>
+          Gender:
+          <input type="radio" name="gender" value="Male" ngModel required #gender="ngModel" /> Male
+          <input type="radio" name="gender" value="Female" ngModel required /> Female
+          <span class="text-danger" *ngIf="gender.touched && gender.hasError('required')">Gender is Required</span>
+        </p>
+
+
+        <p>
+          Hobbies:
+          <input type="checkbox" name="hobbies" value="Reading" ngModel /> Reading
+          <input type="checkbox" name="hobbies" value="Music" ngModel /> Music
+          <input type="checkbox" name="hobbies" value="Sports" ngModel /> Sports
+        </p>
+
+       
+            <p>
+              Password:
+              <input type="password" name="password" #pass="ngModel" ngModel required minlength="6" />
+              <span class="text-danger" *ngIf="pass.touched && pass.hasError('required')">Password is Required</span>
+              <span class="text-danger" *ngIf="pass.touched && pass.hasError('minlength')">Min 6 characters required</span>
+            </p>
+
+
+            <p>
+              Confirm Password:
+              <input type="password" name="cpassword" #cpass="ngModel" ngModel required />
+              <span class="text-danger" *ngIf="cpass.touched && cpass.value !== pass.value">Passwords do not match</span>
+              <span class="text-danger" *ngIf="cpass.touched && cpass.hasError('required')">Confirm Password is Required</span>
+            </p>
+
+        <p>
+          Country:
+          <select name="country" #country="ngModel" ngModel required>
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+          </select>
+          <span class="text-danger" *ngIf="country.touched && country.hasError('required')">Country is Required</span>
+        </p>
+
+        <div ngModelGroup="address">
+          <p>
+            City:
+            <input name="city" #city="ngModel" ngModel required />
+            <span class="text-danger" *ngIf="city.touched && city.hasError('required')">City is Required</span>
+          </p>
+          <p>
+            State:
+            <input name="state" #state="ngModel" ngModel required />
+            <span class="text-danger" *ngIf="state.touched && state.hasError('required')">State is Required</span>
+          </p>
+          <p>
+            Pincode:
+            <input name="pincode" #pincode="ngModel" ngModel required pattern="^[0-9]{6}$" />
+            <span class="text-danger" *ngIf="pincode.touched && pincode.hasError('required')">Pincode is Required</span>
+            <span class="text-danger" *ngIf="pincode.touched && pincode.hasError('pattern')">Enter 6 digit Pincode</span>
+          </p>
+        </div>
+
+        <p>
+          Bio:
+          <textarea name="bio" #bio= "ngModel" ngModel required minlength="10"></textarea>
+          <span class="text-danger" *ngIf="bio.touched && bio.hasError('required')">Bio is Required</span>
+          <span class="text-danger" *ngIf="bio.touched && bio.hasError('minlength')">Min 10 characters required</span>
+        </p>
+
+        <input type="submit" value="Submit" class="btn btn-success mx-1" />
+        <input type="reset" value="Clear" class="btn btn-danger mx-1" />
+
+      </form>
+
+      <pre>{{ myForm.value | json }}</pre>
+        </div>
+  </div>
+</div>

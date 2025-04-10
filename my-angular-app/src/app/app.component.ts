@@ -18,6 +18,8 @@ import { HttpsClientComponent } from './components/https-client/https-client.com
 import { FileExplorerComponent } from './components/file-explorer/file-explorer.component';
 import { SignalDemo1Component } from './components/signal-demo1/signal-demo1.component';
 import { SignalDemo2Component } from './components/signal-demo2/signal-demo2.component';
+import { FormAssignmentComponent } from './components/form-assignment/form-assignment.component';
+import { FormDemo3Component } from './components/form-demo3/form-demo3.component';
 @Component({
   selector: 'app-root',
   imports: [
@@ -38,8 +40,10 @@ import { SignalDemo2Component } from './components/signal-demo2/signal-demo2.com
     // HttpsClientComponent
     // FileExplorerComponent,
     // FileTreeItemComponent
-    SignalDemo1Component,
-    SignalDemo2Component
+    // SignalDemo1Component,
+    // SignalDemo2Component
+    // FormAssignmentComponent,
+    FormDemo3Component
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

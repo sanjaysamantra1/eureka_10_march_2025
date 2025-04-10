@@ -31,3 +31,4 @@ my-angular-app/dist/my-angular-app/server/assets-chunks/styles-DZ6UBGXD_css.mjs
 my-angular-app/dist/.DS_Store
 .DS_Store
 .gitignore
+.dist
