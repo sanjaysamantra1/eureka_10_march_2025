@@ -1,0 +1,49 @@
+<h3 class="text-center">Let's Learn Model Driven Form / Reactive Form</h3>
+
+<div class="row">
+    <div class="col-sm-4 offset-4 border p-4">
+        <form [formGroup]="registrationForm" (submit)="submitMyForm(registrationForm)">
+            <p>
+                FirstName:
+                <input formControlName="firstName" placeholder="Enter Firstname" />
+                @if(registrationForm['controls']['firstName'].hasError('required')){
+                    <span class="text-danger">FirstName is required</span>
+                }
+                @if(registrationForm['controls']['firstName'].hasError('minlength')){
+                    <span class="text-danger">minimum 5 chars</span>
+                }
+            </p>
+            <p>
+                lastName:
+                <input formControlName="lastName" />
+                @if(registrationForm['controls']['lastName'].hasError('required')){
+                    <span class="text-danger">lastName is required</span>
+                }
+            </p>
+            <p>
+                Email:
+                <input formControlName="email" />
+            </p>
+            <div formGroupName="address">
+                <p>
+                    City:
+                    <input formControlName="city" />
+                </p>
+                <p>
+                    State:
+                    <input formControlName="state" />
+                </p>
+                <p>
+                    pincode:
+                    <input formControlName="pincode" />
+                </p>
+            </div>
+            <input type="submit" value="submit" class="btn btn-success mx-1" />
+            <input type="reset" value="Clear" class="btn btn-danger mx-1" />
+        </form>
+
+        <pre>
+            {{registrationForm.value | json}}
+        </pre>
+    </div>
+</div>
