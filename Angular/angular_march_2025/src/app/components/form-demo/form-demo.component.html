@@ -1,0 +1,169 @@
+<div class="form-container">
+    <h2>Complete User Profile</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" enctype="multipart/form-data">
+      
+      <!-- SECTION 1: BASIC INFORMATION -->
+      <fieldset>
+        <legend>Basic Information</legend>
+        
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name*</label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="user.fullName" 
+                 #fullName="ngModel" required minlength="3" maxlength="50">
+          <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="error-message">
+            <div *ngIf="fullName.errors?.['required']">Full name is required</div>
+            <div *ngIf="fullName.errors?.['minlength']">Must be at least 3 characters</div>
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" [(ngModel)]="user.email" 
+                 #email="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+            <div *ngIf="email.errors?.['required']">Email is required</div>
+            <div *ngIf="email.errors?.['pattern']">Please enter a valid email</div>
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password*</label>
+          <input type="password" id="password" name="password" [(ngModel)]="user.password" 
+                 #password="ngModel" required minlength="8">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="password.errors?.['minlength']">Must be at least 8 characters</div>
+          </div>
+        </div>
+  
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password*</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" 
+                 [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" required>
+          <div *ngIf="confirmPassword.dirty && user.password !== user.confirmPassword" 
+               class="error-message">
+            Passwords do not match
+          </div>
+        </div>
+      </fieldset>
+  
+      <!-- SECTION 2: FILE UPLOADS -->
+      <fieldset>
+        <legend>File Uploads</legend>
+  
+        <!-- Profile Picture -->
+        <div class="form-group">
+          <label for="profilePicture">Profile Picture</label>
+          <input type="file" id="profilePicture" name="profilePicture" 
+                 (change)="onProfilePictureChange($event)" accept="image/*">
+          <div *ngIf="user.profilePicture" class="file-info">
+            Selected: {{ user.profilePicture.name }}
+          </div>
+        </div>
+  
+        <!-- Resume -->
+        <div class="form-group">
+          <label for="resume">Resume (PDF/DOC)</label>
+          <input type="file" id="resume" name="resume" 
+                 (change)="onResumeChange($event)" accept=".pdf,.doc,.docx">
+          <div *ngIf="user.resume" class="file-info">
+            Selected: {{ user.resume.name }}
+          </div>
+        </div>
+      </fieldset>
+  
+      <!-- SECTION 3: PERSONAL DETAILS -->
+      <fieldset>
+        <legend>Personal Details</legend>
+  
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="birthDate">Date of Birth*</label>
+          <input type="date" id="birthDate" name="birthDate" [(ngModel)]="user.birthDate" 
+                 #birthDate="ngModel" required>
+          <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" 
+               class="error-message">
+            Birth date is required
+          </div>
+        </div>
+  
+        <!-- Age -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" [(ngModel)]="user.age" 
+                 #age="ngModel" min="18" max="120">
+          <div *ngIf="age.invalid && (age.dirty || age.touched)" class="error-message">
+            Must be between 18 and 120
+          </div>
+        </div>
+  
+        <!-- Gender -->
+        <div class="form-group">
+          <label>Gender*</label>
+          <div class="radio-group">
+            <label *ngFor="let gender of ['Male', 'Female', 'Other', 'Prefer not to say']">
+              <input type="radio" name="gender" [(ngModel)]="user.gender" 
+                     [value]="gender.toLowerCase()" required> {{gender}}
+            </label>
+          </div>
+          <div *ngIf="userForm.submitted && !user.gender" class="error-message">
+            Gender is required
+          </div>
+        </div>
+  
+        <!-- Marital Status -->
+        <div class="form-group">
+          <label for="maritalStatus">Marital Status</label>
+          <select id="maritalStatus" name="maritalStatus" [(ngModel)]="user.maritalStatus">
+            <option value="">Select...</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widowed">Widowed</option>
+          </select>
+        </div>
+      </fieldset>
+  
+      <!-- SECTION 4: PROFESSIONAL INFORMATION -->
+      <fieldset>
+        <legend>Professional Information</legend>
+  
+        <!-- Occupation -->
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" name="occupation" [(ngModel)]="user.occupation">
+        </div>
+  
+        <!-- Skills -->
+        <div class="form-group">
+          <label>Skills</label>
+          <div class="skills-container">
+            <label *ngFor="let skill of skillsList" class="skill-option">
+              <input type="checkbox" name="skills" [(ngModel)]="user.skills" 
+                     [value]="skill"> {{skill}}
+            </label>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!-- Form Actions -->
+      <div class="form-actions">
+        <button type="submit" [disabled]="userForm.invalid || user.password !== user.confirmPassword">
+          Submit
+        </button>
+        <button type="button" (click)="userForm.resetForm({ profilePicture: null, resume: null })">
+          Reset
+        </button>
+      </div>
+  
+      <!-- Form Status -->
+      <div class="form-status">
+        <p>Form valid: {{ userForm.valid }}</p>
+        <p>Password match: {{ user.password === user.confirmPassword }}</p>
+      </div>
+    </form>
+  </div>
