@@ -23,6 +23,10 @@ import { Message1Component } from "../message1/message1.component";
 import { Message2Component } from "../message2/message2.component";
 import { SignalDemo2Component } from "../signal-demo2/signal-demo2.component";
 import { FormDemo2Component } from "../form-demo2/form-demo2.component";
+import { SignalDemo1Component } from "../signal-demo1/signal-demo1.component";
+import { FormDemo1Component } from "../form-demo1/form-demo1.component";
+import { FormDemo3Component } from "../form-demo3/form-demo3.component";
+import { FormDemo4Component } from "../form-demo4/form-demo4.component";
 
 @Component({
   selector: 'app-body',
@@ -49,7 +53,11 @@ import { FormDemo2Component } from "../form-demo2/form-demo2.component";
     Message1Component,
     Message2Component,
     SignalDemo2Component,
-    FormDemo2Component
+    FormDemo2Component,
+    SignalDemo1Component,
+    FormDemo1Component,
+    FormDemo3Component,
+    FormDemo4Component
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

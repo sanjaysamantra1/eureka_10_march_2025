@@ -7,10 +7,10 @@
             <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)">
                 <p>
                     FirstName:
-                    <input name="firstName" #fname="ngModel" ngModel required minlength="5" />
-                    <span class="text-danger" *ngIf="fname.hasError('required')">
-                        firstName is Required
-                    </span>
+                        <input name="firstName" #fname="ngModel" ngModel required minlength="5" />
+                        <span class="text-danger" *ngIf="fname.hasError('required')">
+                            firstName is Required
+                        </span>
                     <span class="text-danger" *ngIf="fname.hasError('minlength')">
                         firstName should have minimum 5 characters
                     </span>
@@ -36,6 +36,68 @@
                         pincode:
                         <input name="pincode" ngModel />
                     </p>
+                    <p>
+                        Upload your Photo:
+                        <input type="file" name="profilePhoto" ngModel />
+                    </p>
+    
+                    <p>
+                        Select your Birth Date:
+                        <input type="date" name="birthDate" ngModel />
+                    </p>
+                    
+                    <p>
+                        Gender:
+                        <input type="radio" name="gender" value="Male" ngModel /> Male
+                        <input type="radio" name="gender" value="Female" ngModel /> Female
+                        <input type="radio" name="gender" value="Other" ngModel /> Other
+                    </p>
+    
+                    <p>
+                        Favorite Color:
+                        <input type="color" name="favoriteColor" ngModel />
+                    </p>
+    
+                    <p>
+                        Select Month of Joining:
+                        <input type="month" name="joiningMonth" ngModel />
+                    </p>
+    
+                    <p>
+                        Enter your Mobile Number:
+                        <input type="tel" name="mobile" ngModel />
+                    </p>
+    
+                    <p>
+                        Choose your Working Hours:
+                        <input type="time" name="workingHours" ngModel />
+                    </p>
+    
+                    <p>
+                        Rate Your Experience (1-10):
+                        <input type="range" min="1" max="10" name="experienceRating" ngModel />
+                    </p>
+    
+                    <p>
+                        Search Your City:
+                        <input type="search" name="searchCity" ngModel />
+                    </p>
+    
+                    <p>
+                        Enter your Website URL:
+                        <input type="url" name="website" ngModel />
+                    </p>
+    
+                    <p>
+                        Enter your Password:
+                        <input type="password" name="password" ngModel />
+                    </p>
+                    <p>
+                        Upload Resume:
+                        <input name="resume" type="file" ngModel />
+                    </p>
+                    
+    
                 </div>
                 <input type="submit" value="submit" class="btn btn-success mx-1" />
                 <input type="reset" value="Clear" class="btn btn-danger mx-1" />

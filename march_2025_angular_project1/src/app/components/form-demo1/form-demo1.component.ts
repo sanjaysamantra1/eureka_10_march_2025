@@ -12,4 +12,5 @@ import { FormsModule } from '@angular/forms';
 export class FormDemo1Component {
   name: string = '';
   age: number = 0;
+  age1: number = 0;
 }
