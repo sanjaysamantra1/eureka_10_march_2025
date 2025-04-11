@@ -1,0 +1,20 @@
+<p>message1 works!</p>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        @if (messages.length > 0) {
+            @for (msg of messages; track $index) {
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>{{msg.text}}</td>
+                </tr>
+            }
+        } @else {
+            <tr>
+                <td colspan="2">
+                    <h1>No Messages to display</h1>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
