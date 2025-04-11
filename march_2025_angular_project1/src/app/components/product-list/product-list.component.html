@@ -27,7 +27,9 @@
                         Rating: {{product.rating.rate}}
                         <fa-icon [icon]="faStar"></fa-icon>
                     </p>
-                    <a href="#" class="btn btn-secondary mx-1">Details</a>
+                    <button class="btn btn-primary mx-2" [routerLink]="['/productdetails']"
+                        [queryParams]="{id:product.id,title:product.title,price:product.price}">
+                        Details</button>
                     <button class="btn btn-primary" (click)="addToCart(product)">Add To cart</button>
                 </div>
             </div>
