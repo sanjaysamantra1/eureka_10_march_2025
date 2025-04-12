@@ -1,0 +1,88 @@
+<div class="employees-crud-container">
+    <h2>Employees CRUD</h2>
+    
+    <!-- Debug Info -->
+    <div *ngIf="isEditing" class="debug-info">
+      <h4>Debug Info (Edit Mode)</h4>
+      <p>Current Employee ID: {{ currentEmployeeId }}</p>
+      <pre>Form Data: {{ employeeForm | json }}</pre>
+    </div>
+  
+    <!-- Employee Form -->
+    <div class="form-section">
+      <h3>{{ isEditing ? 'Edit Employee' : 'Add New Employee' }}</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>First Name: *</label>
+          <input type="text" [(ngModel)]="employeeForm.firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name:</label>
+          <input type="text" [(ngModel)]="employeeForm.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+          <label>Email: *</label>
+          <input type="email" [(ngModel)]="employeeForm.email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <select [(ngModel)]="employeeForm.gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Salary:</label>
+          <input type="text" [(ngModel)]="employeeForm.sal" name="sal">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">{{ isEditing ? 'Update' : 'Add' }}</button>
+          <button type="button" class="btn-secondary" (click)="resetForm()" *ngIf="isEditing">Cancel</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Employee List -->
+    <div class="list-section">
+      <h3>Employee List</h3>
+      @if (isLoading) {
+        <div class="loading">Loading employees...</div>
+      } @else {
+        @if (employees.length > 0) {
+          <table class="employees-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Salary</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (emp of employees; track emp.id) {
+                <tr>
+                  <td>{{ emp.id || '-' }}</td>
+                  <td>{{ emp.firstName || '-' }}</td>
+                  <td>{{ emp.lastName || '-' }}</td>
+                  <td>{{ emp.email || '-' }}</td>
+                  <td>{{ emp.gender || '-' }}</td>
+                  <td>{{ emp.sal || '-' }}</td>
+                  <td class="actions">
+                    <button (click)="onEdit(emp)" class="btn-edit">Edit</button>
+                    <button (click)="onDelete(emp.id)" class="btn-delete">Delete</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        } @else {
+          <div class="no-data">No employees found.</div>
+        }
+      }
+    </div>
+  </div>

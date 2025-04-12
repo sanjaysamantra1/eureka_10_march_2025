@@ -1,0 +1,17 @@
+<h2 class="text-center">Let's Learn Effect</h2>
+<div class="border text-center">
+    <h4>User Id: {{userId()}}</h4>
+    <button class="btn btn-primary" (click)="incrementUserId()">Increment</button>
+
+    <div class="col-sm-4 offset-4 mt-2">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{userData.username}}</h5>
+                <p class="card-text">Name: {{userData.name}}</p>
+                <p class="card-text">Email: {{userData.email}}</p>
+                <p class="card-text">Phone: {{userData.phone}}</p>
+                <p class="card-text">City: {{userData.address.city}}</p>
+            </div>
+        </div>
+    </div>
+</div>

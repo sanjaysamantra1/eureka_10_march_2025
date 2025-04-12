@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <h2>Employee List</h2>
+    
+    <div class="form-group mb-3">
+      <label for="employeeFilter">Filter Employees:</label>
+      <select 
+        id="employeeFilter" 
+        class="form-control" 
+        [(ngModel)]="selectedFilter"
+        (change)="filterEmployees()">
+        <option value="allEmployees">All Employees</option>
+        <option value="maleEmployees">Male Employees</option>
+        <option value="femaleEmployees">Female Employees</option>
+      </select>
+    </div>
+  
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.position }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

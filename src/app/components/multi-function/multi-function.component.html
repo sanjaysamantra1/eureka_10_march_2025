@@ -1,0 +1,74 @@
+<!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the 
+paragraph -->
+
+<p *ngIf="isVisible">Don't Buy This ****</p>
+
+<button (click) ="toggleVisiblity()">{{buttonText}}</button>
+
+
+<button (click) = "chooseGender()">{{Gender}}</button>
+
+<p *ngIf = "chooseGen">Products</p>
+
+<!-- Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters. -->
+
+<textarea maxlength="100" placeholder="Type Something max 100 char"
+[(ngModel)]="userInput"
+(input)="updateRemaining()"></textarea>
+
+<p> Remaining characters: {{remainingChars}}</p>
+
+<!-- Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+
+<select [(ngModel)]="selectedState">
+    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+  </select>
+  
+  <!-- Display selected state -->
+  <p *ngIf="selectedState">You selected: {{ selectedState }}</p>
+
+<!-- have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+
+<div class="arithmetic-section">
+    <h3>Arithmetic Operations</h3>
+    
+    <div class="input-group">
+      <input type="number" [(ngModel)]="number1" placeholder="First number">
+      <input type="number" [(ngModel)]="number2" placeholder="Second number">
+    </div>
+    
+    <select [(ngModel)]="selectedOperation">
+      <option value="+">Addition (+)</option>
+      <option value="-">Subtraction (-)</option>
+      <option value="*">Multiplication (*)</option>
+      <option value="/">Division (/)</option>
+    </select>
+    
+    <button (click)="calculate()" class="calculate-btn">Calculate</button>
+    
+    <div *ngIf="result !== null" class="result">
+      <p>Result: {{ number1 }} {{ selectedOperation }} {{ number2 }} = {{ result }}</p>
+    </div>
+
+    <!-- create a input box, toggle the type of that input box to (text/password) -->
+<div>
+<input [type]="showPassword ? 'text' : 'password'" 
+            [(ngModel)] = "passwordValue"
+            placeholder="Enter your password">
+
+<button (click)="togglePassword()">
+    {{ showPassword ? 'Hide' : 'Show' }} Password
+    </button>
+</div>
+
+<!-- create a counter example with 3 controls(increment,decrement,reset) -->
+
+<div>
+    <h3>Current Count: {{count}}</h3>
+<button (click) = "counterIncrement()">Increment</button>
+ <button (click) = "counterDecrement()">Decrement</button>
+ <button (click) = "counterReset()">Reset</button>
+</div> 
+
+
+

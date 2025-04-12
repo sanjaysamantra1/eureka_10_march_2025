@@ -1,0 +1,103 @@
+.worker-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+  
+  .btn-add {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-add:hover {
+    background-color: #218838;
+  }
+  
+  .btn-add:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .btn-view {
+    background-color: #17a2b8;
+    color: white;
+    margin-right: 5px;
+  }
+  
+  .btn-view:hover {
+    background-color: #138496;
+  }
+  
+  .btn-remove {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-remove:hover {
+    background-color: #c82333;
+  }
+  
+  .worker-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .worker-table th, .worker-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .worker-table th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .worker-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .actions {
+    white-space: nowrap;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }

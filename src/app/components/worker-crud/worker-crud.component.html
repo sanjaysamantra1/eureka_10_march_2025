@@ -1,0 +1,80 @@
+<div class="worker-container">
+    <h2>Worker Management System</h2>
+  
+    <!-- Add Worker Form -->
+    <div class="form-container">
+      <h3>Add New Worker</h3>
+      <form (ngSubmit)="addWorker()" #workerForm="ngForm">
+        <div class="form-group">
+          <label>Full Name:</label>
+          <input type="text" class="form-control" 
+                 [(ngModel)]="newWorker.name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Role:</label>
+          <select class="form-control" 
+                  [(ngModel)]="newWorker.role" name="role" required>
+            <option *ngFor="let role of availableRoles" [value]="role">
+              {{ role }}
+            </option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Shift:</label>
+          <select class="form-control" 
+                  [(ngModel)]="newWorker.shift" name="shift" required>
+            <option *ngFor="let shift of availableShifts" [value]="shift">
+              {{ shift }}
+            </option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Hourly Wage ($):</label>
+          <input type="number" class="form-control" 
+                 [(ngModel)]="newWorker.hourlyWage" name="hourlyWage" 
+                 min="15" step="0.25" required>
+        </div>
+        
+        <button type="submit" class="btn btn-add" 
+                [disabled]="!workerForm.form.valid">
+          Add Worker
+        </button>
+      </form>
+    </div>
+  
+    <!-- Workers Table -->
+    <div class="table-responsive">
+      <table class="worker-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Shift</th>
+            <th>Wage/Hour</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let worker of workers">
+            <td>{{ worker.id }}</td>
+            <td>{{ worker.name }}</td>
+            <td>{{ worker.role }}</td>
+            <td>{{ worker.shift }}</td>
+            <td>${{ worker.hourlyWage.toFixed(2) }}</td>
+            <td class="actions">
+              <button class="btn btn-view" (click)="viewWorkerDetails(worker)">
+                View
+              </button>
+              <button class="btn btn-remove" (click)="deleteWorker(worker)">
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

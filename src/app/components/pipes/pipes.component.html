@@ -1,0 +1,67 @@
+<h2>Number Conversion</h2>
+
+<!-- Ordinal input -->
+<div>
+  <label for="numInput">Enter a number:</label>
+  <input type="number" [(ngModel)]="inputNumber" id="numInput">
+  <p *ngIf="inputNumber">Ordinal: {{ inputNumber | ordinal }}</p>
+</div>
+
+<!-- Roman input -->
+<div>
+  <label for="roNum">Enter Number to Convert:</label>
+  <input type="number" [(ngModel)]="roman" id="roNum">
+  <p *ngIf="roman">Roman Number: {{ roman | roman }}</p>
+</div>
+
+<!-- 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+   input : 04-06-2020
+   output : 5 years old -->
+
+   <div>
+    <label for="dob">Enter the Date of Birth</label>
+    <input type="date" id="dob" [(ngModel)]="dateOfBirth">
+    <p>Age: {{ dateOfBirth | age }}</p>
+  </div>
+
+  <!-- salutation -->
+
+  <h2>Employee List</h2>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name | salutation:emp.gender }}</td>
+      <td>{{ emp.position }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- filter -->
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search employees...">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees | filter:searchText">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.position }}</td>
+    </tr>
+  </tbody>
+</table>

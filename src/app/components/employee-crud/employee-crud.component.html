@@ -1,0 +1,25 @@
+
+
+
+  <div class="container border p-2 mt-2">
+    <h1>Employee Management System</h1>
+    <div class="col-sm-8">
+    <app-employee-add (employeeAdded)="addEmployee($event)"></app-employee-add>
+  </div>
+  <div class="col-sm-8">
+    <app-employee-table 
+      [employeeData]="employees" (deleteEmployee)="deleteEmployee($event)">
+    </app-employee-table>
+  </div>
+  </div>
+
+
+<!-- <div>
+    <h2>Employee List</h2>
+    <ul>
+      <li *ngFor="let employee of employees">
+       {{employee.id}} . {{ employee.name }} - {{ employee.position }}
+      </li>
+    </ul>
+  </div> -->
+

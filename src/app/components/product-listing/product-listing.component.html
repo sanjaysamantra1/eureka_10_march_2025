@@ -1,0 +1,47 @@
+<div class="product-listing">
+    <h1>Product Catalog</h1>
+  
+    <div class="controls">
+      <input
+        type="text"
+        placeholder="You Name It We Don't Have It, We Only Got What We Have"
+        [(ngModel)]="searchQuery"
+        (input)="applySearch()"
+      />
+  
+      <select [(ngModel)]="sortOrder" (change)="applySort()">
+        <option value="none">Default</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+  
+    <div class="product-grid">
+      @for (product of paginatedProducts; track product.id) {
+        <div class="product-card">
+          <img [src]="product.image" [alt]="product.title">
+          <div class="product-card-content">
+            <span class="category">{{product.category}}</span>
+            <h3>{{product.title}}</h3>
+            <p class="price">${{product.price.toFixed(2)}}</p>
+            <div class="rating">
+              ⭐ {{product.rating.rate}} ({{product.rating.count}})
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  
+    @if (totalPages > 1) {
+      <div class="pagination">
+        @for (page of [].constructor(totalPages); track $index) {
+          <button
+            (click)="currentPage = $index + 1"
+            [class.active]="currentPage === $index + 1"
+          >
+            {{$index + 1}}
+          </button>
+        }
+      </div>
+    }
+  </div>

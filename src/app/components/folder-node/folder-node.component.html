@@ -1,0 +1,11 @@
+<li>
+  <span (click)="toggle()" style="cursor: pointer;" [style.fontWeight]="node.isFolder ? 'bold' : 'normal'">
+    {{ node.isFolder ? (isExpanded ? '📂' : '📁') : '📄' }} {{ node.name }}
+  </span>
+
+  <ul *ngIf="node.items?.length && isExpanded">
+    <li *ngFor="let child of node.items">
+      <app-folder-node [node]="child"></app-folder-node>
+    </li>
+  </ul>
+</li>

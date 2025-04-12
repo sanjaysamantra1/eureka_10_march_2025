@@ -1,0 +1,28 @@
+<div class="table-container">
+    <h2>Employee List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (employee of employeeData; track employee.id) {
+          <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.position }}</td>
+            <td>{{ employee.department }}</td>
+            <td>{{ employee.salary | currency }}</td>
+          <td>
+          <button class="delete-btn" (click)="onDelete(employee.id)">Delete</button>
+        </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>

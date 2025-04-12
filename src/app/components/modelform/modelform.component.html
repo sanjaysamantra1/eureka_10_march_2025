@@ -1,0 +1,23 @@
+<form [formGroup]="registerForm">
+    <p>FirstName:</p>
+    <input type="text" formControlName="firstname">
+
+    <p>LastName</p>
+    <input type="text" formControlName= "lastname">
+
+    <div formGroupName="address">
+        <p>Street:</p>
+        <input type="text" formControlName="street">
+
+        <p>City:</p>
+        <input type="text" formControlName="city">
+
+        <p>PinCode:</p>
+        <input type="text" formControlName="pincode">
+
+    </div>
+
+    <button>Submit</button>
+
+</form>
+<h2>{{registerForm.value | json}}</h2>
