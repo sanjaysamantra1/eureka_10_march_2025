@@ -1,0 +1,18 @@
+
+<div class="row">
+        <div class="col-sm-3 offset-4 mt-3">
+            <div class="card mt-2">
+                <img src="{{product.image}}" style="height: 200px; width: 200px; margin-left: auto; margin-right: auto;" class="mt-2" alt="...">
+                <div class="card-body">
+                    <h5>{{product.category}}</h5>
+                    <p class="card-text text-truncate">{{product.title}}</p>
+                    <p class="card-text">Id: {{product.id}}</p>
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text">Price: {{product.price}}</p>
+                    <p class="card-text">
+                        Rating: {{product.rating.rate}}
+                    </p>
+                </div>
+            </div>
+        </div>
+</div>

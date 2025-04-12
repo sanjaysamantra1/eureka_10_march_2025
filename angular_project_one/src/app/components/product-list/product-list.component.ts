@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import productArr from './product_data';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   imports: [
       NgxPaginationModule,
-      FormsModule
+      FormsModule,
+      RouterLink
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'

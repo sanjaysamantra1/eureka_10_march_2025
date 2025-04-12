@@ -27,7 +27,7 @@
                         <p class="card-text">
                             Rating: {{product.rating.rate}}
                         </p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                        <a [routerLink]= "['/productdetails',product.id]" class="btn btn-primary">Details</a>
                     </div>
                 </div>
             </div>

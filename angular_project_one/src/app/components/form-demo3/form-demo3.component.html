@@ -1,0 +1,43 @@
+<form [formGroup]="registerForm">
+    <div>
+        <div class="mb-2">
+            <label>First Name:</label><br>
+            <input formControlName="firstName" type="text"  minlength="4" required ngModel/><br>
+        </div>
+        <div class="mb-2">
+            <label>Middle Name:</label><br>
+            <input formControlName="middleName" type="text" placeholder="(optional)" ngModel/>
+        </div>
+        <div class="mb-2">
+            <label>Last Name:</label><br>
+            <input formControlName="lastName" type="text"  required ngModel/><br>
+        </div>
+        <div class="mb-2">
+            <label>Email:</label><br>
+            <input required formControlName="email" type="email" ngModel ><br>
+        </div>
+        <div class="mb-2">
+            <label>Password</label><br>
+            <input minlength="7" formControlName="pass" ngModel type="password" /><br>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div formGroupName="Address">
+            <p>Address</p>
+        </div>
+        <div>
+                <label>Line1</label><br>
+                <input required formControlName="line1" ngModel /><br>
+                <span class="text-danger" >This field is mandatory</span>
+            </div>
+            <div>
+                <label>Line2</label><br>
+                <input formControlName="line2" ngModel/>
+            </div>
+            <div>
+                <label>City</label><br>
+                <input required formControlName="city" ngModel /><br>
+                <span class="text-danger" >Please provide city name</span>
+            </div>
+    </div>
+</form>

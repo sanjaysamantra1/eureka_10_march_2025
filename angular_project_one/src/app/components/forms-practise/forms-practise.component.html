@@ -1,0 +1,113 @@
+<div class="bg-container">
+    <div class="text-center m-4">
+        <h4 >Application Form</h4>
+    </div>
+    <div class="mt-2  d-flex flex-row justify-content-center">
+        <form #myForm="ngForm" (submit)="dataOnMyForm(myForm.value)">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-2">
+                        <label>First Name:</label><br>
+                        <input name="firstName" type="text" #fname="ngModel" minlength="4" required ngModel/><br>
+                        <span class="text-danger" *ngIf="fname.hasError('required')">FirstName is required</span>
+                        <span class="text-danger" *ngIf="fname.hasError('minlength')">FirstName should have minimum of 5 characters</span>
+                    </div>
+                    <div class="mb-2">
+                        <label>Middle Name:</label><br>
+                        <input name="middleName" type="text" placeholder="(optional)" ngModel/>
+                    </div>
+                    <div class="mb-2">
+                        <label>Last Name:</label><br>
+                        <input name="lastName" type="text" #lname="ngModel" required ngModel/><br>
+                        <span class="text-danger" *ngIf="fname.hasError('required')">LastName is required</span>
+                    </div>
+                    <div class="mb-2">
+                        <label>Gender</label><br>
+                        <input type="radio"/>
+                        <label class="mx-1">Male</label>
+                        <input type="radio"/>
+                        <label class="mx-1">Female</label>
+                    </div>
+                    <div class="mb-2">
+                        <label>Email:</label><br>
+                        <input required name="email" type="email" ngModel #email=ngModel><br>
+                        <span class="text-danger" *ngIf="email.hasError('email')">Please provide a valid email</span>
+                    </div>
+                    <div class="mb-2">
+                        <label>Password</label><br>
+                        <input minlength="7" name="pass" ngModel type="password" #password="ngModel"/><br>
+                        <span class="text-danger" *ngIf="password.hasError('minlength')">Password should have minimum 7 characters</span>
+                    </div>
+                    <div class="mb-2">
+                        <label>Confirm Password</label><br>
+                        <input minlength="7" name="cPass" ngModel type="password" #cpass="ngModel"/><br>
+                        <span class="text-danger" *ngIf="cpass.hasError('minlength')">Password should have minimum 7 characters</span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div ngModelGroup="Address">
+                        <p>Address</p>
+                        <div>
+                            <label>Line1</label><br>
+                            <input required name="line1" ngModel #line1="ngModel"/><br>
+                            <span class="text-danger" *ngIf="line1.hasError('required')">This field is mandatory</span>
+                        </div>
+                        <div>
+                            <label>Line2</label><br>
+                            <input name="line2" ngModel/>
+                        </div>
+                        <div>
+                            <label>City</label><br>
+                            <input required name="city" ngModel #city="ngModel"/><br>
+                            <span class="text-danger" *ngIf="city.hasError('required')">Please provide city name</span>
+                        </div>
+                        <div class="mt-2">
+                            <label>State</label>
+                            <select name="state" ngModel class="mx-1" >
+                                <option >PA</option>
+                                <option >VA</option>
+                                <option >NY</option>
+                                <option >NJ</option>
+                                <option >OH</option>
+                                <option >MI</option>
+                                <option >FL</option>
+                                <option >TX</option>
+                                <option >CA</option>
+                                <option >NC</option>
+                                <option >SC</option>
+                                <option >AL</option>
+                                <option >AK</option>
+                                <option >IL</option>
+                                <option >DC</option>
+                                <option >MD</option>
+                            </select>
+                            <label class="px-2">Zip</label>
+                            <input style="width: 70px;"/>
+                        </div>
+                        <div class="mt-2">
+                            <label>Do you need sponsorship?</label><br>
+                            <label class="me-1">Yes: </label>
+                            <input type="checkbox" class="me-4">
+                            <label class="me-1">No: </label>
+                            <input type="checkbox" class="me-4">
+                        </div>
+                        <div class="mt-2">
+                            <label>Mention your skills and abilities</label><br>
+                            <textarea maxlength="50" minlength="20" style="height: 40px;" name="skills" ngModel #skills="ngModel"></textarea><br>
+                            <span class="text-danger" *ngIf="skills.hasError('minlength')">Please mention your skills in atleast 20 characters</span>
+                            <!-- <span class="text-danger" *ngIf="skills.hasError('maxlength')">Reached your max length</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" value="submit">Submit</button>
+         </form>
+    </div>
+    <pre>
+        {{myForm.value | json}}
+    </pre>
+</div>
+
+
+
+
