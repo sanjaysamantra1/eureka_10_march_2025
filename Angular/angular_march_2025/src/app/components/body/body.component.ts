@@ -15,6 +15,8 @@ import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.c
 import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component';
 import { Messsage1Component } from '../messsage1/messsage1.component';
 import { Messsage2Component } from '../messsage2/messsage2.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
+import { FormDemo2Component } from '../form-demo2/form-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -33,8 +35,10 @@ import { Messsage2Component } from '../messsage2/messsage2.component';
     // ObservableDemo2Component,
     // ObservableDemo3Component,
     // SubjectDemo1Component,
-    Messsage1Component,
-    Messsage2Component,
+    // Messsage1Component,
+    // Messsage2Component,
+    // FormDemo1Component,
+    FormDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
