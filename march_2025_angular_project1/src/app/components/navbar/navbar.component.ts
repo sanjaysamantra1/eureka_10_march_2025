@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,5 +14,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  userRole: string;
 
+  constructor(private userService: UserService) {
+    this.userRole = this.userService.getUserRole();
+  }
 }

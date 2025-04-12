@@ -25,4 +25,9 @@ export class UserService {
       })
     );
   }
+
+  userRole: string = 'student';
+  getUserRole() {
+    return this.userRole;
+  }
 }

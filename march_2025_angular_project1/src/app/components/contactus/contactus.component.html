@@ -1,1 +1,25 @@
 <h3 class="text-center">This is Contact-us Component</h3>
+<hr />
+
+<div class="row">
+    <div class="col-sm-4 offset-4 p-2 border text-center">
+        <form #singUpForm="ngForm" (submit)="onSubmit(singUpForm)">
+            <p>
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" ngModel>
+            </p>
+            <p>
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" ngModel>
+            </p>
+            <p>
+                <label for="email">Email </label>
+                <input type="text" id="email" name="email" ngModel>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+            <p>has changes? {{hasChanges.toString()}}</p>
+        </form>
+    </div>
+</div>
