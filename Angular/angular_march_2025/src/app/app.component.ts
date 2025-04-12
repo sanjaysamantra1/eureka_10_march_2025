@@ -30,7 +30,7 @@ import { MainComponent } from './components/main/main.component';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    // NavbarComponent,
+    NavbarComponent,
     // CategoriesComponent,
     // CarouselComponent,
     BodyComponent,
