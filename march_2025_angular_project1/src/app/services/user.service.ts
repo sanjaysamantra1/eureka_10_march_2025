@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { IUser } from '../models/iuser';
 import { User } from '../models/user';
 
 @Injectable({
@@ -26,7 +25,7 @@ export class UserService {
     );
   }
 
-  userRole: string = 'student';
+  userRole: string = 'teacher';
   getUserRole() {
     return this.userRole;
   }

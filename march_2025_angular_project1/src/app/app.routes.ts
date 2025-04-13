@@ -6,7 +6,6 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PermanentJobsComponent } from './components/permanent-jobs/permanent-jobs.component';
 import { ContractJobsComponent } from './components/contract-jobs/contract-jobs.component';
@@ -34,7 +33,8 @@ export const routes: Routes = [
     { path: 'userdetails/:id', component: UserDetailsComponent },
     {
         path: 'products',
-        component: ProductListComponent,
+        loadComponent: () =>
+            import('./components/product-list/product-list.component').then((x) => x.ProductListComponent),
         canActivate: [teacherGuard]
     },
     { path: 'productdetails', component: ProductDetailsComponent },
