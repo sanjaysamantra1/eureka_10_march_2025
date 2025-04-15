@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.css'
 })

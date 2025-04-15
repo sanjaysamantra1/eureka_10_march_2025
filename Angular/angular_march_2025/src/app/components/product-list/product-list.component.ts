@@ -4,13 +4,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   imports: [
     NgxPaginationModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'

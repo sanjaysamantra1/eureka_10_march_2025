@@ -30,7 +30,11 @@
                             <b>Rating: </b>{{product.rating.rate}}
                             <fa-icon [icon]="faStar"></fa-icon>
                         </p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                        <button [routerLink]="['/productdetails']"
+                            [queryParams]="{id: product.id, title: product.title, price: product.price, description: product.description}"
+                        >
+                            Details
+                        </button>
                     </div>
                 </div>
             </div>
