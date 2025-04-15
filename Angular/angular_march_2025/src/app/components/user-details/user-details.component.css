@@ -1,0 +1,8 @@
+.card-img-top {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}

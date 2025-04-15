@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 // import * as data from './users.json';
 import usersData from './users';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
