@@ -1,0 +1,50 @@
+<div class="border p-2 m-2">
+  <h4>My Name is: {{myName}}</h4>
+
+  <!-- this is property binding and here InnerHtml is property  -->
+  <h4>My Name is: <span [innerHTML]="myName"></span></h4> 
+  <!-- Other way to write the property binding -->
+  <h4>My Name is: <span bind-innerHTML="myName"></span></h4>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUfQIHZlpfo9wkqtnTvc3SIApFoSzUhBPPActtiSLg2Vd9dfUqMKPbsfs&s">
+  <!-- below is using the property binding -->
+  <img src="{{img_url}}">
+  <!-- below 2 line displayed using the property binding -->
+  <img [src]="img_url">
+  <img bind-src="img_url">
+  <div class="mt-2">
+        <p>Plain HTML : <input value="Ajith" placeholder="Enter Your Name"/></p>
+        <p>InterPolation Binding : <input value="{{myName}}" placeholder="Enter Your Name"/></p>
+        <p>Property Binding : <input [value]="myName"/></p>
+        <p>Property Binding : <input bind-value="myName"></p>
+        <p>Two Way Binding : <input [(ngModel)]="myName"></p>
+        <p>Two Way Binding : <input bindon-ngModel="myName"></p>
+
+  </div>
+
+  <div class="mt-2">
+    <button class="btn btn-success">Click Me</button>
+    <button class="btn btn-success mx-1" disabled>Click Me</button>
+    <!-- interpolation binding don't work for the boolean value -->
+    <button class="btn btn-success mx-1" disabled="{{flag}}">Click Me</button>
+    <button class="btn btn-success mx-1" [disabled]="flag">Click Me</button>
+    <button class="btn btn-success mx-1" bind-disabled="flag">Click Me</button>
+
+    <button class="btn btn-success mx-1" (click)="addToCart()">Add to cart</button>
+    <button class="btn btn-success mx-1" on-click="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="mt-2 p-2 border">
+      <h4>2 way data binding </h4>
+      <input type="number" [(ngModel)]="num1" class="mx-1">
+      <input type="number" [(ngModel)]="num2">
+      <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+      <div>Subtraction of {{num1}} and {{num2}} is {{num1-num2}}</div>
+      <div>Multiplication of {{num1}} and {{num2}} is {{num1*num2}}</div>
+      <h4>Template reference Variable</h4>
+      <input type="number" #num3 class="mx-1" id="num3" />
+        <input type="number" ref-num4 class="mx-1" />
+        <button (click)="calculateOnDemand(num3,num4)">Calculate On Demand</button>
+        <div>Addition of {{num3.value}} & {{num4.value}} is: {{additionResult}}</div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+<h3 class="text-center">Template Driven Form Assignment</h3>
+<hr />
+
+<div class="container">
+    <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)">
+        <div class="row g-3">
+
+            <!-- Column -1 -->
+            <div class="col-md-6">
+                <div>
+                    <label>First Name:</label>
+                    <input name="firstName" #fname="ngModel" ngModel required minlength="5" class="form-control" />
+                    <span class="text-danger" *ngIf="fname.hasError('required')">First Name is required</span>
+                    <span class="text-danger" *ngIf="fname.hasError('minlength')">Min 5 characters required</span>
+                </div>
+
+                <div >
+                    <label>Last Name:</label>
+                    <input name="lastName" ngModel class="form-control" />
+                </div>
+
+                <div>
+                    <label>Email:</label>
+                    <input name="email" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>City:</label>
+                    <input name="city" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>State:</label>
+                    <input name="state" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>Zipcode:</label>
+                    <input name="zipcode" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>Gender:</label><br />
+                    <label><input type="radio" name="gender" value="Male" ngModel required /> Male</label>
+                    <label class="ms-3"><input type="radio" name="gender" value="Female" ngModel required /> Female</label>
+                    <br />
+                    <span class="text-danger" *ngIf="myForm.controls['gender']?.errors?.['required']">Gender is required</span>
+                </div>
+
+                <div >
+                    <label>Marital Status:</label>
+                    <select name="maritalStatus" ngModel required #marital="ngModel" class="form-control">
+                        <option value="">Select</option>
+                        <option>Single</option>
+                        <option>Married</option>
+                    </select>
+                    <span class="text-danger" *ngIf="marital.hasError('required')">Please select Marital Status</span>
+                </div>
+
+                <div >
+                    <label>Date of Birth:</label>
+                    <input type="date" name="dob" ngModel required #dob="ngModel" class="form-control" />
+                    <span class="text-danger" *ngIf="dob.hasError('required')">DOB is required</span>
+                </div>
+
+                <div >
+                    <label>Phone Number:</label>
+                    <input name="phone" ngModel required pattern="^[0-9]{10}$" #phone="ngModel" class="form-control" />
+                    <span class="text-danger" *ngIf="phone.hasError('required')">Phone is required</span>
+                    <span class="text-danger" *ngIf="phone.hasError('pattern')">Must be 10 digits</span>
+                </div>
+            </div>
+
+            <!-- Column - 2 -->
+            <div class="col-md-6">
+                <div >
+                    <label>Nationality:</label>
+                    <select name="nationality" ngModel required #nat="ngModel" class="form-control">
+                        <option value="">Select</option>
+                        <option>American</option>
+                        <option>Indian</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="text-danger" *ngIf="nat.hasError('required')">Nationality is required</span>
+                </div>
+
+                <div >
+                    <label>Hobbies:</label><br />
+                    <label><input type="checkbox" name="hobbies" value="Reading" ngModel /> Reading</label>
+                    <label class="ms-2"><input type="checkbox" name="hobbies" value="Traveling" ngModel /> Traveling</label>
+                    <label class="ms-2"><input type="checkbox" name="hobbies" value="Sports" ngModel /> Sports</label>
+                </div>
+
+                <div >
+                    <label>Education Qualification:</label>
+                    <select name="education" ngModel required #edu="ngModel" class="form-control">
+                        <option value="">Select</option>
+                        <option>High School</option>
+                        <option>Bachelor's</option>
+                        <option>Master's</option>
+                        <option>PhD</option>
+                    </select>
+                    <span class="text-danger" *ngIf="edu.hasError('required')">Education is required</span>
+                </div>
+
+                <div >
+                    <label>Experience (years):</label>
+                    <input type="number" name="experience" ngModel required min="0" #exp="ngModel" class="form-control" />
+                    <span class="text-danger" *ngIf="exp.hasError('required')">Experience is required</span>
+                    <span class="text-danger" *ngIf="exp.hasError('min')">Cannot be negative</span>
+                </div>
+
+                <div >
+                    <label>LinkedIn Profile:</label>
+                    <input type="url" name="linkedin" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>GitHub Profile:</label>
+                    <input type="url" name="github" ngModel class="form-control" />
+                </div>
+
+                <div >
+                    <label>Describe Yourself:</label>
+                    <textarea name="description" rows="3" ngModel required #description="ngModel" class="form-control"></textarea>
+                </div>
+
+                <div >
+                    <label>Resume Upload:</label>
+                    <input type="file" name="resume" ngModel required #resume="ngModel" class="form-control" />
+                    <span class="text-danger" *ngIf="resume.hasError('required')">Resume is required</span>
+                </div>
+
+                <div >
+                    <label>Willing to Relocate?</label>
+                    <select name="relocate" ngModel required #relocate="ngModel" class="form-control">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <span class="text-danger" *ngIf="relocate.hasError('required')">This field is required</span>
+                </div>
+            </div>
+
+          
+            <div class="col-12 text-center mt-3">
+                <button type="submit" class="btn btn-success mx-1">Submit</button>
+                <button type="reset" class="btn btn-danger mx-1">Clear</button>
+            </div>
+
+            <!-- <div class="col-12 mt-3">
+                <pre>{{ myForm.value | json }}</pre>
+            </div> -->
+        </div>
+    </form>
+</div>

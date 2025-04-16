@@ -1,0 +1,29 @@
+<!-- Dropdown to filter employees by gender -->
+<select [(ngModel)]="selected" (change)="filteredEmployees()">
+    <option value="" disabled>Select</option> 
+    <option value="allEmployees">All Employees</option>
+    <option value="Female">Female Employees</option>
+    <option value="Male">Male Employees</option>
+  </select>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.employee_id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.department }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

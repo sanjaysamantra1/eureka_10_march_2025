@@ -1,0 +1,31 @@
+.card {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 14px;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  td {
+    padding: 8px;
+  }
+  
+  /* Button */
+  button {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,22 @@
+.folder-icon {
+  color: yellow;
+  /* font-size: 24px;
+  margin-right: 5px; */
+}
+.file-icon{
+  color: rgb(185, 176, 176)
+}
+
+.folder {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .file {
+    padding-left: 10px;
+    margin-left: 5px;
+  }
+  .children {
+    margin-left: 20px;
+  }
+  

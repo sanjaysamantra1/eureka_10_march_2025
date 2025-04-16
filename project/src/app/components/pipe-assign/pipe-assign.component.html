@@ -1,0 +1,66 @@
+<h3>Q1. Ordinal</h3>
+
+  <p>{{ 21 | ordinal }}</p>  
+  <p>{{ 22 | ordinal }}</p> 
+  <p>{{ 23 | ordinal }}</p>
+  <p>{{ 24 | ordinal }}</p>  
+  <p>{{ 25 | ordinal }}</p> 
+  <p>{{ 32 | ordinal }}</p>
+  <p>{{ 33 | ordinal }}</p>  
+  <p>{{ 28 | ordinal }}</p> 
+  <p>{{ 29 | ordinal }}</p>
+
+  <div>
+    <h3>Q2. Roman Numeral Conversion</h3>
+    <ul>
+      <li *ngFor="let num of numbersToConvert">
+        {{ num }} : {{ num | roman }}
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <p>Birth Date: 04-06-2020</p>
+    <p>Age: {{ '04-06-2020' | age }}</p>
+  
+    <p>Birth Date: 12-12-2022</p>
+    <p>Age: {{ '12-12-2022' | age }}</p>
+  </div>
+
+  <div>
+    <h3>Q4. Employee List with Salutation</h3>
+
+    <div class="list-group">
+      <div *ngFor="let employee of employees" class="list-group-item">
+        <strong>{{ employee.name | saluation:employee.gender }}</strong> 
+        <span>- {{ employee.position }}</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Q5.Employee List with Search</h3>
+<div>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="searchTerm"
+  placeholder="Search by name"
+  style="margin-bottom: 20px"
+/>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees | employees:searchTerm">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.position }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

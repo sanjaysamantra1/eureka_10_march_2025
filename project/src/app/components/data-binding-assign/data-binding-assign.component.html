@@ -1,0 +1,58 @@
+<div>
+    <button (click)="toggleParagraph()">Toggle Paragraph</button>
+    <p *ngIf="isParagraphVisible">This is a paragraph that can be shown or hidden.</p>
+</div>
+
+
+
+<div>
+    <textarea [(ngModel)]="userInput" maxlength="100" (ngModelChange)="updateRemainingCharacters()"></textarea>
+    <p>Remaining Characters: {{ remainingCharacters }}</p>
+  </div>
+
+
+  <div>
+    <select [(ngModel)]="selectedState">
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+    <p>You selected: {{ selectedState }}</p>
+  </div>
+
+
+  <div>
+    <input [(ngModel)]="num1" type="number">
+    <input [(ngModel)]="num2" type="number">
+    <select [(ngModel)]="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <button class="btn btn-primary mx-1" (click)="calculateResult()">Calculate</button>
+    <p>Result: {{ result }}</p>
+  </div>
+
+
+  <div>
+    <input [type]="isPasswordVisible ?'text':'password'" [(ngModel)]="userInput">
+    <button (click)="togglePasswordVisibility()">{{isPasswordVisible?'Hide':'Show'}}</button>
+  </div>
+
+  <div>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+    <p>Counter: {{ counter }}</p>
+  </div>
+
+  <div class="mt-2 p-2 border">
+    <button (click)="toggleTheme()">{{ isDarkTheme ? 'Dark' : 'Light' }}</button>
+    <p>The current theme is black/light </p>
+  </div>
+  
+  
+  
+  
+  
+  
+

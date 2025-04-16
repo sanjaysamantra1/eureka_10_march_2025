@@ -1,0 +1,135 @@
+<div class="border p-2 mt-1">
+    <h4 class="text-center">Let's Learn Directives</h4>
+
+    <div class="border p-2">
+        <div>Before Angular 17</div>
+        <p *ngIf="age>=18">Hey, you are {{age}} year old, You're eligible for voting</p>
+        <p *ngIf="age<18">Hey, you are {{age}} year old, Hence not eligible for voting</p>
+        
+        <div>After Angular 17</div>
+        @if(age>18){
+            <p>Hey, you are {{age}} year old, You're eligible for voting</p>
+        }@else{
+        <p>Hey, you are {{age}} year old, Hence not eligible for voting</p>
+        }
+
+        <div>Hidden:</div>
+        <p [hidden]="age<18">Hey, You are {{age}} years old,You are Eligible for voting</p>
+        <p [hidden]="age>=18">Hey, You are {{age}} years old, Hence You are Not Eligible for voting</p>
+    </div>
+
+    <div class="border p-2">
+        <div>Switch Case</div>
+        <div>Day Number is: {{dayNum}}</div>
+        @switch (dayNum) {
+            @case (1) { <h1>Monday</h1> }
+            @case (2) { <h1>Tuesday</h1> }
+            @case (3) { <h1>Wednesday</h1> }
+            @case (4) { <h1>Thursday</h1> }
+            @case (5) { <h1>Friday</h1> }
+            @case (6) { <h1>Saturday</h1> }
+            @case (7) { <h1>Sunday</h1> }
+            @default { <h1>Not a Valid number</h1>> }
+        } 
+    </div>
+    <div class="border p-2 mt-1">
+        <div>For Loop to Display state name</div>
+        <ol>
+            @for(state of statesArr;track $index){
+                <li [style.color]="$even?'red':'green'">{{state}}</li>
+            }
+        </ol>
+        <hr/>
+
+        <div>States DropDown</div>
+        <select [(ngModel)]="selectedState">
+            @for(state of statesArr; track $index){
+                <option>{{state}}</option>
+            }
+        </select>
+        <div>selected state is: {{selectedState}}</div>
+
+        <div>States DataList</div>
+        <input list="states" [(ngModel)]="selectedState" name="state" id="state">
+        <datalist id="states">
+            @for(state of statesArr;track $index){
+                <option>{{state}}</option> 
+            }
+        </datalist>
+        <div>selected state is: {{selectedState}}</div>
+        <hr/>
+
+        <div>States Table</div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <th>Sl no</th>
+                <th>state name</th>
+                <th>isFirst?</th>
+                <th>isLast?</th>
+                <th>isEven?</th>
+                <th>isOdd?</th>
+            </thead>
+            <tbody>
+                @for(state of statesArr;track $index){
+                    <tr [style.background-color]="$even?'red':'green'">
+                        <td>{{$index +1}}</td>
+                        <td>{{state}}</td>
+                        <td>{{$first}}</td>
+                        <td>{{$last}}</td>
+                        <td>{{$even}}</td>
+                        <td>{{$odd}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="border mt-2 p-2">
+        <div>Need of trackBy</div>
+    <table class="table table-bordered">
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="updateEmployees()">update employee</button>
+
+    <h4>Here after angular 17 track by is mandatory to write and it will write with $index or unique column in the table</h4>
+    <table class="table table-bordered">
+        <tbody>
+            @for(emp of employees;track emp.eId){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    </div>
+
+    <div class="my-2 p-2 border">
+        <h4>Apply Styles Conditionally using ngStyle</h4>
+        <input type="number" [(ngModel)]="num"/>
+        <div [style.color]="num%2==0?'green':'red'">Num value is {{num}}</div>
+        <p [ngStyle]="num%2==0?
+                {color:'green',border:'2px solid blue'}:
+                {color:'red',border:'5px dashed yellow'}">
+            Num value is {{num}}, NgStyle for multiple values </p>
+
+            <button class="btn" [ngClass]="num%2==0? 'btn-success':'btn-danger'">button changes dynamically</button>
+    </div>
+
+    <div class="mt-2 p-2 border">
+            <h4>Custom Directives: Number Only</h4>
+            <input numberonly />
+            <!-- input box is host element for number only directive -->
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<h3 class="text-center fw-bold">User CRUD App</h3>
+<hr />
+
+<!-- FETCH BUTTON -->
+@if (!dataFetched) {
+  <div class="text-center mb-3">
+    <button class="btn btn-primary" (click)="fetchUsers()">Fetch User Data</button>
+  </div>
+}
+
+<!-- LOADING SPINNER -->
+@if (isLoading) {
+  <div class="text-center mb-3">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="Loading..." />
+  </div>
+}
+
+<!-- USER FORM and  TABLE -->
+@if (!isLoading && dataFetched) {
+  <div class="card p-3 mb-4">
+    <form (ngSubmit)="submitForm()">
+      <div class="row g-2">
+        <div class="col-sm-4">
+          <input class="form-control" type="text" placeholder="Name" [(ngModel)]="formUser.name" name="name" required />
+        </div>
+        <div class="col-sm-4">
+          <input class="form-control" type="email" placeholder="Email" [(ngModel)]="formUser.email" name="email" required />
+        </div>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" placeholder="Phone" [(ngModel)]="formUser.phone" name="phone" required />
+        </div>
+        <div class="col-12 text-end mt-2">
+          <button class="btn btn-success" type="submit">{{ isEdit ? 'Update' : 'Add' }} User</button>
+          <button class="btn btn-secondary ms-2" type="button" (click)="resetForm()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user.id) {
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary me-2" (click)="editUser(user)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

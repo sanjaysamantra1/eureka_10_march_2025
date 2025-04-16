@@ -1,0 +1,22 @@
+<div *ngIf="projectStructure">
+    <ng-container *ngTemplateOutlet="renderNode; context: { $implicit: projectStructure }"></ng-container>
+</div>
+  
+  <ng-template #renderNode let-node>
+    <div class="folder-node">
+      <div *ngIf="node.isFolder" (click)="toggle(node)" class="folder">
+        <fa-icon [icon]="fafolder" class="folder-icon"></fa-icon> {{ node.name }} 
+      </div>
+  
+      <div *ngIf="!node.isFolder" class="file">
+        <fa-icon [icon]="fafile" class="file-icon"></fa-icon> {{ node.name }}
+      </div>
+  
+      <div class="children" *ngIf="node.isFolder && node.expanded" style="margin-left: 20px;">
+        <ng-container *ngFor="let child of node.items">
+          <ng-container *ngTemplateOutlet="renderNode; context: { $implicit: child }"></ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </ng-template>
+
