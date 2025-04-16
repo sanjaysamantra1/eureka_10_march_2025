@@ -1,0 +1,57 @@
+<h3>Lets Learn Material Buttons:</h3>
+<div>
+    Basic Button:
+    <button mat-button>Basic Button</button>
+</div>
+<div>
+    Stroked Button:
+    <button mat-stroked-button>Stroked Button</button>
+</div>
+<div>
+    Flat Button:
+    <button mat-flat-button>Stroked Button</button>
+</div>
+<mat-divider></mat-divider>
+
+<h3>Lets Learn Card:</h3>
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
+<mat-divider></mat-divider>
+
+<h3>Lets Learn Spinner:</h3>
+<mat-spinner></mat-spinner>
+<mat-divider></mat-divider>
+
+<h3>Let's Learn Dialog</h3>
+<button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
+<mat-divider></mat-divider>
+
+<h3>lets learn tabs</h3>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="First">
+        <app-home></app-home>
+    </mat-tab>
+    <mat-tab label="Second">
+        <app-aboutus></app-aboutus>
+    </mat-tab>
+    <mat-tab label="Third">
+        <app-careers></app-careers>
+    </mat-tab>
+</mat-tab-group>
