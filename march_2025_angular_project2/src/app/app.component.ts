@@ -6,6 +6,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { TodoCrudComponent } from './components/todo-crud/todo-crud.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeAddComponent } from './components/employee-add/employee-add.component';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,9 @@ import { EmployeeAddComponent } from './components/employee-add/employee-add.com
     // MaterialDemoComponent,
     // CounterComponent,
     // TodoCrudComponent
-    EmployeeListComponent,
-    EmployeeAddComponent
+    // EmployeeListComponent,
+    // EmployeeAddComponent
+    ChartDemoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
