@@ -7,13 +7,17 @@ import { provideStore } from '@ngrx/store';
 import { counterReducer } from './ngrx/reducers/counter.reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { todoReducer } from './ngrx/reducers/todo.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { EmployeeEffects } from './ngrx/effects/employee.effects';
+import { employeesReducer } from './ngrx/reducers/employee.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
-    provideStore({ count: counterReducer,todoArr:todoReducer }),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStore({ count: counterReducer, todoArr: todoReducer, employees:employeesReducer }),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideEffects(EmployeeEffects)
 ]
 };
