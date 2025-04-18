@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular_project_one": {
+    "angular_project_two": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular_project_one",
+            "outputPath": "dist/angular_project_two",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,9 +30,12 @@
               "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -62,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular_project_one:build:production"
+              "buildTarget": "angular_project_two:build:production"
             },
             "development": {
-              "buildTarget": "angular_project_one:build:development"
+              "buildTarget": "angular_project_two:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,7 +110,7 @@
     }
   },
   "cli": {
-    "analytics": false,
+    "analytics": "e63f071f-9cd7-4b91-baba-781332452249",
     "schematicCollections": [
       "angular-eslint"
     ]
