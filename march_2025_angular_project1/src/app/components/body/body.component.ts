@@ -27,6 +27,7 @@ import { SignalDemo1Component } from "../signal-demo1/signal-demo1.component";
 import { FormDemo1Component } from "../form-demo1/form-demo1.component";
 import { FormDemo3Component } from "../form-demo3/form-demo3.component";
 import { FormDemo4Component } from "../form-demo4/form-demo4.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -34,7 +35,7 @@ import { FormDemo4Component } from "../form-demo4/form-demo4.component";
     //  ElectronicsComponent,
     //DataBindingComponent,
     //DirectivesComponent,
-    // ProductListComponent,
+     ProductListComponent,
     // MyModalComponent,
     // Demo1Component,
     //Demo2Component,
@@ -42,22 +43,23 @@ import { FormDemo4Component } from "../form-demo4/form-demo4.component";
     // UserTableComponent,
     // PipesComponent,
     // ParentComponent,
-    //EmployeeComponent,
+    EmployeeComponent,
     //HttpDemo1Component,
     //UserCrudComponent,
     //HttpDemo2Component,
-    ObservableDemo1Component,
-    ObservableDemo2Component,
-    ObservableDemo3Component,
-    FolderExplorerComponent,
-    Message1Component,
-    Message2Component,
-    SignalDemo2Component,
-    FormDemo2Component,
-    SignalDemo1Component,
-    FormDemo1Component,
-    FormDemo3Component,
-    FormDemo4Component
+    // ObservableDemo1Component,
+    // ObservableDemo2Component,
+    // ObservableDemo3Component,
+    // FolderExplorerComponent,
+    // Message1Component,
+    // Message2Component,
+    // SignalDemo2Component,
+    // FormDemo2Component,
+    // SignalDemo1Component,
+    // FormDemo1Component,
+    // FormDemo3Component,
+    // FormDemo4Component
+    RouterOutlet
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

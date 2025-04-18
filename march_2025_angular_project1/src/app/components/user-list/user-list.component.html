@@ -12,7 +12,8 @@
                         <p class="card-text">Email: {{user.email}}</p>
                         <p class="card-text">Phone: {{user.phone}}</p>
                         <p class="card-text">City: {{user.address.city}}</p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                        <!-- <a href="#" class="btn btn-primary">Details</a> -->
+                        <a class="btn btn-primary" [routerLink]="['/userdetails', user.id]">Details</a>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,9 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+  getUserRole1(): string {
+    throw new Error('Method not implemented.');
+  }
   url = `http://localhost:3000/users`
 
   constructor(private httpClient: HttpClient) { }
@@ -25,4 +28,8 @@ export class UserService {
       })
     );
   }
+  userRole: string = 'student';
+   getUserRole() {
+     return this.userRole;
+   }
 }

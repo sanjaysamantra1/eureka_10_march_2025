@@ -7,6 +7,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ZoominDirective } from '../../directives/zoomin.directive';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +15,8 @@ import { CartService } from '../../services/cart.service';
     FormsModule,
     NgxPaginationModule,
     FontAwesomeModule,
-    ZoominDirective
+    ZoominDirective,
+    RouterLink
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
