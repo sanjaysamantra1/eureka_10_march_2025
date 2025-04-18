@@ -12,8 +12,7 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideStore({ count: counterReducer },
-                  // {todoArr: todoReducer}
+    provideStore({ count: counterReducer ,todoArr: todoReducer}
     ), 
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };
