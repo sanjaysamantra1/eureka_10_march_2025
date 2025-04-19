@@ -14,7 +14,7 @@ export interface User { //model -> Defines the structure of data
 })
 
 export class UserService {
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = 'http://localhost:3000/users'; 
 
   constructor(private httpClient: HttpClient) { }
 
@@ -32,5 +32,10 @@ export class UserService {
 
   deleteUser(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  userRole: string = 'neel';
+  getUserRole() {
+    return this.userRole;
   }
 }
